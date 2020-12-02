@@ -1,0 +1,139 @@
+/*INDEX - NAVIGATION START */
+.index-nav
+  display: none
+  @media (min-width: $tablet-average-content-width)
+    display: block
+    background-color: $bkg-light-grey-color
+    .index-nav__menu
+      display: flex
+      justify-content: center
+      font-weight: 500
+      font-size: 16px
+      letter-spacing: 2.5px
+      li
+        a
+          display: block
+          padding: 10px 20px 8px 20px
+          text-decoration: none
+          border-bottom: 2px solid #fff
+          &:hover, &:focus, &:active
+            color: $main-blue-color
+            border-bottom-color: $main-blue-color
+
+/* INDEX - NAVIGATION FINISH */
+
+
+/* INDEX - MAIN IMAGE START */
+
+.main-image
+  @media (min-width: $tablet-average-content-width)
+    position: relative
+    background: url("../../images/background/main_img.jpg") center no-repeat
+    height: 600px
+
+/* INDEX - MAIN IMAGE FINISH */
+
+
+/* INDEX - HOW-IT-WORKS START */
+.how-it-works
+  padding: 0 3%
+  @media (min-width: $tablet-content-width)
+    padding: 0
+    display: flex
+
+.how-it-works__box
+  margin: 5% 0 7% 0
+  h3
+    font-weight: 600
+    font-size: 16px
+    margin-top: 10px
+  p
+    line-height: 135%
+    a
+      color: $main-blue-color
+  @media (min-width: $tablet-content-width)
+    flex: 1
+    margin: 3% 2%
+
+.how-it-works__where-to-go
+  background: url(../../images/icons/how-it-works_where-to-go.svg) no-repeat center
+
+.how-it-works__how-to-choose
+  background: url(../../images/icons/how-it-works_how-to-choose.svg) no-repeat center
+
+.how-it-works__subscribe
+  background: url(../../images/icons/how-it-works_subscribe.svg) no-repeat center
+
+.how-it-works__where-to-go,
+.how-it-works__how-to-choose,
+.how-it-works__subscribe
+  width: 60px
+  height: 60px
+  background-size: 60px
+
+/* INDEX - HOW-IT-WORKS FINISH */
+
+/* INDEX - COLLECTION BLOCK START */
+//.main-image:hover
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/background/main_img.jpg")
+  & h1
+    display: none
+  & .collections
+    display: flex
+    justify-content: center
+    align-items: center
+
+//.collections
+  display: none
+  //position: absolute
+  //z-index: 99
+  width: 100%
+  height: 600px
+  .collection-image-1,
+  .collection-image-2,
+  .collection-image-3,
+  .collection-image-4
+    display: flex
+    align-items: flex-end
+    width: 500px
+    height: 280px
+    margin: 10px
+    border-radius: 44px
+    box-shadow: 0 0 7px 0 rgba(2,31,38,1)
+    &:hover
+      transform: scale(1.03)
+    a
+      display: inline-block
+      width: 100%
+      background-color: rgba(0,0,0,.5)
+      text-decoration: none
+      color: #ffffff
+      padding: 10px 0 12px 50px
+      font-size: 17px
+      border-bottom-left-radius: 50px
+      border-bottom-right-radius: 50px
+      i
+        font-size: 14px
+        margin-left: 10px
+
+  .collection-image-1
+    background: linear-gradient(#222, hsla(0,0%,60%,.2)), url(../images/background/collection_camps.jpg) no-repeat
+    &:hover
+      background: url(../images/background/collection_camps.jpg) no-repeat
+  .collection-image-2
+    background: linear-gradient(#222, hsla(0,0%,60%,.2)), url(../images/background/collection_russiaDiscovery.png) no-repeat
+    &:hover
+      background: url(../images/background/collection_russiaDiscovery.png) no-repeat
+  .collection-image-3
+    background: linear-gradient(#222, hsla(0,0%,60%,.2)), url(../images/background/collection_summerTours.png) no-repeat
+    &:hover
+      background: url(../images/background/collection_summerTours.png) no-repeat
+  .collection-image-4
+    background: linear-gradient(#222, hsla(0,0%,60%,.2)), url(../images/background/collection_unknownEurope.png) no-repeat
+    &:hover
+      background: url(../images/background/collection_unknownEurope.png) no-repeat
+
+/* INDEX - COLLECTION BLOCK FINISH */
+
+
+

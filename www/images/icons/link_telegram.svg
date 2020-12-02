@@ -1,0 +1,20 @@
+<svg id="telegram_1_" data-name="telegram (1)" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #59aae7;
+      }
+
+      .cls-2 {
+        fill: #fcfcfc;
+      }
+
+      .cls-3 {
+        fill: #d8d7da;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_18" data-name="Ellipse 18" class="cls-1" cx="15" cy="15" r="15"/>
+  <path id="Path_212" data-name="Path 212" class="cls-2" d="M84.509,112.812l-4.009-2.18a.17.17,0,0,1,0-.291l15.231-8.569a.154.154,0,0,1,.216.177L93.323,116.21a.149.149,0,0,1-.207.118l-3.564-1.661a.139.139,0,0,0-.132.007l-4.605,2.783a.151.151,0,0,1-.223-.143v-4.356A.165.165,0,0,0,84.509,112.812Z" transform="translate(-74.324 -94.75)"/>
+  <path id="Path_213" data-name="Path 213" class="cls-3" d="M199.822,181.26l-.025-4a.073.073,0,0,1,.035-.063l6.5-3.972a.073.073,0,0,1,.09.114l-4.948,4.983a.074.074,0,0,0-.013.019l-.846,1.693-.656,1.262A.073.073,0,0,1,199.822,181.26Z" transform="translate(-187.763 -162.103)"/>
+</svg>

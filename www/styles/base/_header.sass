@@ -1,0 +1,163 @@
+/* HEADER START*/
+
+.header
+  border-bottom: 1px solid #ececec
+  background-color: $bkg-light-grey-color
+  //background: rgba(255, 255, 255, 1) // белый цвет
+  //box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15)
+  width: 100%
+  // фиксируем шапку сайта для mobile & tablet
+  position: fixed
+  z-index: 100
+  top: 0
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    position: unset
+
+.header__container
+  display: flex
+  justify-content: space-between
+  height: 54px
+  padding: 0 15px
+  @media only screen and  (min-width: $tablet-average-content-width)
+    height: 65px
+    padding: 0 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 0 40px
+
+.header__left
+  display: flex
+  align-items: center
+  //justify-content: space-between
+  width: 100%
+
+.header__logo
+  img
+    width: 32px
+    height: 32px
+    border-radius: 4px
+  @media only screen and (min-width: $tablet-average-content-width)
+    background: url(../../images/logo/logo-main-svg-150.svg) no-repeat center
+    background-position: 0 18px
+    background-size: 140px
+    width: 155px
+    height: 65px
+    img
+      display: none
+
+.header__right
+  display: flex
+  align-items: center
+
+.header__currency
+  font-size: 20px
+  opacity: 0.8
+  margin-right: 20px
+  select
+    border: none
+
+.header__notifications
+  display: flex
+  height: 100%
+  align-items: center
+  margin-right: 12px
+
+// header: прозрачность иконок меню
+.icon-heart,
+.icon-suitcase,
+.icon-chat-1,
+.icofont-user,
+.header_burger-menu
+  opacity: 0.7
+  &:hover
+    color: $main-blue-color
+    opacity: 1
+
+.notifications__point
+  position: absolute
+  z-index: 10
+  background: $red-color
+  width: 8px
+  height: 8px
+  border-radius: 50%
+
+.header__favorite
+  position: relative
+  font-size: 19px
+  margin-right: 23px
+  .notifications__point
+    margin-left: 20px
+    margin-top: -1px
+
+.header__requests
+  display: none
+  position: relative
+  font-size: 19px
+  margin-right: 22px
+  .notifications__point
+    margin-left: 20px
+    margin-top: -1px
+
+.header__chat
+  position: relative
+  font-size: 22px
+  margin-top: 2px
+  margin-right: 15px
+  .notifications__point
+    margin-left: 24px
+    margin-top: -1px
+
+
+//.header__menu
+  display: flex
+  height: 100%
+  align-items: center
+
+//.header_burger-menu
+  height: 33px
+  width: 20px
+  padding-top: 7px
+  margin-right: 20px
+  margin-top: 2px
+  div
+    width: 20px
+    height: 7px
+    border-top: 3px solid
+
+//.hidden-menu
+  display: none
+
+.header__user
+  position: relative
+  display: flex
+  height: 100%
+  align-items: center
+  cursor: pointer
+  a
+    text-decoration: none
+
+.user__icon
+  width: 32px
+  height: 32px
+  padding-top: 6px
+  font-size: 19px
+  text-align: center
+  border-radius: 4px
+
+.user__avatar
+  display: none
+  margin-left: 2px
+  img
+    display: block
+    width: 33px
+    height: 33px
+    border-radius: 50%
+    opacity: 0.8
+    &:hover
+      opacity: 0.9
+
+.hidden-menu
+  right: 6px
+  top: 6px
+
+/* HEADER FINISH */

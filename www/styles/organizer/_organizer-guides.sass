@@ -1,0 +1,77 @@
+/* SECTION GUIDES START */
+
+.organizer__guides
+  margin-bottom: 40px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-top: 30px
+    margin-bottom: 100px
+
+.guides-block
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  padding: 0 5%
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 0 20px
+
+.guide-box
+  position: relative
+  padding: 5%
+  //margin: 30px 10px
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  max-width: 400px
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 380px
+    padding: 20px
+    margin-right: 30px
+    &:last-child
+      margin-right: 0
+
+.guide-box__main
+  display: flex
+  align-items: center
+
+  .main__avatar
+    img
+      border-radius: 50%
+      cursor: pointer
+
+  .main__stats
+    padding-left: 20px
+
+.guide-box__tours-stats
+  display: flex
+  justify-content: space-between
+  padding: 3% 0
+  border-bottom: 1px solid $border-line-color
+  div
+    span:nth-child(2)
+      padding-left: 5px
+      font-weight: 600
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 10px 0 5px 0
+
+.guide-box__information
+  div:last-child
+    border: none
+
+
+.edit-bottom-right-tag
+  position: absolute
+  right: 0
+  bottom: 0
+  z-index: 3
+  background-color: $bkg-light-grey-color
+  border-top: 1px solid $border-line-color
+  border-left: 1px solid $border-line-color
+  border-bottom-right-radius: 15px
+  border-top-left-radius: 15px
+  padding: 15px
+  cursor: pointer
+  i
+    font-size: 25px
+    color: $font-dark-grey-color
+
+/* SECTION GUIDES FINISH */

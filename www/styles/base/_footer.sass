@@ -1,0 +1,64 @@
+/* FOOTER START */
+.footer
+  background-color: rgba(217, 217, 217, 0.5)
+
+.footer-container
+  display: flex
+  width: unset
+  height: 100%
+  padding: 3%
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 3% 7%
+  @media (min-width: $tablet-average-content-width)
+    padding: 2%
+  @media only screen and (min-width: $desktop-content-width)
+    width: $desktop-content-width
+    padding: 1.5% 1%
+
+.footer-nav
+  @media only screen and (min-width: $tablet-average-content-width)
+    flex: 2
+    display: flex
+    width: 100%
+
+.footer_nav__row
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-right: 8%
+    &:last-child
+      margin-right: 0
+
+.footer-nav__item
+  display: block
+  padding: 5px
+  font-size: 13px
+  text-decoration: none
+  &:hover, &:focus, &:active
+    text-decoration: underline
+    color: $main-blue-color
+
+.footer-right
+  flex: 1
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  justify-content: space-between
+  margin-top: 10px
+  margin-bottom: 10px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-top: 0
+    margin-bottom: 0
+
+.footer__social-links
+  display: flex
+  opacity: 0.8
+  font-size: 20px
+  i
+    margin-left: 20px
+    &:hover, &:focus, &:active
+      color: $main-blue-color
+
+
+.footer__copyright
+  font-size: 11px
+
+/* FOOTER FINISH */

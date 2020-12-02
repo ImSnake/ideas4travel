@@ -1,0 +1,244 @@
+html,
+body
+  height: 100%
+
+// MAIN SETTINGS FOR FONTS AND CONTENT SIZE
+body
+  font-family: 'Montserrat', sans-serif
+  font-weight: 400
+  color: $main-font-color
+  font-size: 14px
+  display: flex
+  flex-direction: column
+
+*
+  box-sizing: border-box
+
+*:focus
+  outline: none
+
+ul
+  margin: 0
+  padding-left: 0
+  list-style-type: none
+
+a
+  color: inherit
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+
+
+// Задаем ширину и отступы содержимого сайта
+.container
+  min-width: $min-site-width
+  width: 100%
+  @media only screen and (min-width: $desktop-content-width)
+    width: $desktop-content-width
+    margin: 0 auto
+
+.center
+  flex: 1
+  margin-top: 54px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-top: 0
+  @media only screen and (min-width: $desktop-content-width)
+    width: 100%
+
+
+// изменить под макет
+
+// стилизация placeholder
+textarea::placeholder,
+input::placeholder,
+input::-webkit-input-placeholder,
+select:required:invalid
+  word-spacing: 1px
+  letter-spacing: 0.6px
+  color: $font-grey-color
+  font-weight: 300
+  //font-style: italic
+  font-size: 12px
+  height: 100%
+
+// стилизация placeholder для полей ввода даты
+input[type="date"]::before
+  content: attr(data-placeholder)
+  width: 100%
+  word-spacing: 1px
+  letter-spacing: 0.7px
+  color: $font-grey-color
+  font-style: italic
+  font-size: 12px
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before
+  display: none
+
+input,
+textarea
+  padding: 8px 15px
+  border: 1px solid $border-line-color
+  border-radius: 12px
+  color: $main-font-color
+
+textarea
+  resize: vertical
+
+select
+  border: 1px solid $border-line-color
+  border-radius: 10px
+  color: $main-font-color
+  padding: 8px 16px
+  cursor: pointer
+
+option[value=""][disabled]
+  display: none
+
+option:disabled
+  color: $font-grey-color
+  font-size: 13px
+
+option
+  color: $main-font-color
+  font-size: 14px
+
+// не показывать стрелки по умолчанию
+select
+  margin: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-appearance: none
+  -moz-appearance: none
+
+.select-cover
+  position: relative
+  &::before
+    position: absolute
+    content: "\25BC"
+    font-size: 8px
+    line-height: 35px
+    color: #b3b3b3
+    right: 17px
+
+//созадть
+.select-cover.opened
+  &::before
+    position: absolute
+    content: "\25B2"
+
+
+
+// стили для чекбоксов и радио-кнопок
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked),
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked)
+  display: none
+
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label
+  display: inline-block
+  position: relative
+  cursor: pointer
+  padding-left: 30px
+  min-height: 20px
+  min-width: 20px
+  span
+    display: flex
+    min-height: 22px
+    align-items: center
+
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before
+  content: ""
+  position: absolute
+  width: 20px
+  height: 20px
+  border: 1px solid $border-line-color
+  background-color: #ffffff
+  margin-left: -30px
+
+input[type="checkbox"]:disabled + label
+  color: $font-grey-color
+
+input[type="checkbox"]:disabled + label:before
+  background-color: $bkg-grey-color
+
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after
+  left: 5px
+  top: 5px
+  width: 10px
+  height: 5px
+  border-radius: 1px
+  border-left: 4px solid $main-blue-color
+  border-bottom: 4px solid $main-blue-color
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  -ms-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+
+input[type="radio"]:checked + label,
+input[type="radio"]:not(:checked) + label
+  display: flex
+  align-items: center
+  position: relative
+  cursor: pointer
+  padding-left: 30px
+  height: 100%
+  span
+    display: flex
+    min-height: 20px
+    max-height: inherit
+    align-items: center
+
+input[type="radio"]:checked + label:before,
+input[type="radio"]:not(:checked) + label:before
+  content: ""
+  position: absolute
+  width: 20px
+  height: 20px
+  border: 1px solid $border-line-color
+  border-radius: 100%
+  background-color: #ffffff
+  margin-left: -30px
+
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after
+  left: 4px
+  top: 4px
+  width: 14px
+  height: 14px
+  border-radius: 100%
+  background-color: $main-blue-color
+
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after
+  content: ""
+  position: absolute
+  -webkit-transition: all 0.2s ease
+  -moz-transition: all 0.2s ease
+  -o-transition: all 0.2s ease
+  transition: all 0.2s ease
+
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:not(:checked) + label:after
+  opacity: 0
+
+input[type="checkbox"]:checked + label:after,
+input[type="radio"]:checked + label:after
+  opacity: 1
+
+input[type="radio"]:not(:checked) + label
+  color: $font-grey-color
+
+input[type="radio"]:checked + label
+  color: $main-font-color

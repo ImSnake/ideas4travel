@@ -1,0 +1,76 @@
+/* RESOLUTION SETTINGS START */
+/* RESOLUTION SETTINGS FINISH */
+/* COLORS */
+/*INDEX - NAVIGATION START */
+.index-nav {
+  display: none; }
+  @media (min-width: 630px) {
+    .index-nav {
+      display: block;
+      background-color: #FCFCFC; }
+      .index-nav .index-nav__menu {
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 2.5px; }
+        .index-nav .index-nav__menu li a {
+          display: block;
+          padding: 10px 20px 8px 20px;
+          text-decoration: none;
+          border-bottom: 2px solid #fff; }
+          .index-nav .index-nav__menu li a:hover, .index-nav .index-nav__menu li a:focus, .index-nav .index-nav__menu li a:active {
+            color: #00b8e3;
+            border-bottom-color: #00b8e3; } }
+
+/* INDEX - NAVIGATION FINISH */
+/* INDEX - MAIN IMAGE START */
+@media (min-width: 630px) {
+  .main-image {
+    position: relative;
+    background: url("../../images/background/main_img.jpg") center no-repeat;
+    height: 600px; } }
+
+/* INDEX - MAIN IMAGE FINISH */
+/* INDEX - HOW-IT-WORKS START */
+.how-it-works {
+  padding: 0 3%; }
+  @media (min-width: 767px) {
+    .how-it-works {
+      padding: 0;
+      display: flex; } }
+
+.how-it-works__box {
+  margin: 5% 0 7% 0; }
+  .how-it-works__box h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px; }
+  .how-it-works__box p {
+    line-height: 135%; }
+    .how-it-works__box p a {
+      color: #00b8e3; }
+  @media (min-width: 767px) {
+    .how-it-works__box {
+      flex: 1;
+      margin: 3% 2%; } }
+
+.how-it-works__where-to-go {
+  background: url(../../images/icons/how-it-works_where-to-go.svg) no-repeat center; }
+
+.how-it-works__how-to-choose {
+  background: url(../../images/icons/how-it-works_how-to-choose.svg) no-repeat center; }
+
+.how-it-works__subscribe {
+  background: url(../../images/icons/how-it-works_subscribe.svg) no-repeat center; }
+
+.how-it-works__where-to-go,
+.how-it-works__how-to-choose,
+.how-it-works__subscribe {
+  width: 60px;
+  height: 60px;
+  background-size: 60px; }
+
+/* INDEX - HOW-IT-WORKS FINISH */
+/* INDEX - COLLECTION BLOCK START */
+/* INDEX - COLLECTION BLOCK FINISH */

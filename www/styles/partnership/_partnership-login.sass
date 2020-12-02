@@ -1,0 +1,92 @@
+.authorization
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 0 5px
+  margin-top: 20px
+  margin-bottom: 20px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-bottom: 100px
+
+  @media only screen and (min-width: 900px)
+    flex-direction: row
+    justify-content: center
+    align-items: flex-start
+
+  .login
+    order: -1
+
+    @media only screen and (min-width: 900px)
+      order: 0
+
+    a
+      display: inline-block
+      padding-left: 11px
+      margin-top: 10px
+      margin-bottom: 5px
+      font-size: 13px
+      @media only screen and (min-width: 900px)
+        margin-right: 30px
+
+.authorization__form
+  width: 310px
+  background-color: $bkg-light-grey-color
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  padding: 15px
+  &:nth-child(2)
+    margin-bottom: 20px
+
+  @media only screen and (min-width: $mobile-content-width)
+    width: 400px
+    padding: 15px 20px
+
+  @media only screen and (min-width: 900px)
+    &:nth-child(2)
+      margin-bottom: 0
+    &:first-child
+      margin-right: 30px
+
+  div
+    margin: 20px 0
+
+  form
+    margin: 0 auto
+    padding: 0 10px
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"]
+      width: 100%
+      margin-top: 5px
+
+    label
+      display: block
+      padding-left: 11px
+
+    .block-title
+      padding-left: 15px
+
+    .link
+      display: block
+      min-width: 20px
+      margin-left: 5px
+      //margin-top: 2px
+      //margin-left: 35px
+
+    button
+      margin-top: 10px
+      width: 100%
+
+    .agreement
+      margin: 30px 0
+      padding: 0 10px
+      div
+        display: flex
+        align-items: center
+        margin-top: 10px
+
+    .form-comment
+      padding-left: 5px

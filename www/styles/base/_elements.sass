@@ -1,0 +1,536 @@
+// классы для цветов текста и иконок
+.blue
+  color: $main-blue-color
+
+.grey
+  color: $font-grey-color
+
+.dark-grey
+  color: $font-dark-grey-color
+
+.green
+  color: $green-color
+
+.red
+  color: $red-color
+
+
+// жирный
+.bold
+  font-weight: 600
+
+// курсив
+.italic
+  font-style: italic
+
+// ссылочные элементы
+.link
+  color: $main-blue-color
+  text-decoration: underline
+  cursor: pointer
+
+// для подсказок в полях формы
+.text
+  //font-size: 13px
+  //color: $font-grey-color
+  //font-style: italic
+
+// очень маленький серый текст формата /x
+.small-txt
+  font-size: 10px
+  color: $font-grey-color
+  &:before
+    content: " / "
+
+// формат текста для не заполненного поля формы
+.unfilled
+  color: $font-grey-color
+  font-style: italic
+  font-size: 12px
+  &:after
+    content: "..."
+
+.default
+  color: $font-grey-color
+  //font-style: italic
+  font-size: 12px
+  word-spacing: 1px
+  letter-spacing: 0.6px
+  font-weight: 300
+
+// стрелки для фильтров и элементов меню
+.icon-left-open-big,
+.icon-right-open-big,
+.icon-down-open-big,
+.icon-up-open-big
+  color: $font-grey-color
+
+// иконка многоточие
+.icon-dot-3
+  color: $font-grey-color
+
+.down-arr,
+.up-arr
+  padding-right: 2px
+  font-size: 8px
+  color: $font-grey-color
+  &.down-arr::before
+    content: "\25BC"
+  &.up-arr::before
+    content: "\25B2"
+
+
+//стили для выпадающих меню
+.menu-list
+  position: absolute
+  z-index: 999
+  min-width: 200px
+  background-color: rgba(255, 255, 255, 0.95)
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  box-shadow: 0 3px 6px rgba(178, 178, 178, 0.16)
+  padding: 5px 20px
+  span
+    display: block
+    letter-spacing: 0.5px
+    text-align: center
+    padding: 15px
+    border-bottom: 1px solid $border-line-color
+    cursor: pointer
+    &:last-child
+      border: none
+    a
+      display: block
+    &:hover
+      color: $main-blue-color
+      text-decoration: underline
+
+  &.right
+    right: 0
+    top: 0
+
+
+// всплывающие подсказки (?)
+.help
+  display: inline-block
+  position: relative
+  cursor: help
+  text-align: left !important
+  &::before
+    font-family: 'fontello'
+    font-weight: normal
+    font-style: normal
+    content: "\e8be"  //.icon-help-circled-1
+    font-size: 15px
+    color: $font-grey-color
+
+  .right
+    top: -12px
+    left: 26px
+    &::before
+      content: ''
+      border: 8px solid transparent
+      border-right: 8px solid rgba(0, 0, 0, 0.7)
+      position: absolute
+      z-index: 1
+      left: -16px
+      top: 23px
+      margin-top: -10px
+
+  .top
+    top: 20px
+    right: -10px
+    &::before
+      content: ''
+      border: 7px solid transparent
+      border-bottom: 8px solid rgba(0, 0, 0, 0.7)
+      position: absolute
+      z-index: 1
+      left: 146px
+      top: -5px
+      margin-top: -10px
+
+  .help-pop-up
+    position: absolute
+    z-index: 100
+    font-family: "Open Sans", sans-serif
+    color: #ffffff
+    min-width: 170px
+    min-height: 50px
+    line-height: 130%
+    font-size: 12px
+    padding: 24px 15px 18px 18px
+    background-color: rgba(0, 0, 0, 0.7)
+    box-shadow: 1px 5px 8px -2px rgba(179,179,179,1)
+    border-radius: 12px
+    cursor: help
+    h4
+      font-weight: 600
+      line-height: 150%
+    p
+      margin: 0
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+      a
+        display: flex
+        align-items: center
+
+.close-pop-up
+  &::before
+    font-family: 'IcoFont'
+    font-weight: normal
+    font-style: normal
+    content: "\eedd"  //.icofont-close-circled
+    display: block
+    position: absolute
+    z-index: 51
+    top: 5px
+    right: 5px
+    padding: 3px
+    font-size: 14px
+    opacity: 0.8
+    cursor: pointer
+  &:hover
+    color: $main-blue-color
+    opacity: 1
+
+
+// заголовки для блоков (h2)
+.block-title
+  font-size: 15px
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: 1.5px
+  color: $main-blue-color
+  padding: 13px 10px
+  border-bottom: 1px solid $border-line-color
+  width: 100%
+
+
+//комментарий под полем формы
+.form-comment
+  display: block
+  font-size: 12px
+  margin: 5px
+  line-height: 130%
+.input_inner_shadow
+    border: 1px solid rgba(253,85,113,0.7)
+    box-shadow: inset 0 0 3px rgba(253,85,113,0.8)
+
+
+// для mobile (блок под навигацией: вернуться в основное меню);
+.back-n-wrap
+  display: block
+  padding: 3%
+  &::before
+    font-family: 'fontello'
+    font-weight: normal
+    font-style: normal
+    content: "\e91d"  // icon-left-open-big
+    color: $font-grey-color
+    font-size: 12px
+  span
+    display: inline-block
+    margin-left: 2px
+    letter-spacing: 0.5px
+    color: $font-grey-color
+    text-decoration: underline
+
+  //@media only screen and (min-width: $mobile-content-width)
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: none
+
+
+// КНОПКИ
+.btn-blue,
+.btn-orange,
+.btn-grey
+  min-width: 225px
+  border: none
+  border-radius: 20px
+  //box-shadow: 1px 5px 8px -2px rgba(179,179,179,1)
+  text-align: center
+  cursor: pointer
+  opacity: 0.9
+  font-size: 14px
+  text-transform: uppercase
+  font-weight: 600
+  letter-spacing: 1.3px
+  span
+    display: block
+    padding: 12px 20px
+  a
+    text-decoration: none
+
+// голубая круглая кнопка
+.btn-blue
+  color: #ffffff
+  background-color: $main-blue-color
+
+// оранжевая круглая кнопка
+.btn-orange
+  color: #ffffff
+  background-color: $orange-color
+
+// серая круглая кнопка
+.btn-grey
+  color: $font-dark-grey-color
+  background-color: $bkg-grey-color
+  border: 1px solid $border-line-color
+
+
+//стили кнопок для мобйал
+.mob-btn-1
+  width: 150px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border: 1px solid $border-line-color
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12)
+  border-radius: 15px
+  background-color: #ffffff
+  color: $font-grey-color
+  text-transform: uppercase
+  padding: 5px 12px
+  line-height: 15px
+  @media only screen and (min-width: $mobile-content-width)
+    width: 170px
+    padding: 8px 12px
+    border-radius: 17px
+  span
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: 0.45px
+  i
+    display: inline-block
+    font-size: 17px
+
+
+//карточка тура в каталоге
+.program-box
+  width: 300px
+  border-radius: 15px
+  box-shadow: 0 3px 7px -2px rgba(179,179,179,1)
+  margin: 5px
+  height: min-content
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin: 10px
+
+.program__image
+  height: 185px
+  position: relative
+  img
+    width: 300px
+    height: 185px
+    border-top-left-radius: 15px
+    border-top-right-radius: 15px
+
+.image__bottom-left-tag
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 3
+  background-color: rgba(0, 0, 0, 0.4)
+  text-align: center
+  color: #ffffff
+  border-top-right-radius: 20px
+  text-transform: uppercase
+  padding: 10px 15px
+  span
+    font-weight: 500
+    word-spacing: 2px
+    font-size: 13px
+
+.program__info
+  padding: 10px 15px 15px 17px
+
+.program__country
+  margin-bottom: 5px
+  font-size: 13px
+  text-transform: uppercase
+  color: $main-blue-color
+  font-weight: 500
+
+.program__name
+  font-family: "Open Sans", sans-serif
+  line-height: 120%
+  font-size: 13px
+  height: 30px
+  overflow: hidden
+
+.program__stats
+  margin-top: 10px
+  padding-left: 3px
+  span
+    margin-right: 10px
+    letter-spacing: 1px
+    word-spacing: 1px
+
+.program__estimation,
+.program__comfort,
+.program__dynamics
+  font-size: 15px
+  font-weight: 600
+  cursor: pointer
+  &:before
+    content: ""
+    display: inline-block
+    width: 23px
+    height: 14px
+
+.program__estimation
+  background: url(../../images/icons/icon-star-16.svg) center no-repeat
+  background-position-x: 0
+  background-size: 14px
+
+.program__comfort
+  background: url("../../images/icons/icon-comfort-16.svg") center no-repeat
+  background-position-x: 0
+  background-size: 14px
+
+.program__dynamics
+  background: url("../../images/icons/icon-dynamics-16.svg") center no-repeat
+  background-position-x: 0
+  background-size: 15px
+
+
+
+// иконки контактов организатора
+.website
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_website.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.facebook
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_facebook.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.instagram
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_instagram.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.vkontacte
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_vkontacte.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.youtube
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_youtube.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.telegram
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_telegram.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.whatsapp
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_whatsapp.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.viber
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_viber.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.skype
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_skype.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+.phone
+  &:before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/link_phone.svg") center no-repeat
+    width: 30px
+    height: 30px
+    padding-top: 1px
+    padding-left: 1px
+
+// серый цвет иконки svg
+.empty-icon
+  &:before
+    filter: grayscale(100%)
+    opacity: 0.7
+
+
+//------ service-page------------//
+.service
+  text-align: left
+  padding: 0 15px
+  margin-top: 20px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 0 20px
+    margin-top: 30px
+    text-align: center
+
+.service__message
+  h2
+    font-size: 17px
+    text-align: center
+    color: $main-blue-color
+    font-weight: 500
+    margin-bottom: 20px
+  p
+    margin: 10px 0
+    font-size: 12px
+  .small-font
+    padding-left: 1px
+    &:first-child
+      margin-top: 15px
+
+.service__back-link
+  margin-top: 35px
+  text-align: right
+  @media only screen and (min-width: $mobile-content-width)
+    text-align: center

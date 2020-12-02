@@ -1,0 +1,111 @@
+/* SECTION TOURS START */
+
+.organizer__tours
+  margin-bottom: 40px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-bottom: 100px
+
+.tours-table
+  font-size: 13px
+  margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin: 30px 20px
+    border: 1px solid $border-line-color
+    border-radius: 15px
+    background-color: #ffffff
+
+.tours-table__head,
+.tours-table__row
+  display: flex
+  align-items: center
+  text-align: center
+  border-bottom: 1px solid $border-line-color
+
+.tours-table__row
+  position: relative
+  &:last-child
+    @media only screen and (min-width: $tablet-average-content-width)
+      border-bottom: none
+
+.tours-table__head
+  text-transform: uppercase
+  padding-top: 15px
+  padding-bottom: 15px
+  background: #FCFCFC
+  border-top-left-radius: 15px
+  border-top-right-radius: 15px
+  .tours-table__data
+    letter-spacing: normal
+    padding: 0
+  .tours-table__program
+    justify-content: center
+  .tours-table__guide
+    font-size: 13px
+
+.tours-table__data,
+.tours-table__price,
+.tours-table__extra-costs,
+.tours-table__status,
+.tours-table__edit
+  flex: 1
+  align-items: center
+
+.tours-table__program
+  flex: 1.5
+  @media only screen and (min-width: $tablet-average-content-width)
+    flex: 3
+
+.tours-table__data
+  letter-spacing: 1px
+
+.tours-table__program
+  img
+    width: 100px
+    height: 61.5px
+    margin-top: 2px
+    margin-bottom: 2px
+    border-radius: 5px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: flex
+    text-align: start
+    align-items: center
+
+.tours-table__program-name
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    max-height: 55px
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 12px
+    padding: 1% 2%
+
+.tours-table__price
+
+.tours-table__extra-costs
+  display: none
+  @media only screen and (min-width: $tablet-content-width)
+    display: block
+
+.tours-table__guide
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    flex: 1.5
+    font-size: 12px
+    padding: 0 1%
+
+.tours-table__status
+
+.tours-table__edit
+  display: none
+  @media only screen and (min-width: $mobile-content-width)
+    display: block
+    i
+      color: $font-dark-grey-color
+      font-size: 20px
+      padding: 15px
+      cursor: pointer
+
+/* SECTION TOURS FINISH */

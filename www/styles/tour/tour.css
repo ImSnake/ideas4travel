@@ -1,0 +1,17 @@
+/* RESOLUTION SETTINGS START */
+/* RESOLUTION SETTINGS FINISH */
+/* COLORS */
+.tour-nav {
+  background-color: #00b8e3;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  position: -webkit-sticky;
+  width: 100%;
+  top: 55px;
+}
+@media (min-width: 767px) {
+  .tour-nav {
+    top: 0;
+  }
+}

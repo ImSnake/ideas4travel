@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.644" height="20.537" viewBox="0 0 15.644 20.537">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b8e3;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="гарантирован" transform="translate(-738 -1464)">
+    <g id="shield_2_" data-name="shield (2)" transform="translate(737.5 1464)">
+      <path id="Path_185" data-name="Path 185" class="cls-1" d="M15.542,2.447h-1.41A7.6,7.6,0,0,1,8.747.176a.6.6,0,0,0-.851,0A7.6,7.6,0,0,1,2.511,2.447H1.1a.6.6,0,0,0-.6.6v7.22c0,5.407,3.934,7.922,6.538,9.559a5.213,5.213,0,0,0,1.284.709,5.03,5.03,0,0,0,1.261-.695c2.612-1.639,6.56-4.156,6.56-9.574V3.048A.6.6,0,0,0,15.542,2.447ZM8.322,15.684a5.415,5.415,0,1,1,5.415-5.415A5.421,5.421,0,0,1,8.322,15.684Zm0,0"/>
+      <circle id="Ellipse_16" data-name="Ellipse 16" class="cls-1" cx="6" cy="6" r="6" transform="translate(2.5 4)"/>
+      <path id="Path_186" data-name="Path 186" class="cls-2" d="M6.187,9.131l1.466,1.623L10.8,7.607" transform="translate(0.161 1.395)"/>
+    </g>
+  </g>
+</svg>

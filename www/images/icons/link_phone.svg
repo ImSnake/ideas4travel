@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff8080;
+      }
+
+      .cls-2 {
+        fill: #fafafa;
+      }
+
+      .cls-3 {
+        fill: #404040;
+      }
+    </style>
+  </defs>
+  <g id="Group_187" data-name="Group 187" transform="translate(-146.024 -2988.192)">
+    <g id="telephone-call" transform="translate(146.025 2988.192)">
+      <circle id="Ellipse_21" data-name="Ellipse 21" class="cls-1" cx="15" cy="15" r="15" transform="translate(0 0)"/>
+      <path id="Path_229" data-name="Path 229" class="cls-2" d="M104.063,99.82c-1.046-1.006-2.106-1.639-3.374-.7a3.287,3.287,0,0,0-1.41,1.99s.12,2.007-4.721-2.344c-4.356-4.84-2.347-4.72-2.347-4.72a3.289,3.289,0,0,0,1.992-1.41c.938-1.267.276-2.3-.7-3.372-3.128-3.435-5.024.468-5.024.468-2.215,3.725,1.477,8.153,4.325,10.791,2.639,2.846,7.068,6.533,10.793,4.319C103.594,104.841,107.549,103.172,104.063,99.82Z" transform="translate(-81.499 -81.536)"/>
+      <path id="Path_230" data-name="Path 230" class="cls-3" d="M129.991,90.6c-.045.015-.067.052-.108.071.49-.206.995-.389,1.488-.572C130.911,90.262,130.444,90.415,129.991,90.6Z" transform="translate(-112.966 -71.135)"/>
+    </g>
+  </g>
+</svg>

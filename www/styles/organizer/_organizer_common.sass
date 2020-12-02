@@ -1,0 +1,53 @@
+/* ORGANIZER COMMON CSS START */
+
+//общие стили для блоков с контактной информацией
+.organizer__info-field
+  padding: 2% 0
+  padding-left: 5px
+  padding-right: 5px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 5px 0
+
+  @media only screen and (min-width: $desktop-content-width)
+    padding: 10px 0
+
+.info-field__head
+  display: inline-block
+  color: $font-grey-color
+  font-size: 12px
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: 0.5px
+  line-height: 250%
+
+.info-field__content
+  display: block
+  line-height: 130%
+
+.edit-menu
+  &::before
+    font-family: 'fontello'
+    font-weight: normal
+    font-style: normal
+    content: "\e8d7"  //icon-pencil-1
+    font-size: 18px
+    color: $font-grey-color
+
+
+//общие стили для блоков с кнопками
+.requests__bottom,
+.tours__bottom,
+.programs__bottom,
+.guides__bottom,
+.new-program__bottom
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  div
+    margin: 10px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    justify-content: flex-end
+
+/* COMMON CSS FINISH */

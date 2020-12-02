@@ -1,0 +1,140 @@
+/* RESOLUTION SETTINGS START */
+/* RESOLUTION SETTINGS FINISH */
+/* COLORS */
+.partnership {
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column; }
+  .partnership .btn-blue {
+    align-self: flex-end; }
+
+.authorization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5px;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 630px) {
+    .authorization {
+      margin-bottom: 100px; } }
+  @media only screen and (min-width: 900px) {
+    .authorization {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start; } }
+  .authorization .login {
+    order: -1; }
+    @media only screen and (min-width: 900px) {
+      .authorization .login {
+        order: 0; } }
+    .authorization .login a {
+      display: inline-block;
+      padding-left: 11px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-size: 13px; }
+      @media only screen and (min-width: 900px) {
+        .authorization .login a {
+          margin-right: 30px; } }
+
+.authorization__form {
+  width: 310px;
+  background-color: #FCFCFC;
+  border: 1px solid #e6e6e6;
+  border-radius: 15px;
+  padding: 15px; }
+  .authorization__form:nth-child(2) {
+    margin-bottom: 20px; }
+  @media only screen and (min-width: 479px) {
+    .authorization__form {
+      width: 400px;
+      padding: 15px 20px; } }
+  @media only screen and (min-width: 900px) {
+    .authorization__form:nth-child(2) {
+      margin-bottom: 0; }
+    .authorization__form:first-child {
+      margin-right: 30px; } }
+  .authorization__form div {
+    margin: 20px 0; }
+  .authorization__form form {
+    margin: 0 auto;
+    padding: 0 10px; }
+    .authorization__form form input[type="text"],
+    .authorization__form form input[type="tel"],
+    .authorization__form form input[type="email"],
+    .authorization__form form input[type="password"] {
+      width: 100%;
+      margin-top: 5px; }
+    .authorization__form form label {
+      display: block;
+      padding-left: 11px; }
+    .authorization__form form .block-title {
+      padding-left: 15px; }
+    .authorization__form form .link {
+      display: block;
+      min-width: 20px;
+      margin-left: 5px; }
+    .authorization__form form button {
+      margin-top: 10px;
+      width: 100%; }
+    .authorization__form form .agreement {
+      margin: 30px 0;
+      padding: 0 10px; }
+      .authorization__form form .agreement div {
+        display: flex;
+        align-items: center;
+        margin-top: 10px; }
+    .authorization__form form .form-comment {
+      padding-left: 5px; }
+
+.activation {
+  padding: 20px 0; }
+  @media only screen and (min-width: 479px) {
+    .activation {
+      padding: 30px 0; } }
+  @media only screen and (min-width: 630px) {
+    .activation {
+      padding: 40px 0; } }
+
+.activation__form {
+  width: 300px;
+  background-color: #FCFCFC;
+  border: 1px solid #e6e6e6;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 15px 5px;
+  transition: all 0.3s linear; }
+  @media only screen and (min-width: 479px) {
+    .activation__form {
+      width: 350px;
+      padding: 15px 10px; } }
+  @media only screen and (min-width: 630px) {
+    .activation__form {
+      width: 400px;
+      padding: 15px; } }
+  .activation__form .block-title {
+    padding-left: 15px; }
+  .activation__form form {
+    margin: 20px 0 10px 0; }
+  .activation__form .info-field__box {
+    margin-bottom: 15px; }
+  .activation__form .info-field__head {
+    padding-left: 12px; }
+  .activation__form .help {
+    margin-left: 4px;
+    margin-right: 4px; }
+  .activation__form input[type="text"] {
+    width: 90%;
+    margin: 10px; }
+    @media only screen and (min-width: 630px) {
+      .activation__form input[type="text"] {
+        width: 355px; } }
+  .activation__form input[type="radio"] + label {
+    display: block;
+    margin: 15px 10px 10px 30px; }
+  .activation__form div:last-child {
+    margin: 0 10px; }
+    .activation__form div:last-child button {
+      margin: 10px 0;
+      width: 100%; }

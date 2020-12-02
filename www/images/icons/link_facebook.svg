@@ -1,0 +1,15 @@
+<svg id="facebook_3_" data-name="facebook (3)" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b5998;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_209" data-name="Path 209" class="cls-1" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"/>
+  <path id="Path_210" data-name="Path 210" class="cls-2" d="M115.051,75.235H117.1V72.547h-2.406v.01c-2.915.092-3.512,1.549-3.565,3.079h-.006v1.342h-1.985v2.633h1.985v7.057h2.991V79.611h2.45l.473-2.633h-2.923v-.811A.913.913,0,0,1,115.051,75.235Z" transform="translate(-98.117 -64.638)"/>
+</svg>

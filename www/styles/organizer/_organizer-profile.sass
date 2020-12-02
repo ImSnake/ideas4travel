@@ -1,0 +1,381 @@
+.organizer__profile
+  margin-bottom: 40px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    margin-top: 15px
+    margin-bottom: 100px
+
+.organizer__information
+  margin-bottom: 30px
+
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 0 10px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 10px 20px
+
+  @media only screen and (min-width: $tablet-content-width)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 10px
+
+  @media only screen and (min-width: $desktop-content-width)
+    .organizer__main,
+    .organizer__contacts,
+    .organizer__links,
+    .organizer__personal-data,
+    .organizer__about
+      padding: 15px 25px
+
+  .block-title
+    padding-left: 10px
+
+  .help
+    padding-left: 5px
+    &::before
+      font-size: 13px
+
+  form
+
+    select,
+    input,
+    textarea
+      border-style: dotted
+
+    .organizer__button
+      width: 100%
+      padding: 0 10px
+      button
+        width: 100%
+        margin: 20px 0
+
+      @media only screen and (min-width: $mobile-content-width)
+        text-align: end
+        padding: 0 20px
+        button
+          width: auto
+
+.organizer__activate
+  margin: 0 20px 15px 20px
+  div
+    position: relative
+    button
+      width: 100%
+      span
+        padding: 10px 15px
+    .help
+      position: absolute
+      text-align: start
+      z-index: 4
+      right: -9px
+      top: -10px
+      &::before
+        font-size: 16px
+
+  @media only screen and (min-width: $tablet-content-width)
+    order: -2
+    width: 100%
+
+  @media only screen and (min-width: $desktop-content-width)
+    padding: 0
+
+.main__group
+  position: relative
+  background-color: #FCFCFC
+  border: 1px solid #e6e6e6
+  border-radius: 15px
+  margin: 0 2%
+  margin-bottom: 20px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: flex
+    justify-content: space-evenly
+    margin: 0 0 30px 0
+
+  @media only screen and (min-width: $tablet-content-width)
+    order: -1
+    flex-direction: column
+    width: 38.5%
+    padding-top: 20px
+
+.organizer__main
+  padding: 5%
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  margin-top: 10px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    flex-direction: column
+    justify-content: space-evenly
+    padding: 5px 15px
+    margin: 0
+
+  @media only screen and (min-width: $tablet-content-width)
+    flex: 1
+
+  .info-field
+    padding-left: 10px
+
+.organizer__avatar
+  position: relative
+  img
+    border-radius: 50%
+    cursor: pointer
+    &:hover
+      opacity: 0.9
+
+.add_avatar
+  cursor: pointer
+  &:after
+    content: "+"
+    font-size: 32px
+    position: absolute
+    border-radius: 50%
+    padding: 0 9px
+    font-weight: 600
+    opacity: 0.7
+    bottom: 0
+    right: 0
+    color: $font-grey-color
+    background: $bkg-grey-color
+
+.avatar__edit
+  position: absolute
+  z-index: 4
+  top: 70%
+  left: -10px
+  background-color: rgba(255, 255, 255, 0.95)
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  box-shadow: 0 3px 6px rgba(178, 178, 178, 0.16)
+  padding: 25px 15px 15px 15px
+  text-align: center
+  .close-pop-up
+    color: $font-grey-color
+    padding: 5px
+    cursor: pointer
+    font-size: 16px
+    position: absolute
+    right: 5px
+    top: 5px
+    &:hover
+      color: $main-blue-color
+
+  input
+    width: 260px
+
+    @media only screen and (min-width: $mobile-content-width)
+      width: 350px
+
+  button
+    margin: 20px 0 10px 0
+    span
+      padding: 12px
+
+.organizer__registered
+  span
+    display: block
+    padding-left: 20px
+
+    @media only screen and (min-width: $tablet-average-content-width)
+      min-width: 150px
+      padding: 0
+      text-align: center
+
+.organizer__contacts
+  position: relative
+  padding: 15px
+  .organizer__info-field:first-child
+    padding-top: 10px
+    border-top: 1px solid $border-line-color
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 100%
+    padding: 15px 20px
+    border-left: 1px solid $border-line-color
+    margin: 0
+    .organizer__info-field:first-child
+      border-top: none
+
+  @media only screen and (min-width: $tablet-content-width)
+    flex: 2
+    border-left: none
+    .organizer__info-field:first-child
+      border-top: 1px solid $border-line-color
+
+.organizer__links
+  position: relative
+  display: flex
+  flex-direction: column
+  background-color: $bkg-light-grey-color
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  padding: 15px 10px
+  margin: 0 2%
+  margin-bottom: 30px
+
+  .edit-menu
+    position: absolute
+    top: 25px
+    left: 160px
+
+  .block-title
+    margin-bottom: 10px
+
+  .links__group
+    @media only screen and (min-width: $tablet-average-content-width)
+      //margin-left: 10px
+      //margin-bottom: 10px
+      padding-left: 10px
+
+  .organizer__info-field
+    display: flex
+    align-items: center
+
+    .info-field__content
+      width: 85%
+      overflow: hidden
+      text-overflow: ellipsis
+
+      @media only screen and (min-width: $mobile-content-width)
+        width: 89%
+
+      @media only screen and (min-width: $tablet-average-content-width)
+        width: 80%
+
+      @media only screen and (min-width: $tablet-content-width)
+        width: 85%
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    flex-direction: row
+    flex-wrap: wrap
+    margin: 0
+    margin-bottom: 30px
+    .links__group
+      flex: 1
+
+  @media only screen and (min-width: $tablet-content-width)
+    width: 100%
+    padding: 15px 20px
+
+  .info-field__icon
+    margin-right: 10px
+    padding-top: 3px
+    opacity: 0.9
+
+.organizer__personal-data
+  position: relative
+  background-color: $bkg-light-grey-color
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  padding: 15px 10px
+  margin: 0 2%
+  margin-bottom: 30px
+
+  .edit-menu
+    position: absolute
+    top: 25px
+    left: 190px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin: 0 0 30px 0
+
+  @media only screen and (min-width: $tablet-content-width)
+    order: -1
+    display: block
+    width: 58.5%
+    margin-bottom: 30px
+    padding: 15px 20px
+
+  .organizer__info-field
+    @media only screen and (min-width: $tablet-average-content-width)
+      margin-left: 10px
+      margin-right: 10px
+
+  form
+    margin-top: 10px
+
+  select,
+  input
+    width: 100%
+    margin-bottom: 2px
+
+  label
+    margin-bottom: 4px
+    padding-left: 12px
+    line-height: 100%
+
+  .checkbox-cover
+    padding-left: 12px
+    margin-bottom: 3px
+    @media only screen and (min-width: $tablet-average-content-width)
+      padding-left: 25px
+    label
+      text-transform: lowercase
+      font-weight: 400
+      font-size: 14px
+      letter-spacing: 0
+      margin-top: -3px
+      margin-bottom: 0
+    input + label
+      padding-left: 30px
+
+  .radio-btn-cover
+    .info-field__head
+      display: block
+      margin-top: -10px
+
+    @media only screen and (min-width: $mobile-content-width)
+      padding: 0 10px
+      text-align: left
+
+    label
+      margin: 8px 0
+
+    input[type="radio"]:checked + label:before,
+    input[type="radio"]:not(:checked) + label:before
+      margin-top: 1px
+
+.organizer__about
+  position: relative
+  background-color: #FCFCFC
+  border: 1px solid #e6e6e6
+  border-radius: 15px
+  margin: 0 2%
+  margin-bottom: 30px
+  padding: 15px 10px
+
+  .edit-menu
+    position: absolute
+    top: 25px
+    left: 240px
+
+  form
+    margin-top: 10px
+
+  .organizer__info-field
+    padding-left: 0
+
+  textarea
+    width: 100%
+    margin-bottom: 5px
+
+  .info-field__content
+    padding: 0 5px
+
+  p
+    margin: 8px 0
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 15px
+    margin: 30px 0
+
+  @media only screen and (min-width: $tablet-content-width)
+    width: 100%
+    padding: 15px 20px
+    margin: 0

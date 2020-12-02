@@ -1,0 +1,112 @@
+/* SECTION REQUESTS START */
+
+.organizer__requests
+  margin-bottom: 40px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-bottom: 100px
+
+.requests-table
+  font-size: 13px
+  margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    border: 1px solid $border-line-color
+    border-radius: 15px
+    margin: 30px 20px
+
+.requests-table__head,
+.requests-table__row
+  display: flex
+  align-items: center
+  text-align: center
+  border-bottom: 1px solid $border-line-color
+
+.requests-table__row:last-child
+  @media only screen and (min-width: $tablet-average-content-width)
+    border: none
+
+.requests-table__head
+  text-transform: uppercase
+  padding-top: 15px
+  padding-bottom: 15px
+  background: #FCFCFC
+  border-top-left-radius: 15px
+  border-top-right-radius: 15px
+  .requests-table__data
+    letter-spacing: normal
+  .requests-table__program
+    justify-content: center
+
+.requests-table__data,
+.requests-table__amount,
+.requests-table__status,
+.requests-table__period,
+.requests-table__price
+  flex: 1
+  align-items: center
+
+.requests-table__data
+  letter-spacing: 1px
+
+.requests-table__program
+  flex: 1.5
+  @media only screen and (min-width: $tablet-average-content-width)
+    flex: 3
+    display: flex
+    text-align: start
+    align-items: center
+
+.requests-table__img
+  width: 100px
+  height: 61.5px
+  margin-top: 2px
+  margin-bottom: 2px
+  border-radius: 5px
+
+.requests-table__program-name
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    max-height: 55px
+    overflow: hidden
+    font-size: 12px
+    padding: 1% 2%
+
+.requests-table__period
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+
+.requests-table__amount
+
+.requests-table__price
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+
+.requests-table__status
+  i
+    font-size: 20px
+  .icon-money-1,
+  .icon-ok-3
+    font-size: 22px
+
+  .requests-table__status-comment
+    display: none
+    @media only screen and (min-width: $tablet-content-width)
+      display: block
+      font-size: 11px
+
+  // иконки статусов для таблицы с заявками (requests-table + requests-table__status + i)
+  .icon-mail-4,
+  .icon-dot-3
+    color: $main-blue-color
+
+  .icon-cancel-3
+    color: $font-grey-color
+
+  .icon-money-1,
+  .icon-ok-3
+    color: $green-color
+
+/* SECTION REQUESTS FINISH */

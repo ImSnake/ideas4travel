@@ -1,0 +1,55 @@
+.activation
+  padding: 20px 0
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 30px 0
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 40px 0
+
+.activation__form
+  width: 300px
+  background-color: $bkg-light-grey-color
+  border: 1px solid $border-line-color
+  border-radius: 15px
+  margin: 0 auto
+  padding: 15px 5px
+  transition: all 0.3s linear
+  @media only screen and (min-width: $mobile-content-width)
+    width: 350px
+    padding: 15px 10px
+
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 400px
+    padding: 15px
+
+  .block-title
+    padding-left: 15px
+
+  form
+    margin: 20px 0 10px 0
+
+  .info-field__box
+    margin-bottom: 15px
+
+  .info-field__head
+    padding-left: 12px
+
+  .help
+    margin-left: 4px
+    margin-right: 4px
+
+  input[type="text"]
+    width: 90%
+    margin: 10px
+
+    @media only screen and (min-width: $tablet-average-content-width)
+      width: 355px
+
+  input[type="radio"] + label
+    display: block
+    margin: 15px 10px 10px 30px
+
+  div:last-child
+    margin: 0 10px
+    button
+      margin: 10px 0
+      width: 100%

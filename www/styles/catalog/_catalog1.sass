@@ -1,0 +1,280 @@
+.catalog-container
+  @media (min-width: $mobile-content-width)
+    position: relative
+    display: flex
+
+.filter
+  display: flex
+  justify-content: space-around
+  margin-top: 25px
+  margin-bottom: 20px
+  @media (min-width: $mobile-content-width)
+    margin: 0
+    background-color: $bkg-light-grey-color
+
+.main-filter
+  width: unset
+
+  .mob-view-filter-head
+    @media (min-width: $mobile-content-width)
+      display: none
+
+  .dt-view-filter-head
+    display: none
+    @media (min-width: $mobile-content-width)
+      display: flex
+      align-items: center
+      justify-content: space-around
+      border-bottom: 1px solid $border-line-color
+      border-right: 1px solid $border-line-color
+      height: 69px
+    //@media (min-width: $tablet-content-width)
+    @media (min-width: $tablet-average-content-width)
+      border-left: 1px solid $border-line-color
+    &:after
+      content: '\027F6'
+      font-size: 25px
+      color: $main-blue-color
+      //@media (min-width: $tablet-content-width)
+      @media (min-width: $tablet-average-content-width)
+        content: none
+
+    span
+      display: none
+      //@media (min-width: $tablet-content-width)
+      @media (min-width: $tablet-average-content-width)
+        display: inline
+      &:after
+        content: '\027F5'
+        font-size: 25px
+        color: $main-blue-color
+        padding-left: 100px
+
+  .mob-view-filter-options
+    display: none
+    flex-direction: column
+
+    .mob-filter-settings
+      display: flex
+      justify-content: space-around
+      @media (min-width: $mobile-content-width)
+        display: none
+
+    .mob-applied-filters
+      margin-top: 10px
+
+      .mob-filter-button
+        margin: 0 auto
+        width: 85%
+        color: $main-blue-color
+        border-color: $main-blue-color
+
+        .icon-angle-double-left
+          display: none
+
+      .mob-applied-filters-result
+        display: none
+
+        .tags
+          display: flex
+          flex-wrap: wrap
+          justify-content: center
+          margin: 10px 5px 0 5px
+
+          .filter-tag
+            color: $main-blue-color
+            background-color: #ffffff
+            border-radius: 15px
+            border: 1px solid $border-line-color
+            margin: 5px
+            span
+              font-size: 10px
+              letter-spacing: 0.45px
+              text-transform: uppercase
+              padding: 5px 10px
+              line-height: 16px
+              vertical-align: middle
+              &:after
+                content: '\02716'
+                padding-left: 10px
+
+    .mob-view-show-result
+      width: 100%
+      margin-top: 10px
+      background-color: #00b8e3
+      font-size: 14px
+      font-weight: 600
+      letter-spacing: 0.7px
+      color: #ffffff
+      padding: 20px 0
+      text-align: center
+      @media (min-width: $mobile-content-width)
+        display: none
+
+  .main-filter-options
+    display: none
+    flex-direction: column
+    align-items: center
+    @media (min-width: $mobile-content-width)
+      display: block
+      align-items: flex-start
+
+    .filter-heading
+      display: flex
+      align-items: center
+      width: 320px
+      height: 69px
+      border-bottom: 1px solid $border-line-color
+      @media (min-width: $mobile-content-width)
+        width: unset
+      //@media (min-width: $tablet-content-width)
+      @media (min-width: $tablet-average-content-width)
+        width: 297px
+        border-left: 1px solid $border-line-color
+        border-right: 1px solid $border-line-color
+
+      .filter-icon
+        width: 50px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        @media (min-width: $mobile-content-width)
+          width: 70px
+          height: 69px
+          justify-content: center
+          border-right: 1px solid $border-line-color
+        //@media (min-width: $tablet-content-width)
+        @media (min-width: $tablet-average-content-width)
+          width: 50px
+          justify-content: flex-end
+          border-right: none
+
+      .filter-name
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        @media (min-width: $mobile-content-width)
+          display: none
+        //@media (min-width: $tablet-content-width)
+        @media (min-width: $tablet-average-content-width)
+          display: flex
+
+        span
+          padding: 0 25px
+          font-size: 12px
+          line-height: 61px
+          vertical-align: center
+          text-transform: uppercase
+
+        i
+          padding-right: 20px
+
+        .icon-up-open-big
+          color: $main-blue-color
+          display: none
+
+    .filter-params
+      //display: block
+
+.quick-filter
+  @media (min-width: $mobile-content-width)
+    position: absolute
+    z-index: 9
+    top: 0
+    right: 0
+  .quick-filter-options
+    width: 150px
+    border: 1px solid $border-line-color
+    border-radius: 15px
+    background-color: #ffffff
+    color: $font-grey-color
+    text-transform: uppercase
+    font-size: 10px
+    font-weight: 500
+    letter-spacing: 0.45px
+    padding: 6.5px 12px
+    @media (min-width: $mobile-content-width)
+      margin-top: 19px
+      margin-right: 20px
+
+.tours
+  @media (min-width: $mobile-content-width)
+    width: 100%
+
+.tour-window
+  display: flex
+  flex-direction: column
+  align-items: center
+  @media (min-width: $mobile-content-width)
+    border-top: 1px solid $border-line-color
+    margin-top: 68px
+    padding-top: 15px
+    width: 100%
+  @media (min-width: $tablet-content-width)
+    justify-content: space-evenly
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: flex-start
+
+  .tour-box
+    width: 300px
+    border-radius: 20px
+    margin-bottom: 15px
+    box-shadow: 1px 6px 10px -2px rgba(179,179,179,1)
+
+    .tour-image
+      height: 185px
+      position: relative
+
+      .to-favorite
+        position: absolute
+        z-index: 3
+        right: 0
+        cursor: pointer
+        width: 45px
+        height: 45px
+        background-color: rgba(0, 0, 0, 0.3)
+        text-align: center
+        padding-top: 12px
+        border-radius: 25px
+        color: #ffffff
+        margin-top: 5px
+        margin-right: 5px
+        &:hover
+          transform: scale(1.1)
+        i
+          font-size: 21px
+
+      .tour-info
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 3
+        background-color: rgba(0, 0, 0, 0.4)
+        text-align: center
+        color: #ffffff
+        border-top-right-radius: 20px
+        text-transform: uppercase
+        padding: 10px 15px
+        span
+          font-weight: 500
+          word-spacing: 2px
+          font-size: 13px
+
+    .tour-definition
+      display: flex
+      padding: 10px 12px
+      h2
+        color: #4d4d4d
+        font-size: 13px
+        font-weight: 500
+        line-height: 17px
+        letter-spacing: -0.4px
+        word-spacing: 1px
+      span
+        color: $font-grey-color
+        font-size: 35px
+
+
+
