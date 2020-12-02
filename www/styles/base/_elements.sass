@@ -1,12 +1,106 @@
+@charset "UTF-8"
+
+//open-sans - только для ссылок и для help-pop-up!
+//ПРОВЕРИТЬ ПРИМЕНЕНИЕ и ПЕРЕЗАГРУЗИТЬ шрифты
+
+
+
+//====== КЛАССЫ ДЛЯ РАБОТЫ С JS ===============================================
+
+// класс для флекс-открытия элементов через JS
+.flex-element
+  display: flex
+
+// класс для скрытия элементов
+.hide-element
+  display: none
+  -webkit-transition: all 0.2s ease
+  -moz-transition: all 0.2s ease
+  -o-transition: all 0.2s ease
+  transition: all 0.2s ease
+
+// класс для скрытия flex-элементов
+.hidden
+  overflow: hidden
+  height: 0
+  -webkit-transition: all 0.2s ease
+  -moz-transition: all 0.2s ease
+  -o-transition: all 0.2s ease
+  transition: all 0.2s ease
+
+// класс для скрытия flex-элементов полей форм (для формы программы)
+.hidden-field
+
+// признак клонированного элемента
+.clone
+
+// признак элемента c выпадающими блоками
+.hover
+
+// признак выпадающего элемента
+.fade
+
+// признак блока с динамическими элементами вкл\выкл
+.toggle
+
+// признак наличия pop-up на подтверждение действия
+//.confirm-action
+
+// класс-ориентир для вставки текста в блок
+.text
+
+// класс-ориентир для вставки значений по умолчанию
+.default
+
+// класс-ориентир для работы скрипта autocomplete
+.day__city-id
+
+// класс-ориентир для работы скрипта autocomplete
+.day__area-id
+
+// класс для блочного открытия элементов через JS
+//.block-element
+  display: block
+//.max-width-element
+  width: 100%
+//.original
+
+//.unselected
+  -moz-user-select: none //Mozilla Firefox
+  -webkit-user-select: none //Google Chrome, Opera Next, Safari
+
+
+// ширма для блокирующих основной экран всплывающих окон
+.body-disable
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  //padding: 0 2%
+  //max-height: 100%
+  //height: 2000px;
+  //display: flex
+  //justify-content: center
+  //align-items: center
+  background: rgba(4, 6, 38, 0.5)
+
+// цвет бэкграунда для .center при открытии страниц с формами для заполнения
+.organizer__edit
+  background-color: #FFFFFF
+
+//====== КЛАССЫ ФОРМАТИРОВАНИЯ ТЕКСТА ==============================================
+
 // классы для цветов текста и иконок
 .blue
   color: $main-blue-color
 
+.light-grey
+  color: $font-light-grey-color
+
 .grey
   color: $font-grey-color
-
-.dark-grey
-  color: $font-dark-grey-color
 
 .green
   color: $green-color
@@ -14,10 +108,18 @@
 .red
   color: $red-color
 
+.orange
+  color: $orange-color
+
+//.semi-bold
+  font-weight: 500
 
 // жирный
 .bold
   font-weight: 600
+
+.bolder
+  font-weight: 700
 
 // курсив
 .italic
@@ -25,38 +127,50 @@
 
 // ссылочные элементы
 .link
+  //font-family: $f_montserrat
   color: $main-blue-color
+  font-size: 14.5px
+  font-weight: 400
   text-decoration: underline
   cursor: pointer
 
-// для подсказок в полях формы
-.text
-  //font-size: 13px
-  //color: $font-grey-color
-  //font-style: italic
-
-// очень маленький серый текст формата /x
-.small-txt
+// очень маленький серый текст формата " / x"
+.slash-txt
   font-size: 10px
   color: $font-grey-color
   &:before
-    content: " / "
+    content: "/"
+    margin-right: 3px
 
 // формат текста для не заполненного поля формы
 .unfilled
-  color: $font-grey-color
-  font-style: italic
-  font-size: 12px
+  //letter-spacing: 0.05em
+  padding-top: 1px
+  //word-spacing: 1px
+  //color: $font-grey-color
+  //font-weight: 300
+  //font-weight: 300
+  //color: $font-grey-color
+  //font-size: 12px
+  //font-size: 12px
+  color: $font-light-grey-color
+  font-weight: 300
+  font-size: 14px
+  height: 100%
   &:after
     content: "..."
 
+// формат текста для оболчки чекбоксов по дефолту
 .default
+  //letter-spacing: 0.2px
   color: $font-grey-color
-  //font-style: italic
-  font-size: 12px
-  word-spacing: 1px
-  letter-spacing: 0.6px
   font-weight: 300
+  font-size: 14px
+  //word-spacing: 1px
+  //font-weight: 300
+  //font-size: 12px
+
+//====== ИКОНКИ И ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ==============================================
 
 // стрелки для фильтров и элементов меню
 .icon-left-open-big,
@@ -65,72 +179,238 @@
 .icon-up-open-big
   color: $font-grey-color
 
-// иконка многоточие
-.icon-dot-3
-  color: $font-grey-color
-
+// жирные стрелки-указатели для выпадающих элементов
 .down-arr,
 .up-arr
-  padding-right: 2px
-  font-size: 8px
-  color: $font-grey-color
+  position: relative
+  right: -1px
+  font-size: 9px
   &.down-arr::before
     content: "\25BC"
   &.up-arr::before
     content: "\25B2"
 
+// тонкие стрелки для навигации выпадающих элементов
+.pointer-down,
+.pointer-up,
+.pointer-left,
+.pointer-right
+  display: inline-block
+.pointer-down::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e803"   // .icon-down-open-big:before
+.pointer-up::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e804"  // .icon-up-open-big:before
+.pointer-left::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e91d"  // .icon-left-open-big:before
+.pointer-right::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e91e"  // .icon-right-open-big:before
 
-//стили для выпадающих меню
-.menu-list
-  position: absolute
-  z-index: 999
-  min-width: 200px
-  background-color: rgba(255, 255, 255, 0.95)
-  border: 1px solid $border-line-color
-  border-radius: 15px
-  box-shadow: 0 3px 6px rgba(178, 178, 178, 0.16)
-  padding: 5px 20px
-  span
+
+// стилизация select списков (стрелка "вниз")
+.select-cover
+  position: relative
+  //font-family: $f_montserrat
+  color: $font-grey-color
+  line-height: 35px
+  &::before
+    position: absolute
+    //display: flex
+    //justify-content: flex-end
+    //align-items: center
+    content: "\25BC"
+    font-size: 9px
+    right: 19px
+    top: 1px
+    height: 1px
+    width: 1px
+    //padding-bottom: 4px
+    //right: 12px
+// стили для стрелки "вверх"
+.select-cover.opened
+  &::before
+    position: absolute
+    content: "\25B2"
+
+// иконка "закрыть"
+.close-pop-up
+  &::before
+    font-family: 'IcoFont'
+    font-weight: normal
+    font-style: normal
+    font-size: 18px
+    color: $font-grey-color
+    content: "\eedd"
     display: block
-    letter-spacing: 0.5px
-    text-align: center
-    padding: 15px
-    border-bottom: 1px solid $border-line-color
+    position: absolute
+    z-index: 1
+    top: 7px
+    right: 7px
     cursor: pointer
+  &:hover::before
+    color: $main-blue-color
+
+// классы с валютой
+.ruble::before
+  display: inline-block
+  content: "\20BD"
+.dollar::before
+  display: inline-block
+  content: "\0024"
+.euro::before
+  display: inline-block
+  content: "\20AC"
+
+// иконки комфорт, динамика, питание, оценка тура
+.star-estimation,
+.star-estimation-empty,
+.star-estimation-half,
+.program__comfort,
+.program__comfort-empty,
+.program__dynamics,
+.program__dynamics-empty,
+.program__meal,
+.program__meal-empty
+  position: relative
+  //cursor: pointer
+  &::before
+    content: ""
+    display: inline-block
+
+.star-estimation::before
+  background: url(../../images/icons/icon_star.svg) no-repeat
+.star-estimation-empty::before
+  background: url(../../images/icons/icon_star-empty.svg) no-repeat
+.star-estimation-half::before
+  background: url(../../images/icons/icon_star-half.svg) no-repeat
+
+.program__comfort::before
+  background: url("../../images/icons/icon_comfort.svg") no-repeat
+.program__comfort-empty::before
+  background: url("../../images/icons/icon_comfort-empty.svg") no-repeat
+
+.program__dynamics::before
+  background: url("../../images/icons/icon_dynamics.svg") no-repeat
+.program__dynamics-empty::before
+  background: url("../../images/icons/icon_dynamics-empty.svg") no-repeat
+
+.program__meal::before
+  background: url("../../images/icons/icon_meal.svg") no-repeat
+.program__meal-empty::before
+  background: url("../../images/icons/icon_meal-empty.svg") no-repeat
+
+//====== СТИЛИ ДЛЯ ВЫПАДАЮЩИХ ЭЛЕМЕНТОВ (меню, списки)===========================
+
+//стили для выпадающих списков и меню
+.menu-list
+  @include unselectable
+  position: absolute
+  z-index: 199
+  min-width: 200px
+  padding-top: 5px
+  background-color: #ffffff
+  border: 1px solid $border-line-light-color
+  border-radius: 12px
+  -webkit-box-shadow:  0 3px 6px rgba(178, 178, 178, 0.16)
+  -moz-box-shadow:  0 3px 6px rgba(178, 178, 178, 0.16)
+  box-shadow: 0 3px 6px rgba(178, 178, 178, 0.16)
+  cursor: default
+  div
+    display: block
+    border-bottom: 1px solid $border-line-light-color
     &:last-child
       border: none
-    a
+      padding-bottom: 5px
+    a,
+    span
       display: block
-    &:hover
-      color: $main-blue-color
-      text-decoration: underline
+      //font-family: $f_montserrat
+      font-size: 15px
+      font-weight: 400
+      //letter-spacing: 0.2px
+      text-align: center
+      padding: 15px 30px
+      text-decoration: none
+      cursor: pointer
+      &:hover
+        color: $main-blue-color
+        text-decoration: underline
+  .grey
+    opacity: 0.7
+    span:hover
+      cursor: default
+      color: $font-grey-color
+      text-decoration: unset
+  .red
+    span:hover
+      color: $red-color
+
+  .close-pop-up
+    display: block
+    border: none
+    padding-top: 6px
+    @media only screen and (min-width: 1000px)
+      display: none
 
   &.right
     right: 0
     top: 0
 
-
-// всплывающие подсказки (?)
+// стили для всплывающих подсказок (!) и (?)
+.important,
 .help
   display: inline-block
   position: relative
   cursor: help
+  font-weight: 400 !important
   text-align: left !important
-  &::before
-    font-family: 'fontello'
-    font-weight: normal
-    font-style: normal
-    content: "\e8be"  //.icon-help-circled-1
-    font-size: 15px
-    color: $font-grey-color
+  text-transform: none !important
+  &.important
+    width: 10px
+    height: 10px
+  &.help::before
+    position: absolute
+    display: inline-block
+    padding: 3px
+    width: 7px
+    height: 7px
+    content: ''
+    background: url(../../images/service/help-clear.svg) center no-repeat
+    background-size: contain
+    -webkit-filter: grayscale(100%)
+    filter: grayscale(100%)
+  &.important::before
+    position: absolute
+    display: inline-block
+    padding: 3px
+    width: 8px
+    height: 8px
+    content: ''
+    background: url(../../images/service/important.svg) center no-repeat
+    background-size: contain
+    -webkit-filter:  grayscale(100%)
+    filter: grayscale(100%)
+  &:hover::before
+    transform: scale(1.07)
+    -webkit-filter: unset
+    filter: unset
 
   .right
-    top: -12px
-    left: 26px
     &::before
       content: ''
       border: 8px solid transparent
-      border-right: 8px solid rgba(0, 0, 0, 0.7)
+      border-right: 8px solid rgba(60, 53, 53, 0.9)
       position: absolute
       z-index: 1
       left: -16px
@@ -138,399 +418,354 @@
       margin-top: -10px
 
   .top
-    top: 20px
-    right: -10px
     &::before
       content: ''
       border: 7px solid transparent
-      border-bottom: 8px solid rgba(0, 0, 0, 0.7)
+      border-bottom: 8px solid rgba(60, 53, 53, 0.9)
       position: absolute
       z-index: 1
-      left: 146px
+      left: 87%
       top: -5px
       margin-top: -10px
 
-  .help-pop-up
-    position: absolute
-    z-index: 100
-    font-family: "Open Sans", sans-serif
-    color: #ffffff
-    min-width: 170px
-    min-height: 50px
-    line-height: 130%
-    font-size: 12px
-    padding: 24px 15px 18px 18px
-    background-color: rgba(0, 0, 0, 0.7)
-    box-shadow: 1px 5px 8px -2px rgba(179,179,179,1)
-    border-radius: 12px
-    cursor: help
-    h4
-      font-weight: 600
-      line-height: 150%
-    p
-      margin: 0
-      margin-bottom: 10px
-      &:last-child
-        margin-bottom: 0
-      a
-        display: flex
-        align-items: center
+.help-pop-up
+  position: absolute
+  z-index: 99
+  //font-family: $f_montserrat
+  color: $bkg-light-grey-color
+  min-width: 190px
+  min-height: 50px
+  line-height: 130%
+  font-size: 13px
+  font-weight: 300
+  letter-spacing: 0.2px
+  padding: 20px
+  //padding: 18px
+  background-color: rgba(60, 53, 53, 0.96) //rgba(0, 0, 0, 0.8)
+  -webkit-box-shadow: 0 3px 12px 1px rgba(51, 51, 51, 0.6)
+  -moz-box-shadow: 0 3px 12px 1px rgba(51, 51, 51, 0.6)
+  box-shadow: 0 3px 12px 1px rgba(51, 51, 51, 0.6)
+  border-radius: 12px
+  cursor: help
+  p
+    margin: 5px 0 10px
+    line-height: 1.3em
+    &:last-child
+      margin-bottom: 0
+  a
+    display: flex
+    align-items: center
+    white-space: nowrap
+    padding-top: 3px
 
-.close-pop-up
-  &::before
-    font-family: 'IcoFont'
-    font-weight: normal
-    font-style: normal
-    content: "\eedd"  //.icofont-close-circled
-    display: block
-    position: absolute
-    z-index: 51
-    top: 5px
-    right: 5px
-    padding: 3px
-    font-size: 14px
-    opacity: 0.8
+  .close-pop-up
+    &::before
+      color: $border-line-light-color
+      font-size: 15px
+    &:hover::before
+      color: $main-blue-color
+
+  .link
+    font-size: 13px
+
+.dialog-message
+  display: flex
+  align-items: center
+  margin-left: -13px
+  margin-top: -10px
+  font-size: 13px
+  font-weight: 400
+  //letter-spacing: 0.2px
+  img
+    margin-right: 7px
+
+// иконка "Удалить" для элементов
+.delete-clone
+  display: inline-block
+  position: absolute
+  z-index: 5
+  &::after
+    display: inline-block
     cursor: pointer
-  &:hover
-    color: $main-blue-color
+    content: ""
+    background: url(../../images/service/cancel.svg) center no-repeat
+    width: 28px
+    height: 28px
+    background-size: contain
+    filter: grayscale(100%)
+    opacity: 0.8
+    transition: all 0.3s ease-in-out
+  &:hover::after
+    filter: drop-shadow(0px 0px 2px $red-color)
+    transform: scale(1.1)
     opacity: 1
 
-
-// заголовки для блоков (h2)
-.block-title
-  font-size: 15px
-  font-weight: 500
-  text-transform: uppercase
-  letter-spacing: 1.5px
-  color: $main-blue-color
-  padding: 13px 10px
-  border-bottom: 1px solid $border-line-color
-  width: 100%
-
-
-//комментарий под полем формы
-.form-comment
-  display: block
-  font-size: 12px
-  margin: 5px
-  line-height: 130%
-.input_inner_shadow
-    border: 1px solid rgba(253,85,113,0.7)
-    box-shadow: inset 0 0 3px rgba(253,85,113,0.8)
-
+//====== ЗАГОЛОВКИ ===========================
 
 // для mobile (блок под навигацией: вернуться в основное меню);
 .back-n-wrap
   display: block
-  padding: 3%
-  &::before
-    font-family: 'fontello'
-    font-weight: normal
-    font-style: normal
-    content: "\e91d"  // icon-left-open-big
-    color: $font-grey-color
-    font-size: 12px
-  span
-    display: inline-block
-    margin-left: 2px
-    letter-spacing: 0.5px
-    color: $font-grey-color
-    text-decoration: underline
-
-  //@media only screen and (min-width: $mobile-content-width)
+  //margin-top: 15px
+  margin-bottom: 8px
+  //padding: 0 3%
   @media only screen and (min-width: $tablet-average-content-width)
     display: none
+    //margin-bottom: 8px
+  a
+    color: $font-grey-color
+    font-size: 14px
+    display: inline-block
+    opacity: 0.7
+    //letter-spacing: 0.4px
+    font-weight: 300
+    text-decoration: underline
+    &::before
+      display: inline-block
+      line-height: 15px
+      font-size: 9px
+      font-family: 'fontello'
+      font-weight: normal
+      font-style: normal
+      letter-spacing: 5px
+      content: "\e91d"  // icon-left-open-big .icon-down-open-big:before { content: '\e803'
+      margin-left: 5px
+    span
+      font-size: 14px
+      text-decoration: underline
+      text-decoration-color: $font-grey-color
 
 
-// КНОПКИ
+  h2
+    //color: $main-blue-color
+    //color: $font-grey-color
+    font-size: 20px
+    font-weight: 400
+    color: $font-grey-color
+    margin-top: 25px
+    margin-left: 8px
+    //padding-left: 15px
+    @media only screen and (min-width: $tablet-average-content-width)
+      //font-size: 22px
+      margin-top: 30px
+
+// Основные заголовки разделов (h2)
+.block-title
+  display: block
+  color: $main-blue-color
+  font-size: 24px
+  font-weight: 600
+  padding: 12px 5px
+  box-shadow: 0 2px 2px -1px $border-line-light-color
+  width: 100%
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+// заголовок поля формы
+//.info-field__head
+  //display: inline-block
+  //opacity: 0.6
+  //font-size: 10px
+  //font-weight: 600
+  //text-transform: uppercase
+  //letter-spacing: 0.4px
+  //word-spacing: 0.8px
+  //line-height: 1.3em
+
+// ========= КНОПКИ ============================================================
+
 .btn-blue,
 .btn-orange,
-.btn-grey
-  min-width: 225px
+.btn-grey,
+.btn-white
+  @include unselectable
+  min-width: 150px
+  max-width: 270px
   border: none
+  //border-radius: 50px
   border-radius: 20px
-  //box-shadow: 1px 5px 8px -2px rgba(179,179,179,1)
-  text-align: center
   cursor: pointer
-  opacity: 0.9
-  font-size: 14px
-  text-transform: uppercase
-  font-weight: 600
-  letter-spacing: 1.3px
-  span
+  text-align: center
+  transition: all 0.2s ease-in-out
+  padding: 0px 23px
+  line-height: 34px
+  a, span
+    font-size: 14.5px
+    font-weight: 400
+    text-transform: lowercase
+    letter-spacing: 0.5px
     display: block
-    padding: 12px 20px
-  a
     text-decoration: none
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  &:hover
+    transform: scale(0.99)
 
 // голубая круглая кнопка
 .btn-blue
-  color: #ffffff
-  background-color: $main-blue-color
+  color: $bkg-light-grey-color
+  //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+  -webkit-background-image: linear-gradient(to top, #07a6cc, #02c2ef)
+  -moz-background-image: linear-gradient(to top, #07a6cc, #02c2ef)
+  background-image: linear-gradient(to top, #07a6cc, #02c2ef)
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1)
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  &:hover
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.1)
+    -webkit-background-image: linear-gradient(to top, #00b8e3, #02c2ef)
+    -moz-background-image: linear-gradient(to top, #00b8e3, #02c2ef)
+    background-image: linear-gradient(to top, #00b8e3, #02c2ef)
+    -webkit-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.3)
+    -moz-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.3)
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.3)
 
 // оранжевая круглая кнопка
 .btn-orange
-  color: #ffffff
-  background-color: $orange-color
+  color: $bkg-light-grey-color
+  text-shadow: 0 1px 1px rgba(0,0,0,0.15)
+  -webkit-background-image: linear-gradient(to bottom, #f97817, #db6f1d)
+  -moz-background-image: linear-gradient(to bottom, #f97817, #db6f1d)
+  background-image: linear-gradient(to bottom, #f97817, #db6f1d)
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+  &:hover
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
+    -webkit-background-image: linear-gradient(to bottom, #f58a38e8, #f97817)
+    -moz-background-image: linear-gradient(to bottom, #f58a38e8, #f97817)
+    background-image: linear-gradient(to bottom, #f58a38e8, #f97817)
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+  //span
+    display: flex
+    justify-content: center
+    align-items: center
 
 // серая круглая кнопка
 .btn-grey
-  color: $font-dark-grey-color
-  background-color: $bkg-grey-color
-  border: 1px solid $border-line-color
-
-
-//стили кнопок для мобйал
-.mob-btn-1
-  width: 150px
-  display: flex
-  justify-content: space-between
-  align-items: center
-  border: 1px solid $border-line-color
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12)
-  border-radius: 15px
-  background-color: #ffffff
   color: $font-grey-color
-  text-transform: uppercase
-  padding: 5px 12px
-  line-height: 15px
-  @media only screen and (min-width: $mobile-content-width)
-    width: 170px
-    padding: 8px 12px
-    border-radius: 17px
-  span
-    font-size: 12px
-    font-weight: 500
-    letter-spacing: 0.45px
-  i
-    display: inline-block
-    font-size: 17px
+  text-shadow: 0 1px 1px rgba(255,255,255,1)
+  background-color: $bkg-mid-grey-color
+  -webkit-background-image: linear-gradient(to bottom, #f8f8f8, #e6e9ed)
+  -moz-background-image: linear-gradient(to bottom, #f8f8f8, #e6e9ed)
+  background-image: linear-gradient(to bottom, #f8f8f8, #e6e9ed)
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.3)
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.3)
+  box-shadow: 0 1px 5px rgba(0,0,0,0.3)
+  &:hover
+    color: lighten($font-grey-color, 10%)
+    //-webkit-box-shadow: linear-gradient(to bottom, #e6e9ed, #f8f8f8)
+    //-moz-box-shadow: linear-gradient(to bottom, #e6e9ed, #f8f8f8)
+    background-image: linear-gradient(to bottom, #e6e9ed, #f8f8f8)
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset
+
+.btn-white
+  color: $font-grey-color
+  background-color: #ffffff
+  border: 1px solid $border-line-color
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15)
+  &:hover,
+  &:active
+    font-weight: 600
+    background-color: $bkg-grey-color
 
 
-//карточка тура в каталоге
-.program-box
-  width: 300px
-  border-radius: 15px
-  box-shadow: 0 3px 7px -2px rgba(179,179,179,1)
-  margin: 5px
-  height: min-content
-  @media only screen and (min-width: $tablet-average-content-width)
-    margin: 10px
+//------ СТИЛИ ДЛЯ СЕРВИСНЫХ И СЛУЖЕБНЫХ СООБЩЕНИЙ ------------//
 
-.program__image
-  height: 185px
-  position: relative
-  img
-    width: 300px
-    height: 185px
-    border-top-left-radius: 15px
-    border-top-right-radius: 15px
-
-.image__bottom-left-tag
-  position: absolute
-  bottom: 0
-  left: 0
-  z-index: 3
-  background-color: rgba(0, 0, 0, 0.4)
-  text-align: center
-  color: #ffffff
-  border-top-right-radius: 20px
-  text-transform: uppercase
-  padding: 10px 15px
-  span
-    font-weight: 500
-    word-spacing: 2px
-    font-size: 13px
-
-.program__info
-  padding: 10px 15px 15px 17px
-
-.program__country
-  margin-bottom: 5px
-  font-size: 13px
-  text-transform: uppercase
-  color: $main-blue-color
-  font-weight: 500
-
-.program__name
-  font-family: "Open Sans", sans-serif
-  line-height: 120%
-  font-size: 13px
-  height: 30px
-  overflow: hidden
-
-.program__stats
-  margin-top: 10px
-  padding-left: 3px
-  span
-    margin-right: 10px
-    letter-spacing: 1px
-    word-spacing: 1px
-
-.program__estimation,
-.program__comfort,
-.program__dynamics
-  font-size: 15px
-  font-weight: 600
-  cursor: pointer
-  &:before
-    content: ""
-    display: inline-block
-    width: 23px
-    height: 14px
-
-.program__estimation
-  background: url(../../images/icons/icon-star-16.svg) center no-repeat
-  background-position-x: 0
-  background-size: 14px
-
-.program__comfort
-  background: url("../../images/icons/icon-comfort-16.svg") center no-repeat
-  background-position-x: 0
-  background-size: 14px
-
-.program__dynamics
-  background: url("../../images/icons/icon-dynamics-16.svg") center no-repeat
-  background-position-x: 0
-  background-size: 15px
-
-
-
-// иконки контактов организатора
-.website
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_website.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.facebook
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_facebook.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.instagram
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_instagram.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.vkontacte
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_vkontacte.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.youtube
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_youtube.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.telegram
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_telegram.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.whatsapp
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_whatsapp.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.viber
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_viber.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.skype
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_skype.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-.phone
-  &:before
-    content: ''
-    display: inline-block
-    background: url("../../images/icons/link_phone.svg") center no-repeat
-    width: 30px
-    height: 30px
-    padding-top: 1px
-    padding-left: 1px
-
-// серый цвет иконки svg
-.empty-icon
-  &:before
-    filter: grayscale(100%)
-    opacity: 0.7
-
-
-//------ service-page------------//
+// стили для service-page
 .service
-  text-align: left
-  padding: 0 15px
-  margin-top: 20px
-  @media only screen and (min-width: $mobile-content-width)
-    padding: 0 20px
-    margin-top: 30px
-    text-align: center
+  max-width: 1000px
+  padding: 0 5%
+  margin-top: 10%
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin: 0 auto
+    margin-top: 40px
 
 .service__message
-  h2
-    font-size: 17px
-    text-align: center
-    color: $main-blue-color
-    font-weight: 500
-    margin-bottom: 20px
-  p
-    margin: 10px 0
-    font-size: 12px
-  .small-font
-    padding-left: 1px
-    &:first-child
-      margin-top: 15px
-
-.service__back-link
-  margin-top: 35px
-  text-align: right
   @media only screen and (min-width: $mobile-content-width)
     text-align: center
+    padding: 0 5px
+  &.left
+    text-align: unset
+  h2
+    //font-family: $f_montserrat
+    font-size: 25px
+    color: $main-blue-color
+    font-weight: 600
+    line-height: 120%
+    margin-bottom: 20px
+  div
+    font-weight: 600
+    line-height: 120%
+  p
+    line-height: 130%
+    font-weight: 300
+    &.list
+      margin: 15px 0
+
+  .service__back-link
+    //font-family: $f_montserrat
+    line-height: 150%
+    text-align: center
+    margin-top: 40px
+    //letter-spacing: 0.2px
+
+//комментарий под полем формы
+.form-comment
+  display: block
+  //font-family: $f_montserrat
+  font-size: 14px
+  font-weight: 300
+  //letter-spacing: 0.3px
+  padding-top: 5px
+  line-height: 130%
+
+// подсветка полей формы с ошибкой
+.form-red-outline
+  @include form-focus-red
+
+
+.confirm-action
+  position: relative
+  min-width: 300px
+  max-width: 550px
+  margin-top: 25%
+  margin-left: 2%
+  margin-right: 2%
+  background-color: $bkg-grey-color
+  border-radius: 12px
+  padding: 30px 25px 35px 25px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 30px 40px 45px 30px
+    margin-top: 20%
+    margin-left: 20px
+    margin-right: 20px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-top: 10%
+    max-width: 630px
+    padding: 30px 45px 45px 40px
+    margin-left: auto
+    margin-right: auto
+  .info-field__box
+    padding-left: 12px
+    margin-top: 20px
+    margin-bottom: 30px
+  .info-field__head
+    font-size: 16px
+    font-weight: 600
+    text-transform: unset
+    padding-bottom: 3px
+  .info-field__content
+    font-weight: 400
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto

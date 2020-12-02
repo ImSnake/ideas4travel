@@ -1,53 +1,237 @@
-/* ORGANIZER COMMON CSS START */
+@charset "UTF-8"
 
-//общие стили для блоков с контактной информацией
-.organizer__info-field
-  padding: 2% 0
-  padding-left: 5px
-  padding-right: 5px
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    padding: 5px 0
-
-  @media only screen and (min-width: $desktop-content-width)
-    padding: 10px 0
-
-.info-field__head
+/*.info-field__head
   display: inline-block
-  color: $font-grey-color
-  font-size: 12px
+  opacity: 0.65
+  font-size: 11px
   font-weight: 500
   text-transform: uppercase
-  letter-spacing: 0.5px
-  line-height: 250%
+  letter-spacing: 0.4px
+  word-spacing: 0.8px
+  line-height: 1.3em */
 
-.info-field__content
+
+//.info-field__content
   display: block
-  line-height: 130%
+  line-height: 1.3em
+//span.info-field__content
+  padding-top: 1px
 
+// иконка с карандашом "Редактировать"
 .edit-menu
+  @include unselectable
+  cursor: pointer
+  text-decoration: none
   &::before
+    transition: all 0.3s ease-in-out
     font-family: 'fontello'
     font-weight: normal
     font-style: normal
-    content: "\e8d7"  //icon-pencil-1
-    font-size: 18px
+    font-size: 20px
     color: $font-grey-color
+    content: "\e8d7"  //icon-pencil-1
+    padding: 5px
+  &:hover::before
+    color: $main-blue-color
+    transform: scale(1.08)
+  .menu-list
+    right: 5px
+    top: 5px
 
 
-//общие стили для блоков с кнопками
-.requests__bottom,
-.tours__bottom,
-.programs__bottom,
-.guides__bottom,
-.new-program__bottom
-  display: flex
-  flex-wrap: wrap
-  justify-content: center
-  div
-    margin: 10px
+//.cover-tag-blue
+  display: inline-block
+  min-width: 90px
+  font-family: $f_montserrat
+  //color: darken($main-blue-color, 1%)
+  color: #38b3d0
+  text-align: center
+  font-size: 12px
+  font-weight: 500
+  padding: 4px 8px
+  margin: 5px 0
+  margin-right: 10px
+  cursor: default
+  transition: all 0.3s linear
+  border-radius: 6px
+  //-moz-box-shadow: inset 0 1px 0 0 #c9f6ff
+  //-webkit-box-shadow: inset 0 1px 0 0 #c9f6ff
+  //box-shadow: inset 0 1px 0 0 #c9f6ff
+  //background: -webkit-gradient(linear, left top, left bottom, color-stop(0.01, #e3f5f9fa), color-stop(1, #edfbff ))
+  //background: -moz-linear-gradient(to bottom, #e3f5f9fa 0%, #edfbff 100%)
+  //background: -webkit-linear-gradient(to bottom, #e3f5f9fa 0%, #edfbff 100%)
+  //background: -o-linear-gradient(to bottom, #e3f5f9fa 0%, #edfbff 100%)
+  //background: -ms-linear-gradient(to bottom, #e3f5f9fa 0%, #edfbff 100%)
+  //background: linear-gradient(to bottom, #e3f5f9fa 0%, #edfbff 100%)
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='E7E7E7f',GradientType=0);
+  background-color: $light-blue-color
+  border: 1px solid darken($light-blue-color, 1%)
 
-  @media only screen and (min-width: $tablet-average-content-width)
-    justify-content: flex-end
 
-/* COMMON CSS FINISH */
+//добавить\удалить элементы
+.add-elem,
+.delete-elem
+  position: relative
+  display: inline-block
+  transition: all 0.2s ease
+  &::before
+    position: absolute
+    display: inline-block
+    padding: 5px
+    filter: grayscale(100%)
+  &.add-elem::before
+    content: ''
+    background: url(../../images/service/plus.svg) center no-repeat
+    background-size: contain
+    width: 0
+    height: 0
+    padding: 9px
+  &.add-elem:hover::before
+    transform: scale(1.1)
+    filter: drop-shadow(0px 0px 2px $green-color)
+  &.delete-elem::before
+    content: ''
+    background: url(../../images/service/cancel.svg) center no-repeat
+    background-size: contain
+    width: 0
+    height: 0
+    padding: 9px
+  &.delete-elem:hover::before
+    transform: scale(1.1)
+  &.delete-elem:hover::before
+    filter: drop-shadow(0px 0px 2px $red-color)
+
+.turn-img
+  display: inline-block
+  position: absolute
+  z-index: 5
+  //left: 4px
+  top: 4px
+  &::after
+    display: inline-block
+    cursor: pointer
+    content: ""
+    position: absolute
+    z-index: 5
+    background: url(../../images/service/turning.svg) center no-repeat
+    width: 28px
+    height: 28px
+    background-size: contain
+    filter: grayscale(100%)
+    opacity: 0.8
+    transition: 0.4s all linear
+  &:hover::after
+    filter: unset
+    transform: rotate(90deg) scale(1.1)
+    //transform: scale(1.1)
+    opacity: 1
+
+// стили для выбранных элементов форм
+.cover-btn
+  @include unselectable
+  color: #ffffff
+  //text-shadow: 0 1px 1px rgba(0,0,0,0.1)
+  background-color: darken($blue-tag-color, 3%)
+  font-size: 14px
+  font-weight: 400
+  cursor: pointer
+  transition: all 0.3s linear
+  border-radius: 8px
+  &:hover
+    top: 1px
+
+.btn-grey-mini
+  @include unselectable
+  color: $font-grey-color
+  background-color: $bkg-dark-grey-color
+  transition: all 0.3s linear
+  padding: 0 20px
+  line-height: 30px
+  min-width: 150px
+  display: block
+  border-radius: 8px
+  text-align: center
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 0.5px
+  cursor: pointer
+  -webkit-box-shadow: 0 0 5px -2px rgba(0,0,0,0.5)
+  -moz-box-shadow: 0 0 5px -2px rgba(0,0,0,0.5)
+  box-shadow: 0 0 5px -2px rgba(0,0,0,0.5)
+  &:hover
+    color: $main-blue-color
+    transform: scale(0.99)
+    background-color: $bkg-light-grey-color
+    border: 2px solid $main-font-color
+    @include inner-shadow-blue
+
+.input-btn-style .btn-tertiary
+  @include unselectable
+  color: $font-grey-color
+  padding: 0
+  height: 34px
+  //line-height: 30px
+  min-width: 200px
+  display: block
+  border-radius: 8px
+  background-color: $bkg-dark-grey-color
+  text-align: center
+  font-size: 14px
+  letter-spacing: 0.5px
+  font-weight: 400
+  cursor: pointer
+  //background-image: linear-gradient(to bottom, #fdfdfd, #f3f3f3)
+  border: 2px solid $border-line-light-color
+  -webkit-box-shadow: 0 0 4px -2px rgba(0,0,0,0.3)
+  -moz-box-shadow: 0 0 4px -2px rgba(0,0,0,0.3)
+  box-shadow: 0 0 4px -2px rgba(0,0,0,0.3)   
+
+.input-btn-style .input-file
+  width: .1px
+  height: .1px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  z-index: -1
+
+.input-btn-style .input-file + .js-labelFile
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  padding: 0 15px
+  cursor: pointer
+
+.input-btn-style .input-file + .js-labelFile .icon::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  color: $font-grey-color
+  content: "\f02f"
+  padding-right: 5px
+
+.input-btn-style .input-file + .js-labelFile.has-file .icon::before
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  color: $main-blue-color
+  content: "\f1c5"
+
+.input-btn-style .btn-tertiary:hover,
+.input-btn-style .btn-tertiary:hover > .icon,
+.input-btn-style .btn-tertiary:focus,
+.input-btn-style .btn-tertiary:focus > .icon
+  color: $main-blue-color
+  transform: scale(0.99)
+  border-color: unset
+  background-image: unset
+  //font-weight: 500
+  padding-top: 1px
+  padding-bottom: 1px
+  @include inner-shadow-blue
+
+.input-btn-style .btn-tertiary:hover > .icon::before
+  color: $main-blue-color
+
+.input-btn-style .btn-tertiary:hover .icon
+  -webkit-box-shadow: unset
+  box-shadow: unset

@@ -1,24 +1,15 @@
-/* NAV NAV-ORGANIZER START */
+/* ====NAV NAV-ORGANIZER =====================================*/
 
 .nav-organizer
-  margin: 5px
-
+  //font-family: $f_montserrat
+  background-color: #ffffff
   @media only screen and (min-width: $tablet-average-content-width)
     margin: 0
     display: block
-    position: sticky
-    position: -webkit-sticky
-    width: 100%
-    z-index: 99
-    top: 0
-    color: $font-grey-color
-    border-bottom: 1px solid $border-line-color
-    background-color: #ffffff
-
-  @media only screen and (min-width: $tablet-content-width)
-    position: unset
+    border-bottom: 1px solid $border-line-light-color
 
 .nav-organizer__menu
+  @include unselectable
   @media only screen and (min-width: $tablet-average-content-width)
     display: flex
 
@@ -26,58 +17,78 @@
     @media only screen and (min-width: $tablet-average-content-width)
       background-color: $main-blue-color
       color: #ffffff
-      font-weight: 500
+      //font-weight: 600
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
 
 .nav-organizer__link
-  &:hover
+  min-height: 50px
+  transition: all 0.3s linear
+  @media only screen and (min-width: $tablet-average-content-width)
+    font-size: 14.5px
+    color: $font-grey-color
+    //color: lighten($main-font-color, 10%)
+    font-weight: 400
+    flex: 1
+    letter-spacing: 1px
+    min-height: 0
+  &:hover //a
     color: $main-blue-color
-  &.active-link:hover
+    @media only screen and (min-width: $tablet-average-content-width)
+      font-weight: 600
+  &.active-link:hover //a
     @media only screen and (min-width: $tablet-average-content-width)
       color: #ffffff
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    flex: 1
+      font-weight: 400
+      cursor: default
   a
     display: flex
     justify-content: space-between
     text-decoration: none
     padding: 5% 3%
-    border-bottom: 1px solid $border-line-color
-
+    border-bottom: 1px solid $border-line-light-color
+    cursor: pointer
     @media only screen and (min-width: $mobile-content-width)
-      padding: 5% 10%
-
+      padding: 5% 7%
     @media only screen and (min-width: $tablet-average-content-width)
       display: inline-block
       width: 100%
       height: 100%
-      padding: 10px 5px
+      padding: 10px 2px
       border-bottom: none
-      font-size: 15px
-      letter-spacing: 1px
       text-align: center
-    @media only screen and (min-width: $tablet-content-width)
-      padding: 12px 5px
+      text-transform: lowercase
+      //font-size: 15px
+      //font-weight: 500
 
-.nav-organizer__right
-  i
-    padding-left: 10px
+  .nav-organizer__left
+    padding-left: 5px
+    @media only screen and (min-width: $tablet-average-content-width)
+      padding-left: 0
 
-  @media only screen and (min-width: $tablet-average-content-width)
-    display: none
+  .nav-organizer__right
+    &::after
+      font-family: 'fontello'
+      font-weight: normal
+      font-style: normal
+      content: "\e91e"
+      padding-left: 20px
+      padding-right: 12px
+      color: $font-grey-color
 
-.nav-organizer__unread
-  font-size: 15px
-  font-weight: 600
-  color: $main-blue-color
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: none
 
-//не показывать меню Чат в десткопной версии
-#chat-head
-  @media only screen and (min-width: $tablet-average-content-width)
-    display: none
+  .nav-organizer__unread
+    font-size: 15px
+    font-weight: 600
+    color: $main-blue-color
 
 //перенести Профиль в начало списка в десктопной версии
 #profile-head
   order: -1
 
-/* NAV NAV-ORGANIZER FINISH */
+//не показывать меню Чат и Заявки в десткопной версии
+#chat-head,
+#requests-head
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: none

@@ -1,10 +1,1875 @@
-.tour-nav
-  background-color: $main-blue-color
-  padding: 20px 0
-  text-align: center
-  position: sticky
-  position: -webkit-sticky
-  width: 100%
-  top: 55px
-  @media (min-width: $tablet-content-width)
+@charset "UTF-8"
+
+@mixin tour-padding
+  padding: 0 8px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 0 10px
+  //@media only screen and (min-width: $tablet-average-content-width)
+    padding: 0 10px
+  @media only screen and (min-width: $desktop-content-width)
+    padding: 0 13px
+
+//=====================================================
+
+.programs__preview
+  padding: 0 5px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 0 7px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    margin-bottom: 20px
+    padding: 0 10px
+  &.back-n-wrap
+    margin-top: 15px
+
+//=====================================================
+.tour_view
+  //height: 100%
+  background-color: $bkg-grey-color
+  //padding-bottom: 100px
+
+//===== T O U R   N A V I G A T I O N ===========================================
+.nav-tour
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    color: $font-grey-color
+    font-size: 15px
+    font-weight: 400
+    letter-spacing: 1px
+    background-color: #ffffff
+    position: -webkit-sticky
+    position: sticky
+    box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.1)
     top: 0
+    z-index: 99
+  //@media only screen and (min-width: $tablet-content-width)
+    font-size: 14px
+.nav-tour__menu
+  display: flex
+  justify-content: space-around
+
+.nav-tour__link
+  flex: 1
+  a
+    display: inline-block
+    text-decoration: none
+    width: 100%
+    height: 100%
+    padding: 12px 10px
+    border-bottom: none
+    text-align: center
+    text-transform: lowercase
+  &:hover
+    text-decoration: none
+    background-color: $main-blue-color
+    color: #ffffff
+
+//===== T O U R   F I X E D   B A R ========================================
+
+.tour__fixed-bar
+  background-color: #ffffff
+  border-top: 1px solid $border-line-light-color
+  position: fixed
+  height: 70px
+  width: 100%
+  z-index: 103
+  bottom: 0
+  border-top: 1px solid $border-line-light-color
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1)
+
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: inherit
+    padding: 0 3%
+    @media only screen and (min-width: $tablet-average-content-width)
+      padding: 0 5%
+
+  .tour__price
+    flex: 1
+    display: flex
+    justify-content: flex-start
+    height: inherit
+    align-items: center
+    color: $main-blue-color
+    a
+      text-decoration: none
+      opacity: 0.8
+      transition: all 0.2s linear
+      &:hover
+        opacity: 1
+        transform: scale(1.05)
+
+  .day-price
+    position: relative
+    font-size: 23px
+    font-weight: 700
+    word-spacing: -1px
+    cursor: pointer
+    padding-left: 16px
+    padding-right: 30px
+    &::before
+      position: absolute
+      display: inline-block
+      font-size: 11px
+      font-weight: 400
+      content: "от"
+      left: 0
+      top: 8px
+    span::before
+      font-size: 15px
+      font-weight: 400
+      vertical-align: top
+      margin-left: 2px
+      margin-right: 2px
+      margin-top: 1px
+    span::after
+      position: absolute
+      display: inline-block
+      font-size: 11px
+      font-weight: 400
+      content: ' / день'
+      right: -3px
+      top: 7px
+  .tour__user-actions
+    flex: 1
+    display: flex
+    justify-content: flex-end
+    height: inherit
+    align-items: center
+    span
+      display: block
+      color: $font-grey-color
+      padding: 5px
+      margin-left: 10%
+      opacity: 0.7
+      cursor: pointer
+      transition: all 0.2s linear
+      &:hover
+        transform: scale(1.07)
+        color: $main-blue-color
+        opacity: 0.9
+
+.add-to-favorite::before,
+.compare-tours::before,
+.share-link::before,
+.ask-question::before
+  display: inline-block
+  content: ""
+
+.add-to-favorite::before
+  background: url(../../images/icons/icon_add-to-favorite.svg) center no-repeat
+  width: 24px
+  height: 21px
+  background-size: contain
+
+.compare-tours::before
+  background: url(../../images/icons/icon_compare-tours.svg) center no-repeat
+  width: 22px
+  height: 20px
+  background-size: contain
+
+.share-link::before
+  background: url(../../images/icons/icon_share-link.svg) center no-repeat
+  width: 20px
+  height: 22px
+  background-size: contain
+
+.ask-question::before
+  background: url(../../images/icons/icon_ask-question.svg) center no-repeat
+  width: 23px
+  height: 27px
+  background-position-y: 4px
+  background-size: contain
+
+//===== T O U R   H E A D E R ===================================================
+
+#tour-header
+  margin-top: 30px
+  margin-bottom: 8px
+  letter-spacing: 0.3px
+  @include tour-padding
+  //@media only screen and (min-width: $mobile-content-width)
+    margin-bottom: 8px
+
+  h2
+    font-size: 16px
+    font-weight: 400
+    color: $main-blue-color
+    //letter-spacing: 0.2px
+    //@media only screen and (min-width: $mobile-content-width)
+      font-size: 16px
+
+  h1
+    font-size: 23px
+    line-height: 100%
+    font-weight: 800
+    margin-top: 9px
+    text-transform: uppercase
+    //color: $main-blue-color
+    //@media only screen and (min-width: $mobile-content-width)
+      font-size: 22px
+
+  .header__tags
+    margin-top: 5px
+    font-size: 14px
+    text-transform: lowercase
+    color: $font-grey-color
+    font-weight: 400
+    //@media only screen and (min-width: $mobile-content-width)
+      font-size: 15px
+
+  .header__item
+    &::after
+      padding-left: 5px
+      padding-right: 5px
+      content: '\2022'
+      font-size: 10px
+    &:last-child::after
+      content: ''
+
+//====== T O U R   G A L L E R Y ==================================================
+
+#tour-gallery
+  .container
+    padding: 0 3px
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: flex
+      padding: 0 5px
+    @media only screen and (min-width: $desktop-content-width)
+      padding: 0 8px
+
+  .tour__main-image
+    position: relative
+    margin-bottom: -3px
+    @media only screen and (min-width: $tablet-average-content-width)
+      flex: 5
+      margin-bottom: 0px
+    @media only screen and (min-width: $tablet-content-width)
+      flex: unset
+      width: 630px
+      //margin-bottom: 0
+    @media only screen and (min-width: 1000px)
+      width: 630px
+      margin-bottom: -3px
+
+    img
+      width: 100%
+      cursor: pointer
+      @media only screen and (min-width: $tablet-content-width)
+        width: inherit
+
+    #video-box
+      position: absolute
+      background-color: black
+      width: 100%
+      height: 0
+      padding-bottom: 61.5%
+      margin-top: 2px
+      //z-index: 5
+      .video
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 5
+        width: 100%
+        height: 100%
+      .delete-clone
+        display: none
+        position: absolute
+        z-index: 7
+        right: 11px
+        bottom: 3px
+        &::after
+          width: 35px
+          height: 35px
+          opacity: 1
+        &::after:hover
+          filter: unset
+
+  .tour__image-bar
+    display: flex
+    @media only screen and (min-width: $tablet-average-content-width)
+      flex: 1
+      flex-direction: column
+      div
+        margin-bottom: -4px
+    @media only screen and (min-width: $tablet-content-width)
+      flex: unset
+      height: 389px
+      flex-direction: row
+      flex-wrap: wrap
+      overflow: hidden
+    //@media only screen and (min-width: 1000px)
+      height: 389px
+
+    img
+      width: 100%
+      opacity: 0.7
+      cursor: pointer
+      &:hover
+        opacity: 1
+
+    .image_bar__tablet
+      display: none
+      @media only screen and (min-width: $tablet-content-width)
+        display: block
+
+  .switch-to-gallery
+    position: absolute
+    display: flex
+    align-items: center
+    right: 0px
+    bottom: 4px
+    z-index: 1
+    color: #FFFFFF
+    //border-top-left-radius: 12px
+    padding: 10px 12px 8px 12px
+    background-color: $main-font-color
+    opacity: 0.8
+    .group
+      display: flex
+      align-items: center
+    .group:first-child
+      margin-right: 15px
+    i
+      font-size: 25px
+      //margin-left: 10px
+      transition: all 0.2s linear
+      cursor: pointer
+      &:hover
+        opacity: 0.9
+        transform: scale(1.1)
+    span
+      font-weight: 600
+      padding-left: 5px
+      padding-right: 5px
+
+    @media only screen and (min-width: $tablet-average-content-width)
+      padding: 12px 17px 7px 20px
+      .group:first-child
+        margin-right: 30px
+      i
+        margin-left: 0
+      span
+        padding-right: 0
+
+//****** S H O W   G A L L E R Y *************************
+#gallery-cover
+  background: rgba(4, 6, 38, 0.8)
+
+#gallery
+  height: 100%
+  overflow: auto
+  margin: 0 auto
+
+#image-box
+  margin-top: 2%
+  margin-bottom: 2%
+  @media only screen and (min-width: $tablet-content-width)
+    margin-top: 5%
+
+.galleryWrapper
+  margin: 0 auto
+  text-align: center
+  min-width: 320px
+  width: 100%
+  height: 300px
+  @media only screen and (min-width: $mobile-content-width)
+    width: 479px
+    height: 400px
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 630px
+    height: 450px
+  @media only screen and (min-width: $tablet-content-width)
+    width: 100%
+    max-width: 850px
+    height: 500px
+
+.galleryWrapper__container
+  position: relative
+  width: 100%
+  height: 100%
+
+.galleryWrapper__image
+  position: absolute
+  z-index: 1
+  margin: auto
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  //border-radius: 8px
+  border: 2px solid $light-blue-color
+  max-width: 320px
+  max-height: 300px
+  @media only screen and (min-width: $mobile-content-width)
+    max-width: 450px
+    max-height: 400px
+  @media only screen and (min-width: $tablet-average-content-width)
+    max-width: 580px
+    max-height: 450px
+  @media only screen and (min-width: $tablet-content-width)
+    max-width: 720px
+    max-height: 480px
+  //@media only screen and (min-width: $desktop-content-width)
+    max-width: unset
+    max-height: unset
+
+.galleryWrapper__close,
+.galleryWrapper__leftArrow,
+.galleryWrapper__rightArrow
+  position: absolute
+  transition: all 0.3s linear
+  //width: 50px
+  //padding: 10px
+  padding: 5px
+  opacity: 0.7
+  &:hover
+    cursor: pointer
+    transform: scale(1.1)
+    opacity: 1
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: unset
+
+.galleryWrapper__close
+  z-index: 2
+  right: 0
+  top: 0
+
+.galleryWrapper__leftArrow
+  z-index: 2
+  left: 0
+  bottom: 1%
+
+.galleryWrapper__rightArrow
+  z-index: 2
+  right: 0
+  bottom: 1%
+
+#gallery__mini-bar
+  text-align: center
+  img
+    width: 80px
+    margin-bottom: -3px
+    border: 1px solid $light-blue-color
+    transition: all 0.3s linear
+    @media only screen and (min-width: $tablet-average-content-width)
+      width: auto
+      margin: 4px
+      //border-radius: 8px
+      &:hover
+        cursor: zoom-in
+        transform: scale(1.05)
+
+
+//======= T O U R   C O M M O N   P A R T S ===================================
+
+.mobile-section-heading
+  width: 100%
+  color: $main-font-color
+  background-color: #ffffff
+  border-top: 1px solid $border-line-light-color
+  border-bottom: 1px solid $border-line-light-color
+  margin-top: -1px
+  cursor: pointer
+  transition: all 0.3s ease
+  line-height: 50px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: none
+
+  .group
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 10px
+
+  h2
+    font-size: 15px
+    font-weight: 400
+    margin-top: -1px
+    line-height: 100%
+    transition: all 0.2s ease-in-out
+
+  .pointer-down,
+  .pointer-up
+    color: $main-font-color
+    font-size: 17px
+    margin-right: 5px
+
+  &.inverse
+    background-color: $main-blue-color
+    border: none
+    padding-top: 1px
+    line-height: 44px
+    h2
+      color: #ffffff
+      font-weight: 600
+      letter-spacing: 0.5px
+    .pointer-down,
+    .pointer-up
+      color: #ffffff
+
+.program__heading
+  white-space: nowrap
+  //color: $main-blue-color
+  font-size: 19px
+  font-weight: 800
+  text-transform: uppercase
+  margin-bottom: 8px
+  //letter-spacing: 1px
+  @media only screen and (min-width: $tablet-average-content-width)
+    font-size: 23px
+
+.btn-linear-blue
+  @include unselectable
+  color: $icon-grey-color
+  background-color: #ffffff
+  padding: 6px 18px
+  border: 2px solid $border-line-light-color
+  text-align: center
+  font-size: 13px
+  font-weight: 600
+  letter-spacing: 1px
+  cursor: pointer
+  transition: all 0.3s linear
+  &:hover
+    color: $main-blue-color
+    border-color: $main-blue-color
+
+.btn-blue,
+.btn-orange
+  border-radius: 8px
+
+//===== D E S C R I P T I O N ======================================
+.program__activities,
+.program__places,
+.program__transfer,
+.program__nights
+  &::before
+    content: ""
+    display: inline-block
+    width: 30px
+    height: 50px
+
+.program__activities::before
+  background: url("../../images/icons/icon_tour-activities.svg") center no-repeat
+  background-position-x: 6px
+  background-position-y: 15px
+  background-size: 18px
+
+.program__places::before
+  background: url("../../images/icons/icon_tour-places.svg") center no-repeat
+  background-size: 24px
+  background-position-y: 14px
+  background-position-x: 2px
+
+.program__transfer::before
+  background: url("../../images/icons/icon_tour-transfer.svg") center no-repeat
+  background-size: 26px
+  background-position-x: 1px
+
+.program__nights::before
+  background: url("../../images/icons/icon_tour-nights.svg") center no-repeat
+  background-size: 23px
+  background-position-x: 3px
+  background-position-y: 14px
+
+
+#tour-description
+  display: none
+  position: relative
+  @include tour-padding
+  margin-bottom: 100px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+
+  //*******************
+  .tour__right-bar
+    display: none
+    @media only screen and (min-width: $desktop-content-width)
+      display: block
+      padding-right: 10px
+      position: absolute
+      right: 0
+
+    .description__heading
+      font-size: 14px
+      font-weight: 800
+      margin-bottom: 10px
+      text-transform: uppercase
+      color: $main-blue-color
+
+  //*******************
+  .description__people
+    width: 300px
+    //margin-top: -10px
+    background-color: #ffffff
+    padding: 25px 15px 16px 35px
+    margin-bottom: 30px
+    .cover-box
+      font-size: 14px
+      //color: $main-blue-color
+      font-weight: 300
+      text-transform: lowercase
+      //letter-spacing: 0.5px
+      //border: 2px solid $light-blue-color
+      //border-radius: 6px
+      margin-bottom: 8px
+      //display: inline-block
+      //padding: 3px 12px
+      //margin-right: 3px
+      background-color: #ffffff
+      //min-width: 70px
+      //text-align: center
+
+
+  //*******************
+  .tour_tags
+    //display: flex
+
+
+
+  .place-tags,
+  .activity-tags
+    background-color: #ffffff
+    //border: 1px solid $border-line-light-color
+    //border-radius: 8px
+    flex: 1
+    min-width: 180px
+    &.place-tags
+      padding-top: 25px
+
+  .description__table
+    height: 100%
+    padding-bottom: 20px
+    //padding-top: 20px
+    padding-left: 40px
+    padding-right: 25px
+
+    .table_field
+      margin-bottom: 5px
+
+    .table__heading
+      font-size: 14px
+      font-weight: 600
+      //color: $main-blue-color
+
+    .table__content
+      text-transform: lowercase
+      color: $main-font-color
+      font-size: 14px
+      font-weight: 300
+      padding-left: 10px
+      margin-top: 3px
+      margin-left: 4px
+      margin-bottom: 8px
+      border-left: 1.5px solid $light-blue-color
+
+    .string
+      padding-top: 2px
+      padding-bottom: 2px
+
+
+  //*******************
+  .tour_actions
+    width: 300px
+    min-height: 145px
+    background-color: #ffffff
+    margin-top: 30px
+
+  //******************
+  .main-stats
+    margin-top: 25px
+    margin-bottom: 60px
+    max-width: 640px
+    @media only screen and (min-width: $mobile-content-width)
+      margin-left: -5px
+
+  .day-group-age
+    min-width: 320px
+    max-width: 400px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-weight: 800
+    margin-bottom: 35px
+
+    span:first-child
+      display: inline-block
+      min-width: 50px
+
+    .small-txt
+      position: absolute
+      display: inline-block
+      font-size: 12px
+      font-weight: 300
+      @media only screen and (min-width: $mobile-content-width)
+        font-weight: 400
+
+    .duration
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 110px
+      height: 50px
+      line-height: 50px
+      font-size: 20px
+      &::before
+        content: ''
+        display: inline-block
+        background: url("../../images/icons/icon_duration-calendar.svg") center no-repeat
+        background-size: contain
+        background-position-y: 15px
+        width: 25px
+        height: 50px
+        margin-left: 12px
+      span:first-child
+        padding-left: 6px
+      .small-txt
+        bottom: -15px
+        left: 55px
+
+    .group-size
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 110px
+      height: 50px
+      line-height: 50px
+      font-size: 20px
+      &::before
+        content: ''
+        display: inline-block
+        background: url("../../images/icons/icon_group-size.svg") center no-repeat
+        background-size: contain
+        background-position-y: 13px
+        width: 33px
+        height: 50px
+        margin-left: -3px
+        margin-right: 0px
+      span:first-child
+        padding-left: 6px
+        white-space: nowrap
+        overflow: visible
+      .small-txt
+        bottom: -15px
+        left: 50px
+
+    .age-limit
+      position: relative
+      width: 110px
+      padding-right: 6px
+      height: 50px
+      line-height: 50px
+      font-size: 19px
+      text-align: center
+      vertical-align: middle
+      background: url("../../images/icons/icon_age-limit-border.svg") center no-repeat
+      background-size: 46px
+      &::before
+        position: absolute
+        display: inline-block
+        font-size: 12px
+        font-weight: 300
+        content: 'от'
+        left: 15px
+        @media only screen and (min-width: $mobile-content-width)
+          font-weight: 600
+      &::after
+        position: absolute
+        display: inline-block
+        font-size: 12px
+        font-weight: 300
+        content: 'лет'
+        right: 10px
+        @media only screen and (min-width: $mobile-content-width)
+          font-weight: 600
+
+  .comfort-dynamics-meal
+    min-width: 320px
+    max-width: 400px
+    display: flex
+    justify-content: space-between
+
+    .small-txt
+      font-size: 12px
+      font-weight: 300
+      text-align: center
+      margin-top: 1px
+      padding: 0 3px
+      @media only screen and (min-width: $mobile-content-width)
+        font-weight: 400
+        //opacity: 0.9
+        padding: 0
+
+    .comfort,
+    .dynamics,
+    .meal
+      width: 110px
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+
+    .program__comfort::before,
+    .program__comfort-empty::before
+      width: 20px
+      height: 20px
+      background-size: contain
+      margin: 0 1px 0 0
+
+    .program__dynamics::before,
+    .program__dynamics-empty::before
+      width: 21px
+      height: 20px
+      background-size: contain
+      margin: 0 2px
+      background-position-y: 2px
+
+    .program__meal::before,
+    .program__meal-empty::before
+      width: 18px
+      height: 20px
+      background-size: contain
+      margin: 0 3px
+      background-position-y: 1.5px
+
+
+  //*******************
+  .description__about
+    min-width: 300px
+    max-width: 850px
+    p
+      font-size: 15px
+      font-weight: 400
+      line-height: 1.35em
+      margin: 8px 0
+
+
+  //*******************
+  .description__stats
+    max-width: 640px
+
+  //*******************
+  .stats__start-finish
+    margin-top: 30px
+    margin-bottom: 50px
+    .group
+      display: flex
+      align-items: center
+      img
+        height: 33px
+        margin-right: 10px
+        margin-left: 15px
+
+    .title
+      font-size: 12px
+      font-weight: 400
+      color: $main-blue-color
+
+    .country
+      font-size: 11px
+      text-transform: uppercase
+      letter-spacing: 0.5px
+      font-weight: 700
+      padding-top: 4px
+
+    .city
+      font-size: 14px
+      font-weight: 400
+
+    .line
+      margin-left: 28px
+      margin-top: 5px
+
+
+  //*******************
+  .map__img
+    min-width: 300px
+    max-width: 630px
+    position: relative
+    margin-bottom: 30px
+    img
+      width: 100%
+      //border-radius: 8px
+      cursor: pointer
+    .map__bottom-left-tag,
+    .map__top-right-tag
+      position: absolute
+      color: #ffffff
+      background-color: $main-blue-color
+      font-size: 11px
+      text-transform: uppercase
+      font-weight: 700
+      letter-spacing: 1px
+      padding: 8px 20px
+      span
+        margin-right: 7px
+        font-size: 14px
+        letter-spacing: 0.5px
+        font-weight: 600
+      &.map__top-right-tag
+        left: 0
+        top: 0
+      &.map__bottom-left-tag
+        right: 0
+        bottom: 4px
+
+
+  //*******************
+  .program__stats
+    //margin-top: 45px
+    margin-bottom: 20px
+
+    .stats__table
+      min-width: 300px
+      max-width: 630px
+      //border-radius: 8px
+      margin-bottom: 10px
+      //border-left: 3px solid $border-line-light-color
+      &.opened
+        //background-color: #ffffff
+        //margin-top: 10px
+        //margin-bottom: 20px
+        //border-left: 4px solid $border-line-light-color
+        .stats__heading
+          //padding-left: 30px
+          padding-top: 15px
+          border: none
+          //.program__activities::before
+            background-position-x: 7px
+            background-position-y: 16px
+            background-size: 17px
+            width: 27px
+          //.program__places::before
+            background-size: 22px
+            background-position-y: 15px
+            background-position-x: 5px
+            width: 28px
+          //.program__transfer::before
+            background-size: 26px
+          //.program__nights::before
+            background-size: 20px
+            background-position-x: 4px
+            background-position-y: 16px
+            width: 25px
+
+
+          .stats__title
+            color: $main-blue-color
+            //margin-bottom: -4px
+            //font-size: 14px
+            letter-spacing: 1px
+            //padding-left: 12px
+          .stats__qty
+            color: $main-blue-color
+            //margin-bottom: -5px
+
+    .stats__heading
+      @include unselectable
+      height: 50px
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      ///background-color: #ffffff
+      cursor: pointer
+      border: 1px solid $border-line-light-color
+      padding-left: 15px
+      padding-top: 2px
+      //border-radius: 8px
+      //border: 1px solid $border-line-light-color
+      //line-height: 50px
+      //padding: 0 18px 0 20px
+      //@media only screen and (min-width: $mobile-content-width)
+        padding: 0 18px 0 30px
+      //@media only screen and (min-width: $tablet-average-content-width)
+        padding: 0 18px 0 33px
+      //@media only screen and (min-width: $desktop-content-width)
+        padding: 0 18px 0 37px
+      //.group
+        display: flex
+        align-items: center
+        height: 50px
+      &:hover
+        //border-color: $light-blue-color
+      &:hover .stats__title
+        letter-spacing: 1px
+        color: $main-blue-color
+      &:hover .stats__qty,
+      &:hover .pointer-down,
+      &:hover .pointer-up
+        color: $main-blue-color
+
+    .stats__title
+      display: block
+      padding-left: 9px
+      text-transform: uppercase
+      font-size: 11px
+      font-weight: 600
+      letter-spacing: 0.5px
+      //margin-bottom: -3px
+      transition: letter-spacing 0.3s ease
+
+    .stats__qty
+      display: block
+      font-size: 12px
+      padding-bottom: 2px
+      //margin-top: -2px
+      padding-left: 5px
+      color: $main-blue-color
+      font-weight: 600
+      transition: color 0.3s ease
+
+    .pointer-up,
+    .pointer-down
+      color: $main-font-color
+      padding-left: 11px
+      font-size: 9px
+      font-weight: 800
+
+
+    .stats__content
+      //border-bottom-left-radius: 8px
+      //border-bottom-right-radius: 8px
+      //background-color: #ffffff
+      //border: 1px solid $light-blue-color
+      //border-top: none
+      //padding: 2px 20px 10px 27px
+      //@media only screen and (min-width: $mobile-content-width)
+      padding: 2px 20px 10px 20px
+      //@media only screen and (min-width: $desktop-content-width)
+        padding: 10px 20px 10px 45px
+      p
+        margin-top: 6px
+        margin-bottom: 12px
+        line-height: 1.2em
+        font-weight: 400
+        font-size: 14px
+
+    .list-point
+      //padding: 5px 20px 10px 35px
+      //@media only screen and (min-width: $mobile-content-width)
+        padding: 5px 20px 10px 45px
+      //@media only screen and (min-width: $tablet-average-content-width)
+        padding: 5px 20px 10px 50px
+      //@media only screen and (min-width: $desktop-content-width)
+      padding: 2px 20px 10px 30px
+      p
+        position: relative
+        &::before
+          display: inline-block
+          position: absolute
+          content: "\02022"
+          color: $main-blue-color
+          top: 1px
+          margin-left: -10px
+          font-size: 10px
+
+    .stats__transfers
+      p::before
+        content: "- "
+
+    .nights__locations
+      margin: 12px 0
+
+    .stats__country
+      font-size: 14px
+      font-weight: 600
+      padding-right: 3px
+      &::after
+        content: ":"
+
+    .stats__cities
+      font-size: 14px
+      font-weight: 400
+      line-height: 1.3em
+      word-spacing: 1px
+
+
+  //.route-stats__box
+    position: relative
+    display: flex
+    min-width: 320px
+    max-width: 460px
+    min-height: 100px
+    margin-top: 25px
+    margin-bottom: 50px
+    margin-left: -10px
+    //@media only screen and (min-width: $tablet-average-content-width)
+      margin-left: 0
+    @media only screen and (min-width: $tablet-average-content-width)
+      max-width: 500px
+    @media only screen and (min-width: $desktop-content-width)
+      margin-left: -12px
+    //@media only screen and (min-width: 1000px)
+      padding: 0
+    &::before
+      display: block
+      position: absolute
+      z-index: 1
+      content: ""
+      width: 255px
+      height: 63px
+      margin-left: 16%
+      background: url("../../images/icons/route-stats_dotted_line.svg") bottom no-repeat
+      @media only screen and (min-width: $mobile-content-width - 79px)
+        width: 280px
+        margin-left: 14%
+      @media only screen and (min-width: $tablet-average-content-width)
+        //margin-left: 15%
+        width: 320px
+
+    .route-stats__start,
+    .route-stats__finish
+      position: relative
+      min-width: 110px
+      text-align: center
+      padding: 0 5px 0 8px
+      padding-top: 20px
+      @media only screen and (min-width: $mobile-content-width - 79px)
+        min-width: 120px
+      @media only screen and (min-width: 1000px)
+        min-width: 140px
+        padding-left: 13px
+    .route-stats_center
+      position: relative
+      min-width: 120px
+      width: 100%
+      text-align: center
+      @media only screen and (min-width: $mobile-content-width - 79px)
+        max-width: 200px
+
+    .start__img,
+    .finish__img,
+    .stats__img
+      position: absolute
+      z-index: 2
+      width: 44px
+      height: 52px
+      margin-left: auto
+      margin-right: auto
+      left: 0
+      right: 0
+      &.start__img
+        background: url("../../images/icons/route-stats_start.svg") bottom no-repeat
+        background-size: contain
+        &::before
+          display: block
+          //color: $main-blue-color
+          font-size: 12px
+          font-weight: 400
+          //text-transform: uppercase
+          height: 23px
+          content: "старт"
+          //opacity: 0.85
+          margin-top: -10px
+          opacity: 0.8
+      //letter-spacing: 0.4px
+      //@media only screen and (min-width: 1000px)
+        font-size: 12px
+      &.finish__img
+        background: url("../../images/icons/route-stats_finish.svg") bottom no-repeat
+        background-size: contain
+        &::before
+          display: block
+          //color: $main-blue-color
+          font-size: 12px
+          font-weight: 400
+          //text-transform: uppercase
+          height: 23px
+          content: "финиш"
+          //opacity: 0.85
+          margin-top: -10px
+          padding-left: 4px
+          opacity: 0.8
+      //letter-spacing: 0.4px
+      //@media only screen and (min-width: 1000px)
+        font-size: 12px
+      &.stats__img
+        background: url("../../images/icons/route-stats_sign.svg") center no-repeat
+        background-size: contain
+
+    .start__country,
+    .finish__country
+      font-size: 14px
+      font-weight: 700
+      //opacity: 0.9
+      margin-top: 54px
+    //white-space: nowrap
+    //@media only screen and (min-width: 1000px)
+      font-size: 14px
+
+    .start__city,
+    .finish__city
+      font-size: 14px
+      font-weight: 400
+    //@media only screen and (min-width: 1000px)
+      font-size: 14px
+
+    .stats__activities,
+    .stats__places
+      margin-top: 4px
+      height: 18px
+      font-size: 11px
+      letter-spacing: 0.2px
+      width: inherit
+      font-weight: 400
+      //color: $font-grey-color
+      //@media only screen and (min-width: 1000px)
+        font-size: 12px
+      span
+        color: $main-font-color
+        font-size: 14px
+        font-weight: 600
+        //opacity: 0.9
+        margin-right: 3px
+      &.stats__activities
+        margin-top: 54px
+
+//=== P R O G R A M ================================================
+.day__night,
+.day__accommodation,
+.day__meal,
+.day__transfer,
+.day__places,
+.day__activities
+  display: inline-block
+  &::before
+    content: ''
+    display: inline-block
+    width: 20px
+    height: 26px
+    //opacity: 0.8
+
+.day__night::before
+  background: url("../../images/icons/icon_day-box__night.svg") no-repeat
+.day__accommodation::before
+  background: url("../../images/icons/icon_day-box__accommodation.svg") no-repeat
+.day__meal::before
+  background: url("../../images/icons/icon_day-box__meal.svg") no-repeat
+.day__transfer::before
+  background: url("../../images/icons/icon_day-box__transfer.svg") no-repeat
+.day__places::before
+  background: url("../../images/icons/icon_day-box__places.svg") no-repeat
+.day__activities::before
+  background: url("../../images/icons/icon_day-box__activities.svg") no-repeat
+
+#tour-program
+  display: none
+  @include tour-padding
+  margin-bottom: 100px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+
+  .program__heading
+    display: none
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: block
+
+  .days__list
+    min-width: 300px
+    max-width: 850px
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 10px
+
+    .day__circle
+      display: flex
+      align-items: center
+      justify-content: center
+      color: $icon-grey-color
+      width: 27px
+      height: 25px
+      line-height: 25px
+      font-weight: 700
+      background-color: #ffffff
+      border: 2px solid $border-line-light-color
+      //border-radius: 6px
+      margin-right: 1.5%
+      margin-top: 6px
+      margin-bottom: 6px
+      font-size: 12px
+      @include unselectable
+      transition: all 0.3s ease-in-out
+      &:hover
+        cursor: pointer
+        color: $main-blue-color
+        border-color: $main-blue-color
+
+    .day__current
+      background-color: $main-blue-color
+      font-weight: 800
+      color: #ffffff
+      border-color: $main-blue-color
+      &:hover
+        cursor: default
+        color: #ffffff
+
+  .days__block
+    min-width: 300px
+    max-width: 850px
+    display: flex
+    flex-wrap: wrap
+    align-items: baseline
+    justify-content: flex-start
+    border-top: 2px solid $border-line-light-color
+    border-bottom: 2px solid $border-line-light-color
+
+  .day__window
+    position: relative
+    //background-color: #ffffff
+    //border: 1px solid $border-line-light-color
+    margin-top: -1px
+    //min-width: 300px
+    //max-width: 850px
+    width: 100%
+    min-height: 400px
+    //overflow: scroll
+    //overflow-y: visible
+    //overflow-x: hidden
+    //background-color: #ffffff
+    //border: 1px solid $light-blue-color
+    //padding: 15px 15px 10px 15px
+    //border-radius: 8px
+    //margin-bottom: 13px
+    //@media only screen and (min-width: $tablet-average-content-width)
+      //padding: 20px 30px 13px 20px
+
+    .day__number
+      //position: sticky
+      //top: 0
+      //z-index: 5
+      //background-color: $font-light-grey-color
+      color: $main-blue-color
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 15px
+      letter-spacing: 1px
+      word-spacing: 2px
+      height: 30px
+      padding-top: 10px
+      margin-bottom: 10px
+      //padding-left: 22px
+      padding-left: 8px
+
+    img
+      //border-radius: 8px
+      width: 100%
+      max-width: 300px
+      //margin-left: -2px
+      //margin-bottom: 13px
+      @media only screen and (min-width: $tablet-average-content-width)
+        width: unset
+        margin: 0
+        float: right
+        margin-left: 20px
+        //margin-right: 10px
+        margin-top: -15px
+
+    .day__row
+      display: flex
+      //min-height: 30px
+
+    .day__title
+      width: 35px
+      //padding-right: 10px
+      //font-size: 10px
+      //text-transform: uppercase
+      //font-weight: 600
+      //color: $main-blue-color
+      //overflow: hidden
+      //white-space: nowrap
+      //text-overflow: ellipsis
+      padding-left: 6px
+
+    .day__content
+      flex: 1
+      font-size: 13px
+      font-weight: 400
+      max-width: 400px
+      padding-top: 2px
+      margin-top: 0
+    
+      .night__city
+        margin-left: -2px
+
+    .day__description
+      //padding: 0 20px
+      padding-left: 5px
+      margin-top: 8px
+      padding-bottom: 12px
+      p
+        margin: 0 0 5px 0
+        line-height: 1.35em
+        font-size: 15px
+        font-weight: 400
+
+  //.days__bottom
+    width: 100%
+    //background-color: $font-light-grey-color
+    background-color: $main-blue-color
+    height: 30px
+    margin-bottom: 6px
+
+  .days__actions
+    min-width: 300px
+    max-width: 850px
+    margin-top: 10px
+    display: flex
+    //justify-content: center
+    //margin-top: 10px
+    //justify-content: flex-end
+    //padding-right: 5px
+    //.btn-blue
+      max-width: 230px
+    //@media only screen and (min-width: $tablet-average-content-width)
+    //justify-content: flex-start
+    button
+      margin-left: auto
+
+
+//==== S C H E D L U E ===================================================
+
+#tour-schedule
+  display: none
+  @include tour-padding
+  margin-bottom: 100px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+
+  .program__heading
+    margin-bottom: 10px
+
+  .schedule__table
+    min-width: 300px
+    max-width: 850px
+    //border: 1px solid $border-line-light-color
+    //background-color: #FFFFFF
+    font-size: 14px
+    button
+      width: 125px
+    .opened
+      background-color: #ffffff
+      border-bottom: none
+
+  .schedule__head,
+  .schedule__row
+    display: flex
+    align-items: center
+    text-align: center
+
+  .schedule__head
+    height: 46px
+    font-size: 11px
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-weight: 700
+    padding-top: 2px
+    //text-transform: lowercase
+    //font-weight: 400
+    background-color: $icon-grey-color
+    //background-color: $main-blue-color
+    color: #ffffff
+    //padding-top: 2px
+    .schedule__status,
+    .schedule__season
+      .help
+        top: -8px
+        margin-left: 4px
+        &::before
+          background: url(../../images/service/help-white.svg) center no-repeat
+          background-size: contain
+          filter: none
+        .top
+          left: -165px
+          top: 17px
+
+  .schedule__row
+    height: 70px
+    //padding-top: 4px
+    border-bottom: 1px solid $border-line-light-color
+    &:last-child
+      border-bottom: none
+
+  .schedule__price,
+  .schedule__available,
+  .schedule__status
+    flex: 1
+
+  .schedule__data
+    width: 150px
+    padding-left: 20px
+
+  .schedule__row
+    .schedule__data,
+    .schedule__price,
+    .schedule__available
+      font-size: 13px
+      font-weight: 600
+
+    .price__old
+      font-size: 10px
+      text-decoration: line-through
+      color: $red-color
+      margin-top: -14px
+
+    .price_current
+      span
+        margin-left: 3px
+        font-size: 12px
+
+  .schedule__available
+    span
+      margin-left: 3px
+      font-size: 12px
+      color: $font-grey-color
+      &::before
+        content: '/ '
+
+  .schedule__status
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .guarantied,
+  .searching
+    display: block
+    &::before
+      display: inline-block
+      content: ''
+    &.guarantied
+      width: 17px
+      height: 22px
+      background: url("../../images/icons/icon_status-guaranteed.svg") no-repeat
+      background-size: contain
+      //&::after
+        content: "гарантирован"
+    &.searching
+      width: 20px
+      height: 23px
+      background: url("../../images/icons/icon_status-searching.svg") no-repeat
+      background-size: contain
+      //&::after
+        content: "набор группы"
+
+  .schedule__button
+    width: 150px
+
+  .schedule__details
+    padding: 1px 20px 20px 40px
+    background-color: #ffffff
+    margin-bottom: 1px
+    border-bottom: 1px solid $border-line-light-color
+    h3
+      margin-top: 20px
+      text-transform: uppercase
+      font-weight: 700
+      font-size: 16px
+    h4
+      font-size: 15px
+      font-weight: 600
+      margin-top: 5px
+      margin-bottom: 2px
+    button
+      width: 150px
+      line-height: 30px
+      margin-top: 20px
+      margin-bottom: 15px
+      span
+        font-size: 14px
+
+    //button
+      display: flex
+      margin-left: auto
+      justify-content: center
+      margin-top: 10px
+  .extra__total
+    font-size: 14px
+    font-weight: 700
+    margin-left: 8px
+    span
+      margin-left: 2px
+      font-weight: 600
+      font-size: 12px
+
+  .details__title
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.4em
+    span
+      font-size: 13px
+      font-weight: 600
+      margin-left: 4px
+      margin-right: 4px
+
+  .details__text
+    font-weight: 300
+    font-size: 13px
+    line-height: 1.3em
+
+  .details__extra
+    display: flex
+    align-items: center
+    font-weight: 300
+    font-size: 13px
+    line-height: 1.3em
+    .extra__title
+      margin-right: 5px
+      &::after
+        content: ":"
+    .extra__sum
+      margin-left: 5px
+      font-size: 12px
+      span
+        margin-left: 2px
+        font-size: 10px
+        font-weight: 400
+
+  .reserve
+    background-color: #ffffff
+    min-width: 300px
+    max-width: 850px
+    height: 150px
+    margin-top: 80px
+    h4
+      color: $font-light-grey-color
+      font-weight: 300
+
+//==== C O N T A C T S ===============================================
+#tour-contacts
+  display: none
+  @include tour-padding
+  margin-bottom: 100px
+  //padding: 0 2%
+  //margin-top: 30px
+  //margin-bottom: 40px
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    //margin-top: 35px
+    //margin-bottom: 60px
+  //@media only screen and (min-width: $tablet-content-width)
+    padding: 0 20px
+  //@media only screen and (min-width: 1000px)
+    padding: 0 35px
+
+  .contacts__box
+    min-width: 300px
+    max-width: 850px
+    margin-top: 20px
+    //padding: 22px 20px 30px 22px
+    //border: 1px solid $border-line-light-color
+    //border-radius: 8px
+    //background-color: #ffffff
+    //@media only screen and (min-width: $mobile-content-width)
+      padding: 40px 40px 40px 45px
+
+    .group
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+
+    .contacts__image
+      position: relative
+      //margin-left: 5px
+      //margin-right: 15px
+      //margin-bottom: 10px
+      width: 125px
+      padding-left: 5px
+      padding-right: 20px
+
+      .tour-operator
+        position: absolute
+        z-index: 3
+        width: 30px
+        width: 40px
+        right: -6px
+        top: -5px
+      .avatar
+        width: 100%
+        border-radius: 50px
+
+    .contacts__info
+      //margin-bottom: 10px
+
+    .contacts__type
+      font-weight: 700
+      letter-spacing: 0.5px
+      font-size: 11px
+      text-transform: uppercase
+      //color: $font-grey-color
+
+    .contacts__name
+      color: $main-font-color
+      font-size: 19px
+      font-weight: 700
+      width: 280px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      margin-top: 3px
+      margin-bottom: 6px
+      @media only screen and (min-width: $mobile-content-width)
+        width: 370px
+      @media only screen and (min-width: $tablet-average-content-width)
+        width: unset
+        //font-size: 23px
+
+    .contacts__stats
+      display: flex
+      align-items: center
+      margin-bottom: 3px
+      text-transform: uppercase
+      font-weight: 400
+      font-size: 10px
+      color: $font-grey-color
+      span
+        font-size: 12px
+        font-weight: 600
+        padding-left: 8px
+
+    .contacts__rating
+      display: flex
+      align-items: center
+      text-transform: uppercase
+      font-weight: 400
+      font-size: 10px
+      color: $font-grey-color
+      span:first-child
+        padding-left: 11px
+
+    .star-estimation::before,
+    .star-estimation-empty::before,
+    .star-estimation-half::before
+      width: 15px
+      height: 15px
+      background-size: 13px
+      background-position-y: 2px
+      margin-right: 2px
+
+    .contacts__about
+      margin-top: 15px
+      p
+        font-size: 15px
+        font-weight: 400
+        margin: 6px 0
+        line-height: 1.35em
+
+    .contacts__details
+      padding-left: 3px
+      margin-top: 10px
+      span::before
+        opacity: 0.8
+        padding: 4px
+        margin: 10px 25px
+        margin-left: 0
+        transition: all 0.2s ease-in-out
+      span:hover::before
+        opacity: 1
+        transform: scale(1.2)
+
+#show-contacts
+  max-width: 200px
+  margin-top: 20px
+  margin-bottom: 30px
+  //margin-left: auto
+  margin-right: auto
+  span
+    white-space: nowrap
+
+#show-all-tours
+  margin-top: 20px
+  .link
+    display: inline-block
+    white-space: nowrap
+
+//==== A D D I T I O N A L ===============================================
+#tour-additional
+  display: none
+  @include tour-padding
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    //margin-top: 35px
+    //margin-bottom: 60px
+  //@media only screen and (min-width: $tablet-content-width)
+    padding: 0 20px
+  //@media only screen and (min-width: 1000px)
+    padding: 0 35px
+
+  .reserve
+    background-color: #ffffff
+    min-width: 300px
+    max-width: 850px
+    height: 100px
+    h4
+      color: $font-light-grey-color
+      font-weight: 300
+
+  .additional__box
+    min-width: 300px
+    max-width: 850px
+    margin-top: 60px
+    margin-bottom: 60px
+    //background-color: #FFFFFF
+    //border: 1px solid $border-line-light-color
+    //border-radius: 8px
+    //padding: 25px 20px 35px 22px
+    //@media only screen and (min-width: $tablet-average-content-width)
+      padding: 30px 40px 40px 40px
+
+    .program__heading
+      color: $main-font-color
+      margin-bottom: 15px
+
+    h5,
+    h6
+      line-height: 1.4em
+      margin-top: 12px
+    h5
+      color: $font-grey-color
+      font-size: 17px
+      font-weight: 700
+    h6
+      color: $main-blue-color
+      font-size: 15px
+      font-weight: 600
+
+    p,
+    ul,
+    ol,
+    li
+      font-weight: 400
+      margin: 4px 0
+      line-height: 1.3em
+
+    li
+      list-style-type: disc
+      margin-left: 20px
+
+    blockquote
+      font-weight: 400
+      margin: 16px 0
+      margin-left: 5px
+      padding: 20px 25px
+      line-height: 1.5em
+      //font-style: italic
+      font-size: 0.92em
+      color: $dark-blue-color
+      border-left: 2px solid $light-blue-color
+      background-color: lighten($light-blue-color, 6%)
+
+
+//===== E D I T   B U T T O N ========================================
+#program-edit-bar
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    margin-bottom: 20px
+    margin-left: 10px
+    .btn-orange
+      border-radius: 0

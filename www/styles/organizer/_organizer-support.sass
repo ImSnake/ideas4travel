@@ -1,0 +1,164 @@
+@charset "UTF-8"
+
+.organizer__knowledge-base
+  height: 100%
+  padding: 15px 10px 50px 10px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 25px 20px 70px 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 25px 25px 70px 25px
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 25px 10px 70px 10px
+
+  .back-n-wrap
+    margin-bottom: 25px
+    margin-left: -5px
+
+  h1
+    font-size: 24px
+    color: $main-blue-color
+    margin-bottom: 12px
+    line-height: 35px
+
+  .article
+    margin-bottom: 35px
+
+  .group
+    display: flex
+    height: 100%
+  .column
+    flex: 1
+    margin-right: 15px
+    padding-right: 15px
+    border-right: 1px solid $border-line-pr-color
+    max-width: 220px
+    height: 97%
+    //padding-top: 5px
+    @media only screen and (min-width: $tablet-average-content-width)
+      margin-right: 25px
+    @media only screen and (min-width: $desktop-content-width)
+      margin-right: 35px
+
+    h3
+      font-size: 16px
+      margin-bottom: 3px
+      font-weight: 600
+
+    ul
+      margin-bottom: 15px
+    li
+      cursor: pointer
+      line-height: 1.4em
+      font-size: 14px
+      font-weight: 300
+      &:hover
+        color: $main-blue-color
+        text-decoration: underline
+
+      .link
+        display: inline-block
+        font-size: 14px
+        font-weight: 300
+        margin-bottom: 8px
+        line-height: 1.1em
+
+  .content
+    flex: 4.5
+    padding-top: 5px
+
+    h2
+      font-size: 21px
+      margin-top: 25px
+      margin-bottom: 10px
+      font-weight: 600
+      &:first-child
+        margin-top: 0
+
+    h3
+      color: $main-blue-color
+      font-size: 17px
+      margin-top: 15px
+      margin-bottom: 3px
+
+    h4
+      font-size: 16px
+      font-weight: 600
+
+    p
+      margin: 0
+      line-height: 1.4em
+      font-weight: 300
+
+    .red
+      margin-top: 15px
+
+    ol
+      margin: 0
+      padding-inline-start: 20px
+      li
+        margin: 18px 0
+        &:first-child
+          margin-top: 0
+      p
+        margin-left: 3px
+
+    ol[type='i'],
+    ol[type='a']
+      margin-left: 10px
+      li
+        margin: 6px 0
+
+    .link
+      font-size: 15px
+      font-weight: 300
+      letter-spacing: 0.5px
+
+#profile-info
+  p
+    margin-left: 20px
+  li
+    margin-left: 20px
+    p
+      margin-left: 5px
+
+.program__comfort,
+.program__dynamics,
+.program__meal
+  &::before
+    width: 17px
+    height: 17px
+
+.img_search
+  &::before
+    content: ""
+    display: inline-block
+    width: 17px
+    height: 20px
+    background: url("../../images/icons/icon_search.svg") no-repeat
+    background-size: contain
+    margin-right: 10px
+    margin-bottom: -5px
+
+.img_accommodation
+  &::before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/icon_accommodation.svg") no-repeat
+    margin-bottom: -4px
+    margin-top: 6px
+    width: 21px
+    height: 14px
+    background-size: contain
+
+.img_map-and-route
+  &::before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/icon_route-stats.svg") no-repeat
+    margin-bottom: -6px
+    width: 24px
+    height: 26px
+    background-size: contain
+    margin-right: 6px

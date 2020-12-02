@@ -1,0 +1,142 @@
+/* RESOLUTION SETTINGS START*/
+/* FONTS =========================================*/
+/* COLORS =====================================*/
+/*====================*/
+/*====================*/
+/*====================*/
+/* css =========================================*/
+/* SHADOWS =========================================*/
+.back-n-wrap {
+  display: block;
+  padding-top: 15px;
+  padding-left: 5px;
+}
+.back-n-wrap h2 {
+  font-weight: 800;
+  font-size: 23px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.moderation {
+  padding: 15px 10px 50px 10px;
+}
+@media only screen and (min-width: 479px) {
+  .moderation {
+    padding: 15px 15px 60px 15px;
+  }
+}
+@media only screen and (min-width: 630px) {
+  .moderation {
+    padding: 35px 20px 70px 20px;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .moderation {
+    padding: 40px 30px 70px 30px;
+  }
+}
+@media only screen and (min-width: 1320px) {
+  .moderation {
+    padding: 40px 10px 70px 10px;
+  }
+}
+.moderation .table__title {
+  padding-bottom: 5px;
+  padding-left: 3px;
+  font-size: 23px;
+}
+.moderation .table {
+  border: 1px solid #ebeef2;
+  background-color: #ffffff;
+  margin-bottom: 40px;
+}
+.moderation .table__heading div,
+.moderation .table__row div {
+  padding: 8px 12px;
+  border-right: 1px solid #ebeef2;
+}
+.moderation .table__heading div:last-child,
+.moderation .table__row div:last-child {
+  border: none;
+}
+.moderation .table__heading {
+  display: flex;
+  align-items: baseline;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid #ebeef2;
+}
+.moderation .table__row {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid #ebeef2;
+}
+.moderation .table__row:last-child {
+  border: none;
+}
+.moderation .table__name {
+  flex: 2.5;
+}
+.moderation .table__data {
+  flex: 1;
+}
+.moderation .table__id {
+  flex: 0.5;
+  text-align: center;
+}
+
+#program-moderation {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0 13px;
+}
+#program-moderation h4 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+#program-moderation .moderation__history {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#program-moderation .moderation__history .group {
+  display: flex;
+  align-items: baseline;
+  min-height: 25px;
+  border: 1px solid #dedddd;
+  border-bottom: none;
+  background-color: #EFEFEF;
+}
+#program-moderation .moderation__history .group:last-child {
+  border-bottom: 1px solid #dedddd;
+}
+#program-moderation .moderation__history .history__data {
+  padding: 5px 12px;
+  font-weight: 400;
+  font-size: 12px;
+}
+#program-moderation .moderation__history .history__comment {
+  padding: 0 12px;
+  border-left: 1px solid #dedddd;
+}
+#program-moderation .moderation__history .history__comment p {
+  margin: 6px 0;
+}
+#program-moderation label {
+  display: block;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fd5571;
+}
+#program-moderation textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #dedddd;
+}
+#program-moderation button {
+  min-width: 140px;
+}

@@ -1,13 +1,15 @@
+@charset "UTF-8"
+
 html,
 body
   height: 100%
 
 // MAIN SETTINGS FOR FONTS AND CONTENT SIZE
 body
-  font-family: 'Montserrat', sans-serif
-  font-weight: 400
+  font-family: $f_nunito
+  font-weight: 300
+  font-size: 15px
   color: $main-font-color
-  font-size: 14px
   display: flex
   flex-direction: column
 
@@ -41,73 +43,85 @@ h1, h2, h3, h4, h5, h6
 .center
   flex: 1
   margin-top: 54px
+  background-color: $bkg-grey-color
   @media only screen and (min-width: $tablet-average-content-width)
     margin-top: 0
   @media only screen and (min-width: $desktop-content-width)
     width: 100%
 
 
+// стилизация списков для autocomplete
+.ui-autocomplete
+  max-height: 120px
+  max-width: 440px
+  overflow-y: auto
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete
+  height: 100px
+
 // изменить под макет
 
+
+// стилизация полей формы
+input,
+textarea,
+select
+  background-color: #ffffff
+  padding: 7px 14px
+  border: 1px solid $border-line-light-color
+  border-radius: 8px
+  font-family: $f_nunito
+  color: $main-font-color
+  font-size: 15px
+  font-weight: 400
+  min-height: 32px
+  height: 100%
+  vertical-align: middle
+  transition: all 0.2s ease-in-out
+  &select
+    cursor: pointer
+
+input[type="email"]
+  text-transform: lowercase
+
 // стилизация placeholder
+// !!! при замене стилей не забывать про классы .unfilled , .default
 textarea::placeholder,
 input::placeholder,
 input::-webkit-input-placeholder,
-select:required:invalid
-  word-spacing: 1px
-  letter-spacing: 0.6px
-  color: $font-grey-color
+select:required:invalid,
+option:disabled
+  color: $font-light-grey-color
   font-weight: 300
-  //font-style: italic
-  font-size: 12px
-  height: 100%
+  font-size: 14px
+  //letter-spacing: 0.2px
 
-// стилизация placeholder для полей ввода даты
-input[type="date"]::before
-  content: attr(data-placeholder)
-  width: 100%
-  word-spacing: 1px
-  letter-spacing: 0.7px
-  color: $font-grey-color
-  font-style: italic
-  font-size: 12px
-/* hide our custom/fake placeholder text when in focus to show the default
- * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
- */
-input[type="date"]:focus::before,
-input[type="date"]:valid::before
-  display: none
-
-input,
-textarea
-  padding: 8px 15px
-  border: 1px solid $border-line-color
-  border-radius: 12px
+input:focus,
+select:focus,
+textarea:focus
   color: $main-font-color
+  font-weight: 400
+  font-size: 15px
+  @include form-focus-inset
+
+option[value=""][disabled]
+  //display: none
+
+option
+  color: $main-font-color
+  font-size: 15px
+  font-weight: 400
 
 textarea
   resize: vertical
 
-select
-  border: 1px solid $border-line-color
-  border-radius: 10px
-  color: $main-font-color
-  padding: 8px 16px
-  cursor: pointer
-
-option[value=""][disabled]
-  display: none
-
-option:disabled
-  color: $font-grey-color
-  font-size: 13px
-
-option
-  color: $main-font-color
-  font-size: 14px
-
 // не показывать стрелки по умолчанию
-select
+select,
+input[type="date"]
   margin: 0
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
@@ -115,23 +129,33 @@ select
   -webkit-appearance: none
   -moz-appearance: none
 
-.select-cover
-  position: relative
+// стилизация placeholder для полей ввода даты
+input[type="date"]
+  background-color: #ffffff
+  padding: 6px 2px 6px 12px
   &::before
-    position: absolute
-    content: "\25BC"
-    font-size: 8px
-    line-height: 35px
-    color: #b3b3b3
-    right: 17px
+    content: attr(data-placeholder)
+    width: 100%
+    color: $font-light-grey-color
+    font-weight: 300
+    font-size: 14px
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before
+  display: none
 
-//созадть
-.select-cover.opened
-  &::before
-    position: absolute
-    content: "\25B2"
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+input[type="number"]
+  -moz-appearance: textfield
 
-
+input[type="file"],
+input[type="url"]
+  border: none
 
 // стили для чекбоксов и радио-кнопок
 input[type="checkbox"]:checked,
@@ -145,7 +169,7 @@ input[type="checkbox"]:not(:checked) + label
   display: inline-block
   position: relative
   cursor: pointer
-  padding-left: 30px
+  padding-left: 27px
   min-height: 20px
   min-width: 20px
   span
@@ -159,22 +183,28 @@ input[type="checkbox"]:not(:checked) + label:before
   position: absolute
   width: 20px
   height: 20px
-  border: 1px solid $border-line-color
+  border-radius: 5px
   background-color: #ffffff
-  margin-left: -30px
+  margin-left: -27px
+  border: 1px solid $border-line-pr-color
+  -webkit-box-shadow: 0 0 8px -1px $border-line-color inset
+  -moz-box-shadow: 0 0 8px -1px $border-line-color inset
+  box-shadow: 0 0 8px -1px $border-line-color inset
 
 input[type="checkbox"]:disabled + label
-  color: $font-grey-color
+  color: $font-light-grey-color
+  cursor: default
 
 input[type="checkbox"]:disabled + label:before
   background-color: $bkg-grey-color
+  border: 1px solid $border-line-color
 
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after
   left: 5px
-  top: 5px
-  width: 10px
-  height: 5px
+  top: 6px
+  width: 9px
+  height: 4px
   border-radius: 1px
   border-left: 4px solid $main-blue-color
   border-bottom: 4px solid $main-blue-color
@@ -190,7 +220,7 @@ input[type="radio"]:not(:checked) + label
   align-items: center
   position: relative
   cursor: pointer
-  padding-left: 30px
+  padding-left: 27px
   height: 100%
   span
     display: flex
@@ -204,10 +234,13 @@ input[type="radio"]:not(:checked) + label:before
   position: absolute
   width: 20px
   height: 20px
-  border: 1px solid $border-line-color
   border-radius: 100%
   background-color: #ffffff
-  margin-left: -30px
+  margin-left: -27px
+  border: 1px solid $border-line-pr-color
+  -webkit-box-shadow: 0 0 8px -1px $border-line-color inset
+  -moz-box-shadow: 0 0 8px -1px $border-line-color inset
+  box-shadow: 0 0 8px -1px $border-line-color inset
 
 input[type="radio"]:checked + label:after,
 input[type="radio"]:not(:checked) + label:after
@@ -224,10 +257,10 @@ input[type="radio"]:checked + label:after,
 input[type="radio"]:not(:checked) + label:after
   content: ""
   position: absolute
-  -webkit-transition: all 0.2s ease
-  -moz-transition: all 0.2s ease
-  -o-transition: all 0.2s ease
-  transition: all 0.2s ease
+  -webkit-transition: all 0.3s ease-in-out
+  -moz-transition: all 0.3s ease-in-out
+  -o-transition: all 0.3s ease-in-out
+  transition: all 0.3s ease-in-out
 
 input[type="checkbox"]:not(:checked) + label:after,
 input[type="radio"]:not(:checked) + label:after
@@ -236,9 +269,3 @@ input[type="radio"]:not(:checked) + label:after
 input[type="checkbox"]:checked + label:after,
 input[type="radio"]:checked + label:after
   opacity: 1
-
-input[type="radio"]:not(:checked) + label
-  color: $font-grey-color
-
-input[type="radio"]:checked + label
-  color: $main-font-color

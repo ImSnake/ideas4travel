@@ -2,46 +2,62 @@
 
 namespace app\Models;
 
-use app\base\App;
 use app\base\Model;
 
+/**
+ * Class User
+ * @package app\Models
+ */
 class User extends Model
-
 {
+    // Статусы пользователей.
     const STATUS_NOT_CONFIRMED = 0;
     const STATUS_CONFIRMED = 1;
 
-    const TYPE_NOT_DEFINED = 0;
-    const TYPE_COMPANY = 1;
-    const TYPE_PERSON = 2;
+    // Роли пользователей.
+    const ROLE_USER = 0;
+    const ROLE_MODERATOR = 1;
 
     public $id;
+    public $partner_id;
     public $email;
-    public $password;
-    public $password_repeat;
-    public $status;
-    public $type;
+    public $password_hash;
     public $first_name;
     public $last_name;
     public $phone;
+    public $status;
+    public $role;
+    public $created_at;
+    public $updated_at;
+    public $created_ip;
     public $confirm_offer;
     public $confirm_agreement;
-    public $created_at;
-    public $created_ip;
     public $verification_token;
 
-    private $db;
+    // Массив полей таблицы.
+    protected $arrColumnsInTable = [
+        'id',
+        'partner_id',
+        'email',
+        'password_hash',
+        'first_name',
+        'last_name',
+        'phone',
+        'status',
+        'role',
+        'created_at',
+        'updated_at',
+        'created_ip',
+        'confirm_offer',
+        'confirm_agreement',
+        'verification_token',
+    ];
+
+    // Название первичного ключа.
+    protected $primaryKey = 'id';
 
     /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->db = App::get()->db;
-    }
-
-    /**
-     * Метод возрващает название таблицы с которой работает форма.
+     * Метод возрващает название таблицы.
      * @return string
      */
     public static function tableName()
@@ -49,11 +65,12 @@ class User extends Model
         return 'p_users';
     }
 
-    public function getOne($id)
+    /**
+     * Получаем название класса.
+     * @return string
+     */
+    public function getClass()
     {
-        $table = static::tableName();
-        $sql = "select * from " . $table . " where id = :id";
-        $std = $this->db->queryObject($sql, $this->getEntityClass(), [':id' => $id]);
-        return $std;
+        return self::class;
     }
 }

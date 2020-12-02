@@ -1,5 +1,4 @@
-
-/* RESOLUTION SETTINGS START */
+/* RESOLUTION SETTINGS START*/
 
 $desktop-content-width: 1280px
 
@@ -11,27 +10,109 @@ $mobile-content-width: 479px
 
 $min-site-width: 320px
 
-/* RESOLUTION SETTINGS FINISH */
 
-/* COLORS */
+/* FONTS =========================================*/
 
-$main-font-color: #383838
+$f_nunito: "Nunito", sans-serif
 
-$font-dark-grey-color: #666666
-
-$font-grey-color: #b3b3b3
-
-$border-line-color: #e6e6e6
-
-$bkg-grey-color: #FAFAFA
-
-$bkg-light-grey-color: #FCFCFC
-
-$main-blue-color: #00b8e3
+/* COLORS =====================================*/
 
 $orange-color: #ff7017
 
+$orange-tag-color: #FF9F40
+
 $red-color: #fd5571
 
-$green-color: #00df8d
+$green-color: #1ed457
 
+//!!! для стилей в тег цитата
+$dark-blue-color: #007894
+
+$main-blue-color: #00b8e3
+
+$blue-tag-color: #3CCFF1
+
+$light-blue-color: #D3F5FD
+
+/*====================*/
+
+$main-font-color: #2c3e50
+
+$font-grey-color: #818d99
+
+$font-light-grey-color: #c1cbd5
+
+$icon-grey-color: #99a3ac
+
+/*====================*/
+//!!! для чекбоксов и радио кнопок
+$border-line-pr-color: #dedddd
+
+$border-line-color: #c7d0d9
+
+$border-line-light-color: #ebeef2
+
+/*====================*/
+
+$bkg-deep-grey-color: #EFEFEF
+
+$bkg-dark-grey-color: #f5f5f5
+
+$bkg-mid-grey-color: #f6f6f6
+
+$bkg-grey-color: #f8f8f8
+
+$bkg-light-grey-color: #fbfbfb
+
+/* css =========================================*/
+
+@mixin content-padding
+  padding: 15px 10px 50px 10px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 35px 20px 70px 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 40px 30px 70px 30px
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 40px 10px 70px 10px
+
+@mixin unselectable
+  -moz-user-select: none //Mozilla Firefox
+  -webkit-user-select: none //Google Chrome, Opera Next, Safari
+
+/* SHADOWS =========================================*/
+
+@mixin box-deep-shadow
+  border: 0.5px solid $border-line-light-color
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.15)
+  -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.15)
+
+
+@mixin box-light-shadow
+  border-top: 0.5px solid $border-line-light-color
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.1)
+
+@mixin inner-shadow-blue
+  border: unset
+  -webkit-box-shadow: inset 0 0 7px 1px $main-blue-color
+  -moz-box-shadow: inset 0 0 7px 1px $main-blue-color
+  box-shadow: inset 0 0 7px 1px $main-blue-color
+
+@mixin form-focus-inset
+  border: 1px solid $light-blue-color
+  box-shadow: 0 0 4px 1px $light-blue-color inset
+  -webkit-box-shadow: 0 0 4px 1px $light-blue-color inset
+  -moz-box-shadow: 0 0 4px 1px $light-blue-color inset
+
+@mixin form-focus-red
+  box-shadow: 0 0 5px 1px $red-color inset
+  -webkit-box-shadow: 0 0 5px 1px $red-color inset
+  -moz-box-shadow: 0 0 5px 1px $red-color inset
+
+@mixin img-light-shadow
+  -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.15))
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.15))

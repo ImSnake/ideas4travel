@@ -1,13 +1,18 @@
 /* RESOLUTION SETTINGS START */
-/* RESOLUTION SETTINGS FINISH */
-/* COLORS */
+/* FONTS ========================================= */
+/* COLORS ===================================== */
+/*==================== */
+/*==================== */
+/*==================== */
+/* css ========================================= */
+/* SHADOWS ========================================= */
 /*INDEX - NAVIGATION START */
 .index-nav {
   display: none; }
   @media (min-width: 630px) {
     .index-nav {
       display: block;
-      background-color: #FCFCFC; }
+      background-color: #fbfbfb; }
       .index-nav .index-nav__menu {
         display: flex;
         justify-content: center;

@@ -4,14 +4,10 @@
     $(document).ready(
         function () {
 
-            // при ошибке валидации подсвечивает красной тенью поле ввода с ошибкой
-            $.each($('.form-comment'), function () {
-                if ($(this).hasClass('red')) {
-                    $(this).siblings('input').addClass('input_inner_shadow');
-                }
-            });
+            $("#phone").inputmask({"mask": "+7 (999) 999-99-99"}); // "+9[9] (999) 999-99-99"
+
+            $("#add-password, #repeat-password").inputmask({ regex: "[^а-яА-ЯЁё]*" }); // исклоючить кирилицу при создании пароля
 
         });
-
 })
 (jQuery);

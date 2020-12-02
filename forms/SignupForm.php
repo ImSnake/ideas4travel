@@ -2,22 +2,15 @@
 
 namespace app\forms;
 
-use app\base\App;
-use app\base\Model;
+use app\base\FormModel;
+use app\Models\User;
 
 /**
  * Class SignupForm
  * @package app\forms
  */
-class SignupForm extends Model
+class SignupForm extends FormModel
 {
-    const STATUS_NOT_CONFIRMED = 0;
-    const STATUS_CONFIRMED = 1;
-
-    const TYPE_NOT_DEFINED = 0;
-    const TYPE_COMPANY = 1;
-    const TYPE_PERSON = 2;
-
     public $id;
     public $email;
     public $password;
@@ -27,23 +20,12 @@ class SignupForm extends Model
     public $first_name;
     public $last_name;
     public $phone;
-    public $confirm_offer;
     public $confirm_agreement;
     public $created_at;
     public $created_ip;
     public $verification_token;
 
-    private $db;
-
     public $attrErrors = 'signup';
-
-    /**
-     * SignupForm constructor.
-     */
-    public function __construct()
-    {
-        $this->db = App::get()->db;
-    }
 
     /**
      * Метод возрващает название таблицы с которой работает форма.
@@ -69,7 +51,7 @@ class SignupForm extends Model
                     'phone',
                     'password',
                     'password_repeat',
-                    'confirm_offer',
+//                    'confirm_offer',
                     'confirm_agreement'
                 ],
                 'required'
@@ -122,7 +104,7 @@ class SignupForm extends Model
 
         // Если значение аргумента уже существует, то выводим ошибку.
         if ($result = $this->db->queryOne($sql, [':verification_token' => $token])) {
-            $sql = "UPDATE " . DB_P_USERS . " SET status = ".self::STATUS_CONFIRMED.", verification_token = '' WHERE id = {$result['id']}";
+            $sql = "UPDATE " . DB_P_USERS . " SET status = " . User::STATUS_CONFIRMED . ", verification_token = '' WHERE id = {$result['id']}";
             $this->db->execute($sql);
 
             return true;

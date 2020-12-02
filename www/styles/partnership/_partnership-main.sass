@@ -1,11 +1,51 @@
+@charset "UTF-8"
+
 .partnership
-  margin: 40px 20px
+  padding: 0 3%
+  margin-top: 20px
+  margin-bottom: 70px
   display: flex
   flex-direction: column
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 0 20px
+    margin-bottom: 70px
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 0
+
+  .block-title
+    margin-bottom: 5px
+
+  h4
+    font-size: 16px
+    //letter-spacing: 0.5px
+    margin-top: 20px
+    padding-left: 5px
+    font-weight: 700
+    &::before
+      font-size: 12px
+      content: " \2022\ "
+
+  p
+    //font-family: $f_montserrat
+    //font-weight: 400
+    //font-size: 13px
+    line-height: 150%
+    padding-left: 15px
+    margin: 10px 0
 
   .btn-blue
-    align-self: flex-end
+    width: auto
+    align-self: center
+    margin-top: 50px
+    @media only screen and (min-width: $tablet-average-content-width)
+      margin-top: 70px
+    @media only screen and (min-width: $tablet-content-width)
+      margin-top: 100px
 
-
-
-
+  .link
+    //font-family: $f_montserrat
+    //font-weight: 400
+    //font-size: 13px
+    line-height: 150%
+    margin-top: 20px
+    text-align: center

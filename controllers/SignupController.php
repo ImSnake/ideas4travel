@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\base\App;
 use app\forms\SignupForm;
+use app\services\Mailer;
 
 class SignupController extends Controller
 {
@@ -13,7 +14,7 @@ class SignupController extends Controller
     public function actionIndex()
     {
         // Если пользователь авторизован перенаправляем его на главную страницу.
-        if ($this->auth->getUserId()) {
+        if (isset($this->user)) {
             $this->go();
         }
 
@@ -28,7 +29,6 @@ class SignupController extends Controller
             $form->first_name = $_POST['signup']['first_name'];
             $form->last_name = $_POST['signup']['last_name'];
             $form->phone = $_POST['signup']['phone'];
-            $form->confirm_offer = $_POST['signup']['confirm_offer'];
             $form->confirm_agreement = $_POST['signup']['confirm_agreement'];
             $form->created_ip = $_SERVER['REMOTE_ADDR'];
 
@@ -45,9 +45,12 @@ class SignupController extends Controller
 					<h2>Здравствуйте, " . $form->first_name . " " . $form->last_name . "</h2>
 					<p>Пожалуйста, подтвердите вашу регистрацию на сайте ideas4travel.ru</p>
 					<p><a href=\"https://" . $_SERVER['HTTP_HOST'] . "/signup/" . $form->verification_token . "\">Подтвердите регистрацию</a></p>
-					<p>Или скопируйте код в адресную строку браузера: https://" . $_SERVER['HTTP_HOST'] . "/signup/" . $form->verification_token . "\"</p>
+					<p>Или скопируйте код в адресную строку браузера: https://" . $_SERVER['HTTP_HOST'] . "/signup/" . $form->verification_token . "</p>
+					<p>Email при регистрации: " . $form->email . "</p>
 					";
-                $this->myMail($form->email, '', EMAIL_SUPPORT, $subject, $message);
+//                $this->myMail($form->email, '', EMAIL_SUPPORT, $subject, $message);
+//                $this->myMail(EMAIL_SUPPORT, '', EMAIL_SUPPORT, $subject, $message);
+                Mailer::mail(EMAIL_SUPPORT, $subject, $message);
                 // перегружаем страницу для предотвращения повторной отправки формы
 //                $this->go('//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 
@@ -59,8 +62,6 @@ class SignupController extends Controller
         } else {
             echo $this->render('signup/signup-form', ['form' => $form]);
         }
-
-
     }
 
     /**
@@ -69,7 +70,7 @@ class SignupController extends Controller
     public function actionVerification()
     {
         // Если пользователь авторизован перенаправляем его на главную страницу.
-        if ($this->auth->getUserId()) {
+        if (isset($this->user)) {
             $this->go();
         }
 

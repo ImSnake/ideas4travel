@@ -1,33 +1,271 @@
-.organizer__programs
-  margin-top: 2%
-  margin-bottom: 40px
+@charset "UTF-8"
 
-  @media only screen and (min-width: $tablet-average-content-width)
-    margin-bottom: 100px
+//.center
+  background-color: $bkg-grey-color
+
+.organizer__programs
+  @include content-padding
 
 .programs__block
   display: flex
   flex-wrap: wrap
-  justify-content: space-around
+  justify-content: center
+  //margin-top: 10px
+  //margin-bottom: 20px
+  @media only screen and (min-width: $tablet-average-content-width)
+    //margin-left: -10px
+    //margin-right: -12px
+    justify-content: flex-start
+    //margin-bottom: 30px
+
+.no-programs
+  font-weight: 600
+  padding: 0 10px
+  color: $main-blue-color
+  font-size: 21px
+  text-align: center
+  margin: 0 auto
+  margin-top: 2%
+  margin-bottom: 10%
+  p
+    font-weight: 300
+    font-size: 15px
+    color: $font-grey-color
+  .link
+    font-weight: 300
+
+.program-box
+  //margin-left: 1%
+  //margin-right: 1%
   margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-left: 0
+    margin-right: 1%
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    margin-right: 15px
+  //@media only screen and (min-width: $desktop-content-width + 40px)
+    margin-right: 12px
+    margin-left: 12px
+  .edit-menu
+    position: absolute
+    width: 70px
+    height: 67px
+    right: 0
+    top: -2px
+    z-index: 3
+    background-color: rgba(252, 252, 252, 0.9)
+    border-top-right-radius: 10px
+    border-bottom-left-radius: 12px
+    cursor: pointer
+    &::before
+      display: block
+      text-align: center
+      margin-top: 12px
+      font-size: 30px
+      color: $main-font-color
+      opacity: 0.9
+    &:hover
+      background-color: rgba(252, 252, 252, 0.98)
+    &:hover::before
+      color: $main-blue-color
+    .menu-list
+      top: 0
+      right: 0
 
-.edit-menu
-  position: absolute
-  width: 66px
-  height: 60px
-  right: 0
-  top: 0
-  z-index: 3
-  background-color: rgba(252, 252, 252, 0.8)
-  border-top-right-radius: 13px
-  border-bottom-left-radius: 15px
-  cursor: pointer
-  &::before
+  //.close-pop-up
+    &::before
+      z-index: 1
+      top: 12px
+      right: 14px
+      font-size: 17px
+      opacity: 1
+      color: $font-light-grey-color
+    &:hover::before
+      color: $main-blue-color
+
+.programs__bottom
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-top: 50px
+  margin-left: -5%
+  div
+    margin-left: 5%
+    margin-bottom: 20px
+  .icon-doc-new
+    font-size: 13px
+  @media only screen and (min-width: $tablet-average-content-width)
+    //padding-right: 30px
+    justify-content: flex-end
+
+// поп-ап для создания новой программы
+.new-create
+  position: relative
+  min-width: 300px
+  max-width: 550px
+  margin-top: 25%
+  margin-left: 2%
+  margin-right: 2%
+  background-color: $bkg-grey-color
+  border-radius: 12px
+  padding: 30px 25px 35px 25px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 20px 35px 35px 35px
+    margin-top: 20%
+    margin-left: 20px
+    margin-right: 20px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-top: 10%
+    max-width: 630px
+    padding: 20px 45px 35px 45px
+    margin-left: auto
+    margin-right: auto
+
+  .block-title
+    font-size: 21px
+    span
+      font-family: $f_nunito
+      font-size: 17px
+      font-weight: 300
+
+  .info-field__box
+    margin-top: 20px
+    margin-bottom: 30px
+    //padding: 0 5px
+
+  .info-field__head
+    padding-left: 8px
+    font-size: 14px
+    font-weight: 300
+    color: $font-grey-color
+    text-transform: unset
+    padding-bottom: 3px
+
+  .info-field__content
+    //padding: 0 3px
+
+  .form-comment
+    padding-left: 12px
+
+  input
+    width: 100%
+
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto
+
+//======================================
+// поп-ап для создания нового тура
+#add-new-date
+  .new-tour-list
+    position: relative
+    min-width: 300px
+    max-width: 550px
+    margin-top: 15%
+    margin-left: 2%
+    margin-right: 2%
+    background-color: $bkg-grey-color
+    border-radius: 12px
+    padding: 20px
+    h2
+      font-size: 21px
+    @media only screen and (min-width: $mobile-content-width)
+      padding: 25px 40px
+      margin-left: 20px
+      margin-right: 20px
+      h2
+        font-size: 23px
+    @media only screen and (min-width: $tablet-average-content-width)
+      margin-left: auto
+      margin-right: auto
+    //@media only screen and (min-width: $tablet-content-width)
+    //padding: 25px 30px 30px 30px
+  .group
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    margin-top: 15px
+    padding: 0 3px
+    height: unset
+    border-bottom: none
+    @media only screen and (min-width: $tablet-average-content-width)
+      flex-direction: row
+
+  .form-comment
+    padding: 5px
+
+  .program__name,
+  .tours-table__program-name
+    margin: 0
+
+  .program__name
+    height: unset
+    order: 1
+    align-self: baseline
+    @media only screen and (min-width: $tablet-average-content-width)
+      order: 2
+      align-self: center
+
+  input[type="date"]
+    width: 150px
+    margin-top: 5px
+    margin-right: 8px
+    padding: 7px 2px 7px 10px
+    order: 2
+    align-self: baseline
+    @media only screen and (min-width: $tablet-average-content-width)
+      order: 0
+      margin-top: 0
+      align-self: center
+
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    margin-top: 15px
+    margin-bottom: 10px
+
+//#add-new-date
+  .new-tour-list
+    max-width: 550px
+    margin-top: 15%
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    background-color: $bkg-grey-color
+    border-radius: 12px
+    padding: 25px 30px 30px 30px
+
+  .group
+    display: flex
+    //flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    margin-top: 15px
+    padding: 0 3px
+  .form-comment
+    padding: 5px
+  .clone
+    margin-bottom: 0
+    height: unset
+    overflow: unset
+  input[type="date"]
+    width: 150px
+    margin-right: 8px
+    padding: 7px 2px 7px 10px
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    margin-top: 20px
+
+
+
+//== страница  А Р Х И В   П Р О Г Р А М М =========================================
+.programs__archive
+  .back-n-wrap
     display: block
-    text-align: center
-    margin-top: 11px
-    font-size: 30px
-    color: $font-dark-grey-color
+    padding: 0 5px
 
-
-/* SECTION PROGRAMS FINISH */

@@ -3,6 +3,8 @@
 namespace app\services;
 
 use app\base\App;
+use app\Models\Partner;
+use app\Models\User;
 
 /**
  * Class Auth
@@ -33,6 +35,12 @@ class Auth
     private $errors = [];
     /** @var int User Id. По умолчанию - 0, что означает гость. */
     private $userId = 0;
+    /** @var User */
+    private $user;
+    /** @var Partner */
+    private $partner;
+    /** @var int Роль пользователя */
+    private $role;
 
     /**
      * Auth constructor.
@@ -61,12 +69,43 @@ class Auth
     }
 
     /**
+     * Метод возвращает экземляр объекта авторизованного пользователя.
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Метод возвращает экземляр объекта партнера для авторизованного пользователя.
+     * @return Partner
+     */
+    public function getPartner()
+    {
+        return $this->partner;
+    }
+
+    /**
      * Метод возвращает Id пользователя.
      * @return int
      */
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    /**
+     * Метод возвращает Id пользователя.
+     * @return int
+     */
+    public function getRole()
+    {
+        if ($this->user) {
+            return $this->user->role;
+        }
+
+        return null;
     }
 
     /**
@@ -128,9 +167,23 @@ class Auth
         // Получаем значение идентификатора пользователя.
         $userId = $_SESSION[$this->userSessionName];
 
-        // Если идентификатор существует, то получаем id пользователя.
+        //todo это костыль, выяснить причину.
+        // Сделал исправление в методе checkCookieUser (26.07.2019), теперь нужно протестировать.
+//        if (is_array($userId)) {
+//            $userId = $userId['p_user_id'];
+//        }
+
+        // Если идентификатор существует, то получаем id пользователя и его объкт.
         if ($userId) {
+            // Получаем id пользователя.
             $this->userId = $userId;
+
+            // Получаем экземпляр объекта пользователя.
+            $this->user = (new User())->getOne($this->userId);
+
+            // Получаем экземпляр объекта партнера.
+            $this->partner = (new Partner())->getOne($this->user->partner_id);
+
             return true;
         }
 
@@ -147,7 +200,21 @@ class Auth
         if ($authKey = $_COOKIE[$this->authKeyName]) {
             // Проверяем наличие куки в базе данных, если есть получаем id пользователя.
             $sql = 'SELECT p_user_id from ' . DB_P_AUTH_KEYS . ' WHERE auth_key = :auth_key';
-            $this->userId = $this->db->queryOne($sql, [':auth_key' => $authKey]);
+            $result = $this->db->queryOne($sql, [':auth_key' => $authKey]);
+
+            if (!$result) {
+                return false;
+            }
+
+            // Присваиваем переменной значение id авторизованного пользователя.
+            $this->userId = $result['p_user_id'];
+
+            // Получаем экземпляр объекта пользователя.
+            $this->user = (new User())->getOne($this->userId);
+
+            // Получаем экземпляр объекта партнера.
+            $this->partner = (new Partner())->getOne($this->user->partner_id);
+
             return true;
         }
 
@@ -165,6 +232,14 @@ class Auth
         // Получаем IP авторизовавшегося пользователя.
         $userIP = $_SERVER['REMOTE_ADDR'];
 
+        // Получаем id партнера.
+        $partnerId = $this->partner->id;
+
+        // Если id партера не существует, то он равен 0.
+        if (!$partnerId) {
+            $partnerId = 0;
+        }
+
         // задаем случайное значение для куки (authKey).
         $authKey = sha1(session_id() . "xRGp8_1HrPq" . time());
 
@@ -181,8 +256,8 @@ class Auth
         $this->db->execute($sql, [':auth_key' => $authKey, ':p_user_id' => $this->userId]);
 
         // добавляем информацию об авторизации пользователя (id и ip пользователя, время авторизации) в базу данных.
-        $sql = 'INSERT INTO ' . DB_P_AUTH_LOGS . ' (p_user_id, p_user_ip, created_at) VALUES (:p_user_id, :p_user_ip, NOW())';
-        $this->db->execute($sql, [':p_user_id' => $this->userId, ':p_user_ip' => $userIP]);
+        $sql = 'INSERT INTO ' . DB_P_AUTH_LOGS . ' (p_user_id, p_user_ip, partner_id, created_at) VALUES (:p_user_id, :p_user_ip, :partner_id, NOW())';
+        $this->db->execute($sql, [':p_user_id' => $this->userId, ':p_user_ip' => $userIP, ':partner_id' => $partnerId]);
     }
 
     /**
@@ -228,7 +303,13 @@ class Auth
                 }
 
                 // Получаем id пользователя.
-                $this->userId = $userId;
+                $this-> userId = $userId;
+
+                // Получаем экземпляр объекта пользователя.
+                $this->user = (new User())->getOne($this->userId);
+
+                // Получаем экземпляр объекта партнера.
+                $this->partner = (new Partner())->getOne($this->user->partner_id);
 
                 // Логин и пароль совпадают.
                 return true;

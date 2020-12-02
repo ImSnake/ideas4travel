@@ -128,7 +128,30 @@ class Request
         return $item['params'];
     }
 
-    public function getUrlParams(){
+    public function getUrlParams()
+    {
         return $this->urlParams;
+    }
+
+    /**
+     * Метод возвращает значение переданное методом пост.
+     * @param $post - Значение переданное методом post.
+     * @param $var - Возвращаемое значение, если post не существует.
+     * @param null|string $empty - Возвращаемое значение, если post пустой.
+     * @return string|null
+     */
+    public static function getPostForm($post, $var, $empty = ''): ?string
+    {
+        if (isset($post)) {
+            // Если переменная пустая, то возвращаем другое значение (по умолчанию null)
+            if ($post === '') {
+                return $empty;
+            }
+
+            // Возвращаем значение предварительно убрав лишние пробелы.
+            return trim($post);
+        }
+
+        return $var;
     }
 }

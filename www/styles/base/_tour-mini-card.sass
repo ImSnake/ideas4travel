@@ -1,0 +1,143 @@
+@charset "UTF-8"
+
+//======== КАРТОЧКА ТУРА В КАТАЛОГЕ ========================================
+.program-box
+  width: 300px
+  border-radius: 10px
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.08) inset, -1px 0 0 0 rgba(0,0,0,0.05), 5px 5px 10px -4px $font-light-grey-color
+  -moz-box-shadow: 0 0 1px rgba(0,0,0,0.08) inset, -1px 0 0 0 rgba(0,0,0,0.05), 5px 5px 10px -4px $font-light-grey-color
+  box-shadow: 0 0 1px rgba(0,0,0,0.08) inset, -1px 0 0 0 rgba(0,0,0,0.05), 5px 5px 10px -4px $font-light-grey-color
+  height: min-content
+
+.program__image
+  position: relative
+  width: 100%
+  height: 185px
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  img
+    width: 100%
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+  .image__bottom-left-tag
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: 1
+    background-color: rgba(0, 0, 0, 0.75)
+    text-align: center
+    color: #ffffff
+    border-top-right-radius: 15px
+    padding: 10px 18px 8px 15px
+    &.filed
+      background-color: rgba(46, 204, 113, 0.7)
+    &.moderation
+      background-color: rgba(129, 141, 153, 0.7)
+    &.published
+      background-color: rgba(0, 184, 227, 0.7)
+
+    .rejected
+      position: relative
+      background: $red-color
+      width: 9px
+      height: 9px
+      border-radius: 50%
+      margin-left: auto
+      margin-top: -10px
+      right: -10px
+      top: 8.5px
+    span
+      font-size: 14px
+      font-weight: 400
+      word-spacing: 1px
+      letter-spacing: 1px
+    .visits
+      font-size: 14px
+      &::before
+        font-family: 'fontello'
+        font-weight: normal
+        font-style: normal
+        font-size: 16px
+        word-spacing: 2px
+        content: "\00a0\00a0\2022\00a0\00a0\e825\00a0"  // space*2/bullet/space*2/icon-eye/space
+      &::after
+        text-transform: lowercase
+        font-size: 12px
+        content: " / мес"
+
+.program__info
+  padding: 9px 13px 10px 15px
+  background-color: #ffffff
+  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
+
+.program__country
+  //text-transform: uppercase
+  //font-size: 11px
+  font-size: 13px
+  color: $main-blue-color
+  font-weight: 400
+  min-height: 19px
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+.program__name
+  font-size: 14px
+  font-weight: 600
+  height: 32px
+  overflow: hidden
+  margin-bottom: 8px
+
+.program__stats
+  display: flex
+  align-items: center
+  font-size: 14px
+  font-weight: 700
+  margin-top: 3px
+  //margin-left: 2px
+  div
+    min-height: 35px
+    margin-right: 33px
+  span
+    display: inline-block
+    margin-left: 1px
+    margin-right: -1px
+  .slash-txt
+    font-weight: 600
+  .txt-small-narrow
+    position: absolute
+    left: 2px
+    bottom: 2px
+    z-index: 2
+    letter-spacing: 0.3px
+    font-size: 10px
+    font-weight: 400
+    margin-left: 4px
+
+.program__comfort::before
+  width: 15.5px
+  height: 20px
+  background-size: contain
+  background-position-y: 4px
+  margin-bottom: -3px
+  margin-left: 2px
+  margin-right: 1px
+
+.program__dynamics::before
+  width: 17px
+  height: 20px
+  background-size: contain
+  margin-bottom: -3px
+  background-position-y: 5px
+  margin-left: 6px
+
+.program__meal::before
+  width: 14px
+  height: 20px
+  background-size: contain
+  margin-bottom: -3px
+  background-position-y: 5px
+  margin-right: 1px
+  margin-left: 3px
+//==============================================================

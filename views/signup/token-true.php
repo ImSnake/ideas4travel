@@ -11,19 +11,17 @@ $this->title = "Ваш email успешно подтвержден";
 $this->description = "";
 
 $this->cssFiles = ['partnership/partnership.css'];
-$this->jsFiles = ['partnership/partnership.js'];
+//$this->jsFiles = ['partnership/partnership.js'];
 
 ?>
 
-<div class="center">
+<!--<div class="center">-->
 
     <div class="container service">
 
         <div class="service__message">
-            <h2>Спасибо за регистрацию!</h2>
-            <p>Ваш адрес электронной почты успешно подтвержден.</p>
+            <h2>Регистрация завершена!</h2>
         </div>
-
     </div>
 
     <section class="authorization container">
@@ -35,4 +33,4 @@ $this->jsFiles = ['partnership/partnership.js'];
 
     </section>
 
-</div>
+<!--</div>-->

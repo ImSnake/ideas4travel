@@ -1,55 +1,111 @@
+@charset "UTF-8"
+
 .activation
-  padding: 20px 0
+  //margin-top: 30px
+  //margin-bottom: 50px
+  //padding: 0 5%
+  padding: 20px 10px 60px 10px
   @media only screen and (min-width: $mobile-content-width)
-    padding: 30px 0
+    padding: 20px 15px 60px 15px
   @media only screen and (min-width: $tablet-average-content-width)
-    padding: 40px 0
+    padding: 30px 20px 70px 20px
+  //@media only screen and (min-width: $tablet-content-width)
+    padding: 25px 30px 70px 30px
+  //@media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 25px 10px 70px 10px
+  //@media only screen and (min-width: $mobile-content-width)
+    margin-top: 40px
+  //@media only screen and (min-width: $tablet-average-content-width)
+    padding: 0
+    margin-bottom: 100px
 
 .activation__form
-  width: 300px
-  background-color: $bkg-light-grey-color
-  border: 1px solid $border-line-color
-  border-radius: 15px
+  min-width: 300px
+  max-width: 400px
+  background-color: $bkg-mid-grey-color
+  border-radius: 12px
   margin: 0 auto
-  padding: 15px 5px
+  padding: 15px 27px 40px 27px
+  @include box-deep-shadow
   transition: all 0.3s linear
   @media only screen and (min-width: $mobile-content-width)
-    width: 350px
-    padding: 15px 10px
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    width: 400px
-    padding: 15px
-
-  .block-title
-    padding-left: 15px
+    padding: 20px 45px 45px 45px
 
   form
-    margin: 20px 0 10px 0
+    //padding: 0 5px
+
+  .info-field__box:first-child
+    margin-top: 22px
+    .info-field__head
+      margin-bottom: 2px
 
   .info-field__box
-    margin-bottom: 15px
+    margin-bottom: 25px
 
   .info-field__head
-    padding-left: 12px
+    display: inline-block
+    //font-family: $f_montserrat
+    color: $font-grey-color
+    text-transform: lowercase
+    font-size: 15px
+    padding-bottom: 2px
+    font-weight: 300
+    padding-left: 5px
+    //opacity: 1
 
   .help
-    margin-left: 4px
-    margin-right: 4px
+    top: -12px
+    right: -3px
+    opacity: 1
+    .top
+      right: -23px
+      top: 20px
+    .right
+      top: -15px
+      left: 20px
+
+  .help-pop-up
+    h4
+      font-size: 14px
+      font-weight: 700
+      line-height: 130%
+      text-transform: lowercase
 
   input[type="text"]
-    width: 90%
-    margin: 10px
-
-    @media only screen and (min-width: $tablet-average-content-width)
-      width: 355px
+    width: 100%
+    margin-top: 2px
 
   input[type="radio"] + label
     display: block
-    margin: 15px 10px 10px 30px
+    margin: 8px 0 10px 4px
+    font-size: 15px
 
-  div:last-child
-    margin: 0 10px
-    button
-      margin: 10px 0
-      width: 100%
+  input[type="radio"]:not(:checked) + label
+    font-weight: 300
+    color: $font-grey-color
+  input[type="radio"]:checked + label
+    font-weight: 400
+    color: $main-font-color
+
+  .info-field__content
+    display: flex
+    align-items: center
+    margin-left: 4px
+
+  .info-field__text
+    font-weight: 300
+    font-size: 15px
+    color: $font-grey-color
+    padding-left: 5px
+    padding-top: 6px
+    margin-bottom: 8px
+
+  input[type='checkbox'] + label
+    margin-right: 4px
+    margin-left: 4px
+
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    margin-top: 40px

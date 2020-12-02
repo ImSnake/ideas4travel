@@ -5,26 +5,30 @@ use app\services\renderer\TemplateRenderer;
 /* @var $errors */
 /* @var $this TemplateRenderer */
 
-$this->title = "Регистрация и авторизация партнера";
+$this->title = "Авторизация организатора";
 $this->description = "Описание к странице Регистрация и авторизация партнера";
 
 $this->cssFiles = ['partnership/partnership.css'];
-$this->jsFiles = ['partnership/partnership.js'];
+
+$this->jsFiles = [
+    'partnership/partnership.js',
+    'jquery/jquery.inputmask.js'
+];
 
 ?>
 
-<div class="center">
+<!--<div class="center">-->
 
-    <section class="authorization container">
+<section class="authorization container">
 
-        <?php
-        $actionSignupForm = '/signup';
-        include VIEWS_DIR. "signup/_signup-form.php";
+    <?php
+    $actionSignupForm = '/signup';
+    include VIEWS_DIR . "signup/_signup-form.php";
 
-        $actionAuthForm = '/auth';
-        include "_auth-form.php"
-        ?>
+    $actionAuthForm = '/auth';
+    include "_auth-form.php"
+    ?>
 
-    </section>
+</section>
 
-</div>
+<!--</div>-->

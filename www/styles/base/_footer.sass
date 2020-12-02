@@ -1,21 +1,26 @@
+@charset "UTF-8"
+
 /* FOOTER START */
 .footer
-  background-color: rgba(217, 217, 217, 0.5)
+  z-index: 999
+  background-color: $bkg-deep-grey-color
+  border-top: 1px solid $border-line-light-color
 
 .footer-container
   display: flex
   width: unset
   height: 100%
-  padding: 3%
-  @media only screen and (min-width: $mobile-content-width)
-    padding: 3% 7%
+  padding: 20px 15px
   @media (min-width: $tablet-average-content-width)
-    padding: 2%
-  @media only screen and (min-width: $desktop-content-width)
+    padding: 21px 20px 20px 15px
+  @media (min-width: $tablet-content-width)
+    padding: 21px 30px 20px 25px
+  @media only screen and (min-width: $desktop-content-width +40px)
     width: $desktop-content-width
-    padding: 1.5% 1%
+    padding: 21px 10px 20px 5px
 
 .footer-nav
+  color: $font-grey-color
   @media only screen and (min-width: $tablet-average-content-width)
     flex: 2
     display: flex
@@ -30,7 +35,7 @@
 .footer-nav__item
   display: block
   padding: 5px
-  font-size: 13px
+  font-size: 14px
   text-decoration: none
   &:hover, &:focus, &:active
     text-decoration: underline
@@ -50,15 +55,19 @@
 
 .footer__social-links
   display: flex
-  opacity: 0.8
   font-size: 20px
   i
     margin-left: 20px
+    color: $main-font-color
+    opacity: 0.7
+    transition: all 0.2s ease-in-out
     &:hover, &:focus, &:active
       color: $main-blue-color
+      opacity: 1
 
 
 .footer__copyright
-  font-size: 11px
+  font-size: 12px
+  font-weight: 300
 
 /* FOOTER FINISH */

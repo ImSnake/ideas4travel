@@ -8,7 +8,7 @@ use app\services\renderer\TemplateRenderer;
 $this->title = "Заявки";
 $this->description = "Описание к странице Заявки";
 
-$this->cssFiles = ['organizer/organizer.css'];
+$this->cssFiles = ['organizer/requests.css'];
 $this->jsFiles = ['organizer/organizer_common.js'];
 
 // Подключаем заявки.

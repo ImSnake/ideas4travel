@@ -3,6 +3,7 @@
 namespace app\helpers;
 
 use app\base\App;
+use app\base\FormModel;
 use app\base\Model;
 use ReflectionClass;
 use ReflectionException;
@@ -15,9 +16,9 @@ class Validators
 
     /**
      * Validators constructor.
-     * @param Model $model
+     * @param FormModel|Model $model
      */
-    public function __construct(Model $model)
+    public function __construct($model)
     {
         $this->model = $model;
     }
@@ -33,7 +34,7 @@ class Validators
 
         if (empty($this->model->$attribute)) {
             // Добавляем ошибку.
-            $this->addError($attribute, 'Поле обязательное для заполнения.');
+            $this->addError($attribute, 'поле обязательное для заполнения');
         }
     }
 
@@ -50,7 +51,7 @@ class Validators
         // проверяем на допустимость символов
         if (!preg_match("/^([a-z0-9_\-.]+@[a-z0-9\-.]+\.[a-z]{2,7})$/i", $email)) {
             // Добавляем ошибку.
-            $this->addError($attribute, 'Неверный адрес электронной почты');
+            $this->addError($attribute, 'неверный адрес электронной почты');
         }
     }
 
@@ -73,11 +74,11 @@ class Validators
             // пароль не может содержать только буквы или цифры, или знаки пунктуации
 //            if (preg_match("/^[a-zA-Z]+$|^[0-9]+$|^[[:punct:]]+$/", $pass)) {
 //                // Добавляем ошибку.
-//                $this->addError($attribute, 'Пароль не может содержать только буквы или цифры или знаки пунктуации.');
+//                $this->addError($attribute, 'Пароль не может содержать только буквы или цифры или знаки пунктуации');
 //            }
         } else {
             // Добавляем ошибку.
-            $this->addError($attribute, 'Длина пароля должна быть от ' . $min . ' до ' . $max . ' символов.');
+            $this->addError($attribute, 'длина пароля должна быть от ' . $min . ' до ' . $max . ' символов');
         }
     }
 
@@ -94,7 +95,7 @@ class Validators
 
         if ($pass !== $pass_repeat) {
             // Добавляем ошибку.
-            $this->addError($attribute, 'Пароли не совпадают.');
+            $this->addError($attribute, 'пароли не совпадают');
         }
     }
 
@@ -113,7 +114,7 @@ class Validators
         // Если значение аргумента уже существует, то выводим ошибку.
         if ($db->queryOne($sql, [":{$attribute}" => $this->model->$attribute])) {
             // Добавляем ошибку.
-            $this->addError($attribute, 'Такой ' . $attribute . ' уже существует.');
+            $this->addError($attribute, 'такой ' . $attribute . ' уже существует');
         }
     }
 
@@ -136,13 +137,13 @@ class Validators
                 $min = $params['min'];
                 if ($length < $min || $length > $max) {
                     // Добавляем ошибку.
-                    $this->addError($attribute, 'Длина должна быть от ' . $min . ' до ' . $max . ' символов.');
+                    $this->addError($attribute, 'длина должна быть от ' . $min . ' до ' . $max . ' символов');
                 }
             } elseif ($params['max'] && !$params['min']) {
                 $max = $params['max'];
                 if ($length > $max) {
                     // Добавляем ошибку.
-                    $this->addError($attribute, 'Длина должна быть не более ' . $max . ' символов.');
+                    $this->addError($attribute, 'длина должна быть не более ' . $max . ' символов');
                 }
             }
         }

@@ -13,23 +13,29 @@ $this->description = "";
 ?>
 
 
-<div class="center">
+<!--<div class="center">-->
 
     <div class="container service">
 
         <div class="service__message">
-            <h2><?= $form->first_name ?> <?= $form->last_name ?>, информация успешно сохранена!</h2>
-            <p>Для завершения регистрации подтвердите свой e-mail:</p>
-            <p class="small-font dark-grey">&bull;&nbsp;Проверьте входящие сообщения в почтовом ящике.</p>
-            <p class="small-font dark-grey">&bull;&nbsp;Найдите сообщение с электронного адреса <?= EMAIL_SUPPORT ?>
-                .</p>
-            <p class="small-font dark-grey">&bull;&nbsp;Пройдите по ссылке в письме и активируйте кабинет партнера.</p>
-        </div>
+            <h2>Привет, <?= $form->first_name ?> <?= $form->last_name ?>!</h2>
 
-        <div class="service__back-link">
-            <a href="/" class="link">Вернуться в раздел "Партнерам"</a>
+            <div>Благодарим тебя за готовность принять участие в тестировании сервиса ideas4travel</div>
+            <p>Ты получишь доступ в "Личный кабинет организатора" после проверки регистрационных данных</p>
+            <p>Чтобы ускорить процесс, свяжись с пригласившим тебя контактным лицом</p>
+
+
+<!--            <div>Чтобы завершить регистрацию подтверди свой&nbsp;email</div>
+            <p class="list">Проверь входящие сообщения в&nbsp;почтовом ящике, в&nbsp;том числе папку СПАМ</p>
+            <p class="list">Найди сообщение с&nbsp;электронного адреса <span class="blue"><?= EMAIL_SUPPORT ?></span></p>
+            <p class="list">Пройди по&nbsp;ссылке в&nbsp;письме и&nbsp;активируй кабинет Организатора</p>
+-->
+            <div class="service__back-link">
+                <a href="/" class="link">вернуться в раздел "Организаторам"</a>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+<!--</div>-->

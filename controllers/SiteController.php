@@ -18,7 +18,15 @@ class SiteController extends Controller
             $this->go('organizer');
         } else {
             // Если НЕ авторизован выводим приглашение зарегистрироваться или авторизоваться.
-            echo $this->render('site/invite');
+            echo $this->render('auth/auth-signup-form');
         }
+    }
+
+    public function actionTest()
+    {
+
+        // Если НЕ авторизован выводим приглашение зарегистрироваться или авторизоваться.
+        echo $this->render('site/index');
+
     }
 }

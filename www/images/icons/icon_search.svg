@@ -1,0 +1,14 @@
+<svg id="magnifier" xmlns="http://www.w3.org/2000/svg" width="38.09" height="38.09" viewBox="0 0 38.09 38.09">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b8e3;
+      }
+    </style>
+  </defs>
+  <g id="Group_384" data-name="Group 384" transform="translate(0)">
+    <path id="Path_647" data-name="Path 647" class="cls-1" d="M297.282,304.982l8.738-8.739a16.82,16.82,0,0,0,5.05,5.049l-8.739,8.739a3.57,3.57,0,0,1-5.049-5.049Z" transform="translate(-296.236 -272.987)"/>
+    <path id="Path_648" data-name="Path 648" class="cls-1" d="M0,14.284A14.284,14.284,0,1,1,14.285,28.567,14.284,14.284,0,0,1,0,14.284ZM14.285,25A10.713,10.713,0,1,0,3.572,14.284,10.724,10.724,0,0,0,14.285,25Z" transform="translate(9.521)"/>
+    <path id="Path_649" data-name="Path 649" class="cls-1" d="M84.149,84.148h-2.38A5.959,5.959,0,0,0,75.817,78.2V75.816A8.342,8.342,0,0,1,84.149,84.148Z" transform="translate(-52.011 -69.864)"/>
+  </g>
+</svg>

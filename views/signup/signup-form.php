@@ -4,15 +4,18 @@ use app\services\renderer\TemplateRenderer;
 
 /* @var $this TemplateRenderer */
 
-$this->title = "Регистрация партнера";
+$this->title = "Регистрация нового организатора";
 $this->description = "Описание к странице Регистрация партнера";
 
 $this->cssFiles = ['partnership/partnership.css'];
-$this->jsFiles = ['partnership/partnership.js'];
+$this->jsFiles = [
+    'partnership/partnership.js',
+    'jquery/jquery.inputmask.js'
+];
 
 ?>
 
-<div class="center">
+<!--<div class="center">-->
 
     <div class="container">
 
@@ -27,4 +30,4 @@ $this->jsFiles = ['partnership/partnership.js'];
 
     </div>
 
-</div>
+<!--</div>-->

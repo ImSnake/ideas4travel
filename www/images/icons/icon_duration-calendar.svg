@@ -1,0 +1,33 @@
+<svg id="hanging-calendar" xmlns="http://www.w3.org/2000/svg" width="45" height="41.816" viewBox="0 0 45 41.816">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b8e3;
+      }
+    </style>
+  </defs>
+  <g id="Group_368" data-name="Group 368" transform="translate(0 0)">
+    <g id="Group_366" data-name="Group 366" transform="translate(5.236 13.233)">
+      <g id="Group_363" data-name="Group 363" transform="translate(9.508)">
+        <rect id="Rectangle_43" data-name="Rectangle 43" class="cls-1" width="6.005" height="6.005"/>
+        <rect id="Rectangle_44" data-name="Rectangle 44" class="cls-1" width="6.005" height="6.005" transform="translate(9.508)"/>
+        <rect id="Rectangle_45" data-name="Rectangle 45" class="cls-1" width="6.005" height="6.005" transform="translate(19.016)"/>
+      </g>
+      <g id="Group_364" data-name="Group 364" transform="translate(0 9.007)">
+        <rect id="Rectangle_46" data-name="Rectangle 46" class="cls-1" width="6.005" height="6.005"/>
+        <rect id="Rectangle_47" data-name="Rectangle 47" class="cls-1" width="6.005" height="6.005" transform="translate(9.508)"/>
+        <rect id="Rectangle_48" data-name="Rectangle 48" class="cls-1" width="6.005" height="6.005" transform="translate(19.016)"/>
+        <rect id="Rectangle_49" data-name="Rectangle 49" class="cls-1" width="6.005" height="6.005" transform="translate(28.523)"/>
+      </g>
+      <g id="Group_365" data-name="Group 365" transform="translate(0 18.015)">
+        <rect id="Rectangle_50" data-name="Rectangle 50" class="cls-1" width="6.005" height="6.004"/>
+        <rect id="Rectangle_51" data-name="Rectangle 51" class="cls-1" width="6.005" height="6.004" transform="translate(9.508)"/>
+        <rect id="Rectangle_52" data-name="Rectangle 52" class="cls-1" width="6.005" height="6.004" transform="translate(19.016)"/>
+      </g>
+    </g>
+    <g id="Group_367" data-name="Group 367">
+      <path id="Path_762" data-name="Path 762" class="cls-1" d="M42,21.651H3a3,3,0,0,0-3,3v7.089H45V24.653A3,3,0,0,0,42,21.651ZM11.35,29.4A2.252,2.252,0,1,1,13.6,27.151,2.252,2.252,0,0,1,11.35,29.4Zm22.3,0A2.252,2.252,0,1,1,35.9,27.151,2.252,2.252,0,0,1,33.65,29.4Z" transform="translate(0 -21.651)"/>
+    </g>
+    <path id="Path_763" data-name="Path 763" class="cls-1" d="M43,228.988a1.1,1.1,0,0,1-1,1.183H3.008a1.1,1.1,0,0,1-1-1.183v-30.5h-2v30.5a3.31,3.31,0,0,0,3,3.548H42a3.31,3.31,0,0,0,3-3.548v-30.5H43v30.5Z" transform="translate(-0.006 -190.72)"/>
+  </g>
+</svg>

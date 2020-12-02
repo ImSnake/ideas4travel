@@ -4,7 +4,10 @@ namespace app\base;
 
 use app\controllers\Error404Controller;
 use app\services\Auth;
+use app\services\Currency;
 use app\services\Db;
+use app\services\DbGeo;
+use app\services\Geo;
 use app\services\renderer\TemplateRenderer;
 use app\services\Request;
 use app\traits\TSingleton;
@@ -16,9 +19,12 @@ use ReflectionException;
  * Class App определяет все наше приложение.
  * @package app\base
  * @property Db $db;
+ * @property DbGeo $db_geo;
+ * @property Geo $geo;
  * @property Request $request;
  * @property TemplateRenderer $renderer;
  * @property Auth $auth;
+ * @property Currency $currency;
  */
 class App
 {

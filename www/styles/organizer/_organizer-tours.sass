@@ -1,111 +1,431 @@
-/* SECTION TOURS START */
+@charset "UTF-8"
+
+//.center
+  background-color: $bkg-grey-color
+.no-tours
+  font-weight: 600
+  padding: 0 10px
+  color: $main-blue-color
+  font-size: 21px
+  text-align: center
+  margin: 0 auto
+  margin-top: 2.5%
+  margin-bottom: 10%
+  p
+    font-weight: 300
+    font-size: 15px
+    color: $font-grey-color
+  .link
+    font-weight: 300
 
 .organizer__tours
-  margin-bottom: 40px
-
+  padding: 15px 10px 50px 10px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
   @media only screen and (min-width: $tablet-average-content-width)
-    margin-bottom: 100px
+    padding: 30px 20px 70px 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 30px 30px 70px 30px
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 30px 10px 70px 10px
+
+  .back-n-wrap
+    margin-bottom: 15px
+
+  .tours__heading
+    //text-transform: uppercase
+    font-size: 24px
+    font-weight: 600
+    padding: 0 5px
+    line-height: 1.5em
+    //@media only screen and (min-width: $mobile-content-width)
+      font-size: 18px
+
+  .menu-list
+    top: 10px
+    font-size: 14px
 
 .tours-table
-  font-size: 13px
-  margin-bottom: 30px
-  @media only screen and (min-width: $tablet-average-content-width)
-    margin: 30px 20px
-    border: 1px solid $border-line-color
-    border-radius: 15px
-    background-color: #ffffff
+  font-size: 12px
+  margin-bottom: 50px
+  //@include box-deep-shadow
+  border: 1px solid $border-line-light-color
+  border-radius: 6px
+  background-color: #ffffff
+  font-weight: 400
+  &.moderation
+    //background-color: $bkg-grey-color
+    color: lighten($font-grey-color, 17%)
+    .tours-table__head
+      background-color: lighten($font-grey-color, 17%)
+    .tours-table__img
+      opacity: 0.7
+  &.published
+    .tours-table__head
+      background-color: $main-blue-color
+
+  @media only screen and (min-width: $mobile-content-width)
+    font-size: 13px
 
 .tours-table__head,
 .tours-table__row
   display: flex
   align-items: center
   text-align: center
-  border-bottom: 1px solid $border-line-color
+  border-bottom: 1px solid $border-line-light-color
 
 .tours-table__row
   position: relative
   &:last-child
-    @media only screen and (min-width: $tablet-average-content-width)
-      border-bottom: none
+    border-bottom: none
+
+.tours-table__sub-row
+  flex: 3
+  width: 100%
+  //border-left: 1px solid $border-line-color
+
+.group
+  display: flex
+  align-items: center
+  height: 50px
+  //padding: 5px 0
+  padding: 25px 0
+  border-bottom: 1px solid $border-line-light-color
+  border-left: 1px solid $border-line-light-color
+  &:last-child
+    border-bottom: none
 
 .tours-table__head
+  background-color: $font-grey-color
+  color: #FFFFFF
   text-transform: uppercase
-  padding-top: 15px
-  padding-bottom: 15px
-  background: #FCFCFC
-  border-top-left-radius: 15px
-  border-top-right-radius: 15px
-  .tours-table__data
-    letter-spacing: normal
-    padding: 0
+  font-size: 11px
+  font-weight: 600
+  letter-spacing: 1px
+  padding-top: 8px
+  padding-bottom: 6px
+  height: 44px
+  border-top-left-radius: 6px
+  border-top-right-radius: 6px
+  .group
+    border: none
+    padding: 3px 0
+  .tours-table__sub-row
+    border: none
+    min-height: unset
   .tours-table__program
-    justify-content: center
-  .tours-table__guide
-    font-size: 13px
+    display: block
+    text-align: center
+
+.tours-table__program
+  flex: 1
+  display: flex
+  align-self: center
+  text-align: left
+  padding: 3px 5px 2px 6px
+  //padding: 5px
+  //margin-left: 5px
+
+//.tours-table__sub-row
+  flex: 3
 
 .tours-table__data,
+.tours-table__duration,
 .tours-table__price,
-.tours-table__extra-costs,
+.tours-table__discount,
+.tours-table__available,
 .tours-table__status,
-.tours-table__edit
+.tours-table__season
   flex: 1
   align-items: center
 
-.tours-table__program
-  flex: 1.5
-  @media only screen and (min-width: $tablet-average-content-width)
-    flex: 3
+.tours-table__duration,
+.tours-table__available,
+.tours-table__discount
+  max-width: 100px
 
-.tours-table__data
-  letter-spacing: 1px
-
-.tours-table__program
+.tours-table__img
+  width: 100%
+  max-width: 100px
   img
-    width: 100px
-    height: 61.5px
-    margin-top: 2px
-    margin-bottom: 2px
-    border-radius: 5px
-  @media only screen and (min-width: $tablet-average-content-width)
-    display: flex
-    text-align: start
-    align-items: center
+    width: 100%
+    border-radius: 8px
 
 .tours-table__program-name
   display: none
-  @media only screen and (min-width: $tablet-average-content-width)
+  @media only screen and (min-width: $tablet-content-width)
     display: block
-    max-height: 55px
-    overflow: hidden
-    text-overflow: ellipsis
-    font-size: 12px
-    padding: 1% 2%
+    padding: 1px 0 1px 5px
+    align-self: center
+
+.tours-table__duration
+  display: none
+  @media only screen and (min-width: $desktop-content-width)
+    display: block
+
+.tours-table__available
 
 .tours-table__price
 
-.tours-table__extra-costs
-  display: none
-  @media only screen and (min-width: $tablet-content-width)
-    display: block
-
-.tours-table__guide
+.tours-table__discount
   display: none
   @media only screen and (min-width: $tablet-average-content-width)
     display: block
-    flex: 1.5
-    font-size: 12px
-    padding: 0 1%
 
 .tours-table__status
+  display: none
+  @media only screen and (min-width: $tablet-average-content-width)
+    display: block
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.tours-table__season
+  display: none
+  @media only screen and (min-width: $desktop-content-width)
+    display: block
 
 .tours-table__edit
-  display: none
-  @media only screen and (min-width: $mobile-content-width)
-    display: block
-    i
-      color: $font-dark-grey-color
-      font-size: 20px
-      padding: 15px
-      cursor: pointer
+  width: 60px
+  opacity: 1
+  .edit-menu
+    width: 100%
+    height: 100%
+    &::before
+      font-size: 23px
+      padding: 10px
+    //&:hover
+      transform: scale(1.2)
+  img
+    opacity: 0.7
 
-/* SECTION TOURS FINISH */
+.tours__bottom
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: baseline
+  margin-top: 50px
+  @media only screen and (min-width: $tablet-average-content-width)
+    justify-content: flex-end
+    //margin-right: 10px
+    margin-top: 70px
+  .btn-orange,
+  .btn-grey
+    min-width: 170px
+    max-width: 200px
+    //margin-left: 5%
+    margin-bottom: 20px
+    //&.btn-grey
+      @media only screen and (min-width: $tablet-average-content-width)
+        margin-right: 0
+
+  .icon-doc-new
+    font-size: 13px
+    padding-right: 3px
+
+//======СКРЫТЫЕ ЭЛЕМЕНТЫ======================================
+// поп-ап для создания нового тура
+.new-tour-list
+  position: relative
+  min-width: 300px
+  max-width: 550px
+  margin-top: 15%
+  margin-left: 2%
+  margin-right: 2%
+  background-color: $bkg-grey-color
+  border-radius: 12px
+  padding: 20px
+  h2
+    font-size: 21px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 20px 40px
+    margin-left: 20px
+    margin-right: 20px
+    h2
+      font-size: 23px
+  @media only screen and (min-width: $tablet-content-width)
+    margin-left: auto
+    margin-right: auto
+  p
+    color: $font-grey-color
+    font-weight: 300
+    font-size: 15px
+    padding: 0 8px
+  .link
+    font-size: 15px
+
+
+#create-new-tour
+  .new-tour-list
+    max-width: 750px
+    @media only screen and (min-width: $mobile-content-width)
+      margin-top: 10%
+      padding-top: 25px
+    @media only screen and (min-width: $tablet-average-content-width)
+      margin-top: 4%
+  .block-title
+    box-shadow: none
+  .programs-table
+    max-height: 500px
+    overflow: scroll
+    overflow-y: visible
+    overflow-x: hidden
+    margin-bottom: 15px
+    border: 1px solid $border-line-light-color
+    border-radius: 8px
+    background-color: #ffffff
+  
+  .programs-table__row
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid $border-line-light-color
+    padding: 10px 5px
+    &:last-child
+      border-bottom: none
+  
+  .programs-table__img
+    max-width: 100px
+    border-radius: 8px
+    img
+      border-radius: 8px
+  
+  .programs-table__info
+    display: none
+    @media only screen and (min-width: $mobile-content-width)
+      display: block
+      align-self: center
+      width: 100%
+      padding-left: 8px
+      padding-right: 10px
+  
+  .programs-table__duration
+    font-size: 12px
+    font-weight: 600
+  
+  .programs-table__direction
+    display: none
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: block
+      max-width: 265px
+      color: $main-blue-color
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      font-size: 13px
+      font-weight: 300
+      max-height: 16px
+      margin-top: 2px
+      margin-bottom: 3px
+      @media only screen and (min-width: $tablet-content-width)
+        max-width: 400px
+  
+  .programs-table__name
+    max-height: 32px
+    font-size: 14px
+    font-weight: 400
+    overflow: hidden
+  
+  .programs-table__action
+    position: relative
+    width: 110px
+    align-self: center
+    margin-right: 5px
+
+    .btn-blue,
+    .btn-orange,
+    .btn-grey
+      min-width: 110px
+      max-width: 110px
+      padding: 0 15px
+      line-height: 28px
+      border-radius: 12px
+      span
+        font-size: 13px
+        font-weight: 600
+
+#add-new-date
+  .new-tour-list
+    font-weight: 400
+  .block-title
+    margin-bottom: 20px
+  .group
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    margin-top: 15px
+    padding: 0 3px
+    height: unset
+    border-left: none
+    border-bottom: none
+    @media only screen and (min-width: $tablet-average-content-width)
+      flex-direction: row
+
+  .form-comment
+    padding: 5px
+
+  .programs-table__name,
+  .tours-table__program-name
+    margin-top: 0
+    max-height: unset
+
+  .programs-table__name
+    font-size: 14px
+    order: 1
+    align-self: baseline
+    @media only screen and (min-width: $tablet-average-content-width)
+      order: 2
+      align-self: center
+
+  input[type="date"]
+    width: 150px
+    margin-top: 5px
+    margin-right: 8px
+    padding: 7px 2px 7px 10px
+    order: 2
+    align-self: baseline
+    @media only screen and (min-width: $tablet-average-content-width)
+      order: 0
+      margin-top: 0
+
+  button
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    margin-top: 15px
+    margin-bottom: 10px
+    border-radius: 20px
+
+
+#finish-tour
+  .new-tour-list
+    max-width: 320px
+
+  .block-title
+    margin-bottom: 20px
+
+  input[type='radio'] + label
+    margin-top: 10px
+    margin-bottom: 10px
+    font-size: 14px
+    &::after
+      top: 3px
+
+  input[type='radio']:checked + label
+    font-weight: 400
+
+  button
+    display: block
+    margin-top: 25px
+    margin-bottom: 15px
+    margin-left: auto
+    margin-right: auto
+
+#no-active-programs
+  padding: 20px
+  background-color: #ffffff
+  border-radius: 12px
+  border: 1px solid $border-line-color
+  h3
+    color: $red-color
+    font-weight: 600

@@ -1,7 +1,12 @@
 @charset "UTF-8";
 /* RESOLUTION SETTINGS START */
-/* RESOLUTION SETTINGS FINISH */
-/* COLORS */
+/* FONTS ========================================= */
+/* COLORS ===================================== */
+/*==================== */
+/*==================== */
+/*==================== */
+/* css ========================================= */
+/* SHADOWS ========================================= */
 @media (min-width: 479px) {
   .catalog-container {
     position: relative;
@@ -15,7 +20,7 @@
   @media (min-width: 479px) {
     .filter {
       margin: 0;
-      background-color: #FCFCFC; } }
+      background-color: #fbfbfb; } }
 
 .main-filter {
   width: unset; }
@@ -29,12 +34,12 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        border-bottom: 1px solid #e6e6e6;
-        border-right: 1px solid #e6e6e6;
+        border-bottom: 1px solid #c7d0d9;
+        border-right: 1px solid #c7d0d9;
         height: 69px; } }
     @media (min-width: 630px) {
       .main-filter .dt-view-filter-head {
-        border-left: 1px solid #e6e6e6; } }
+        border-left: 1px solid #c7d0d9; } }
     .main-filter .dt-view-filter-head:after {
       content: "⟶";
       font-size: 25px;
@@ -81,11 +86,10 @@
             color: #00b8e3;
             background-color: #ffffff;
             border-radius: 15px;
-            border: 1px solid #e6e6e6;
+            border: 1px solid #c7d0d9;
             margin: 5px; }
             .main-filter .mob-view-filter-options .mob-applied-filters .mob-applied-filters-result .tags .filter-tag span {
               font-size: 10px;
-              letter-spacing: 0.45px;
               text-transform: uppercase;
               padding: 5px 10px;
               line-height: 16px;
@@ -99,7 +103,6 @@
       background-color: #00b8e3;
       font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.7px;
       color: #ffffff;
       padding: 20px 0;
       text-align: center; }
@@ -119,15 +122,15 @@
       align-items: center;
       width: 320px;
       height: 69px;
-      border-bottom: 1px solid #e6e6e6; }
+      border-bottom: 1px solid #c7d0d9; }
       @media (min-width: 479px) {
         .main-filter .main-filter-options .filter-heading {
           width: unset; } }
       @media (min-width: 630px) {
         .main-filter .main-filter-options .filter-heading {
           width: 297px;
-          border-left: 1px solid #e6e6e6;
-          border-right: 1px solid #e6e6e6; } }
+          border-left: 1px solid #c7d0d9;
+          border-right: 1px solid #c7d0d9; } }
       .main-filter .main-filter-options .filter-heading .filter-icon {
         width: 50px;
         display: flex;
@@ -138,7 +141,7 @@
             width: 70px;
             height: 69px;
             justify-content: center;
-            border-right: 1px solid #e6e6e6; } }
+            border-right: 1px solid #c7d0d9; } }
         @media (min-width: 630px) {
           .main-filter .main-filter-options .filter-heading .filter-icon {
             width: 50px;
@@ -175,14 +178,13 @@
     right: 0; } }
 .quick-filter .quick-filter-options {
   width: 150px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #c7d0d9;
   border-radius: 15px;
   background-color: #ffffff;
-  color: #b3b3b3;
+  color: #818d99;
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.45px;
   padding: 6.5px 12px; }
   @media (min-width: 479px) {
     .quick-filter .quick-filter-options {
@@ -199,7 +201,7 @@
   align-items: center; }
   @media (min-width: 479px) {
     .tour-window {
-      border-top: 1px solid #e6e6e6;
+      border-top: 1px solid #c7d0d9;
       margin-top: 68px;
       padding-top: 15px;
       width: 100%; } }
@@ -258,8 +260,7 @@
         font-size: 13px;
         font-weight: 500;
         line-height: 17px;
-        letter-spacing: -0.4px;
         word-spacing: 1px; }
       .tour-window .tour-box .tour-definition span {
-        color: #b3b3b3;
+        color: #818d99;
         font-size: 35px; }

@@ -1,383 +1,1198 @@
-.nav-organizer
-  position: unset !important
+@charset "UTF-8"
 
-.mobile-warning
-  padding: 10px
+//.center
+  @media only screen and (min-width: $tablet-average-content-width)
+    background-color: $bkg-grey-color
+
+.new-program
+  padding: 15px 10px 60px 10px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 30px 20px 70px 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 30px 30px 70px 30px
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 30px 10px 70px 10px
+
+  .back-n-wrap
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: block
+      margin-top: -12px
+      margin-bottom: 30px
+
+  .mobile-warning
+    padding: 10px
+    line-height: 130%
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: none
+
+.new-program-nav__steps
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  margin-bottom: 6px
+  //color: lighten($font-grey-color, 7%)
+
+.new-program-nav__step
+  @include unselectable
+  flex: 1
+  display: flex
+  justify-content: center
+  align-items: center
+  min-width: 130px
+  max-width: 150px
+  font-weight: 400
+  font-size: 14px
+  border-radius: 6px
+  margin: 0 0.2%
+  cursor: pointer
+  background-color: $bkg-deep-grey-color
+  color: $font-grey-color
+  border: 2px solid $border-line-light-color
+  text-transform: lowercase
+  height: 30px
+  transition: all 0.3s linear
+  letter-spacing: 0.5px
+  &:hover
+    color: $main-blue-color
+    font-weight: 600
+    //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
+    background-color: #ffffff
+    border: 2px solid $main-blue-color
+    //height: 28px
+  &.current,
+  &.current:hover
+    background-color: #ffffff
+    color: $font-grey-color
+    border: 2px solid $border-line-light-color
+    font-weight: 600
+    //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15)
+    &.current:hover
+      font-weight: 600
+      cursor: default
+
+.program-form__step
+//margin-bottom: 30px
+
+.notice
+  margin-top: 23px
+  text-align: end
+  padding-right: 20px
   font-size: 13px
+  color: $font-grey-color
+  font-weight: 300
+  font-style: italic
+  .link
+    font-size: 13px
+
+//#description,
+//#gallery,
+//#additional
+  padding-top: 10px
 
 .program-form
   display: none
-
   @media only screen and (min-width: $tablet-average-content-width)
-    font-size: 13px
-    margin-top: 20px
-    padding: 0 10px
+    //padding: 0 3%
     display: block
-
-  @media only screen and (min-width: $tablet-content-width)
-    margin-top: 25px
+    //margin-bottom: 100px
+  //@media only screen and (min-width: $tablet-content-width)
     padding: 0 20px
+  //@media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 0 10px
 
-  @media only screen and (min-width: $desktop-content-width)
-    padding: 0 30px
+  input,
+  select,
+  textarea
+    border: none
+    box-shadow: none
+    height: unset
+    -webkit-box-shadow: none
+    -moz-box-shadow: none
+
+  textarea::placeholder,
+  input::placeholder,
+  input::-webkit-input-placeholder,
+  select:required:invalid,
+  option:disabled
+    color: $font-grey-color
+
+  input:focus,
+  select:focus,
+  textarea:focus
+    border: none
+    box-shadow: none
+    -webkit-box-shadow: none
+    -moz-box-shadow: none
+
+  input
+    min-height: 38px
 
   input[type="text"]
-    width: 97%
+    width: 98%
     border: none
+    text-overflow: ellipsis
 
   input[type="number"]
-    height: 100%
-    width: 100%
-    border: none
+    width: 55px
+    padding: 5px 8px
+    min-height: unset
+    height: 28px
+    text-align: center
+    border: 1px solid $border-line-light-color
+    border-radius: 8px
+    &:focus
+      @include form-focus-inset
+    &:first-child
+      margin-left: 15px
+
+  input[type="number"] + .default
+    margin: 0 5px
+
+  label.default:first-child
+    margin-left: 15px
+    margin-right: 5px
 
   input[type="checkbox"]:checked + label,
   input[type="checkbox"]:not(:checked) + label
-    font-size: 12px
+    font-size: 14px
+  input[type="checkbox"]:not(:checked) + label
+    font-weight: 300
+  input[type="checkbox"]:checked + label
+    font-weight: 400
+    color: $main-font-color
 
 
-  //input[type="radio"]:checked + label:after,
-  //input[type="radio"]:not(:checked) + label:after
-    left: 4px
-    top: 2px
-    width: 14px
-    height: 14px
-    border-radius: 100%
-    background-color: $main-blue-color
+  input[type="radio"] + label
+    //letter-spacing: 0.2px
+  input[type="radio"]:not(:checked) + label
+    color: $font-grey-color
+    font-size: 14px
+    font-weight: 300
+  input[type="radio"]:checked + label:after,
+  input[type="radio"]:not(:checked) + label:after
+    top: 13px
+  input[type="radio"]:checked + label
+    color: $main-font-color
+    font-size: 14px
+    font-weight: 400
+
+  //input[type="url"]
+    min-width: 100%
 
   select
     width: 100%
-    height: 100%
-    border: none
+    min-height: 40px
     background: none
 
   textarea
-    width: 98%
-    border: none
-    padding: 12px 10px
+    width: 100%
+    overflow: unset
+    min-height: 40px
+    line-height: 1.3em
+    padding: 10px 15px
+    transition: all 0.3s ease-in-out
+    padding-bottom: 3px
+    margin-top: 1px
+    margin-bottom: 10px
+
+  textarea::placeholder
+    padding-top: 2px
 
   .group
     display: flex
     align-items: center
-    input[type="number"]
-      width: 15%
-      &:nth-child(2)
-        width: 85%
-        border-left: 1px dotted $border-line-color
-        border-radius: 10px
 
-//.new-program-nav
-  text-transform: uppercase
-  h2
-    display: none
+  .down-arr,
+  .up-arr,
+  .select-cover::before
+    font-size: 10px
+    color: $font-grey-color
+    padding-right: 3px
+  .select-cover::before
+    top: 5px
 
-  //@media only screen and (min-width: 900px)
-    display: flex
-    justify-content: space-between
-    align-items: center
-    h2
-      display: block
-      font-weight: 500
-      font-size: 16px
-      letter-spacing: 1px
-      color: $main-blue-color
-      margin-left: 25px
-      &:after
-        content: ':'
+  .dashed-line
+    border-top: 1px dashed $border-line-light-color
 
-  @media only screen and (min-width: $desktop-content-width)
-    margin-top: 30px
+  .cover-tag
+    @include unselectable
+    display: inline-block
+    min-width: 70px
+    color: $font-grey-color
+    //background-color: $blue-tag-color
+    background-color: $bkg-deep-grey-color
+    //opacity: 0.9
+    margin: 5px 0
+    margin-right: 10px
+    padding: 3px 8px
+    font-size: 13px
+    //letter-spacing: 0.5px
+    font-weight: 400
+    border: 1px solid $border-line-pr-color
+    //text-shadow: 0 1px 1px rgba(0,0,0,0.1)
+    text-align: center
+    cursor: default
+    border-radius: 6px
+    //-webkit-box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
+    //-moz-box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
+    //box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
 
-.new-program-nav__steps
-  text-transform: uppercase
-  display: flex
-  justify-content: flex-end
-  font-size: 12px
+//#program-name,
+//#start-country,
+//#start-city,
+//#finish-country,
+//#finish-city,
+//.day-country
+  font-weight: 500
 
-.new-program-nav__step
-  display: inline-block
-  color: $font-grey-color
-  padding: 10px 20px
-  cursor: pointer
-  &.current
-    color: $main-blue-color
-  &:hover
-    text-decoration: underline
-
-.program-form__step
-  //margin-bottom: 30px
-
-.day-box
-  margin-bottom: 5px
-
-  @media only screen and (min-width: $desktop-content-width)
-    margin-bottom: 8px
-
-  &.opened
-    margin: 20px 0
-    &:first-child
-      margin-top: 0
+#program-form-edit-gallery
+  margin: 0
 
 .program-form__field
   display: flex
-  margin-bottom: 5px
+  margin-bottom: 6px
   min-height: 40px
   height: 100%
-
+  .right
+    top: -25px
+    left: 0
   &.day
     margin: 0
-
   &.start
     display: flex
     align-items: center
     justify-content: space-between
-    background-color: $bkg-grey-color
-    border-radius: 12px
+    border-radius: 10px
     height: 50px
-    color: $font-grey-color
-    border: 1px solid $border-line-color
-    padding: 0 20px 0 50px
-    -webkit-transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335), color 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335)
-    -moz-transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335), color 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335)
-    -o-transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335), color 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335)
-    transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335), color 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335)
+    color: $main-font-color
+    background-color: $bkg-deep-grey-color
+    border: 1px solid $border-line-light-color
+    //text-transform: uppercase
     .day-title
-      font-size: 14px
+      color: $font-grey-color
+      flex: 1
+      height: 100%
+      font-size: 18px
+      font-weight: 700
       cursor: pointer
+      span
+        text-shadow: 0 1px 1px white
+        position: relative
+        height: 100%
+        word-spacing: 1px
+        letter-spacing: 0.5px
+        justify-content: flex-end
+        width: 165px
+        text-transform: uppercase
+        font-size: 15px
 
-    .symbol
-      font-size: 9px
-    i
-      padding: 5px
-      margin: 0 10px
-      font-size: 16px
-      cursor: pointer
-      &:last-child
-        margin-right: 0
+      &.closed span
+        &::before
+          font-family: 'fontello'
+          font-weight: normal
+          font-style: normal
+          font-size: 22px
+          content: '\f114' // .icon-folder-empty
+          position: absolute
+          right: 112px
+        &::after
+          font-size: 9px
+          content: "\25BC"
+          padding-left: 15px
+
+      &.opened span
+        padding-top: 2px
+        //color: $main-blue-color
+        &::before
+          font-family: 'fontello'
+          font-weight: normal
+          font-style: normal
+          font-size: 21px
+          content: '\f115' // .icon-folder-open-empty
+          position: absolute
+          right: 110px
+        &::after
+          font-size: 9px
+          content: "\25B2"
+          padding-left: 15px
+
+    .day-nav
+      justify-content: flex-end
+      height: 100%
+      padding-right: 35px
+
+      .help
+        top: -9px
+        right: 22px
+        &::before
+          width: 8px
+          height: 8px
+          padding: 6px
+          left: -4px
+        .top
+          right: -25px
+          top: 20px
+
+        .day-clone,
+        .day-delete
+          margin: 0
+          padding: 0
+        .locked::after,
+        .unlocked::after
+          margin: 0
+          font-size: 15px
+
+      .day-clone
+        margin-right: 35px
+        cursor: pointer
+        padding: 5px
+        &::before
+          font-family: 'fontello'
+          font-weight: normal
+          font-style: normal
+          font-size: 18px
+          content: '\f0c5' // .icon-docs
+          color: $font-grey-color
+        &:hover
+          color: $main-blue-color
+          transform: scale(1.1)
+
+      .day-delete
+        margin-right: 3px
+        cursor: pointer
+        padding: 5px
+        &::before
+          font-family: 'fontello'
+          font-weight: normal
+          font-style: normal
+          font-size: 18px
+          content: '\e83b' // .icon-trash-empty
+          color: $font-grey-color
+        &:hover
+          color: $main-blue-color
+          transform: scale(1.2)
 
     &.opened
+      border-bottom: none
       border-bottom-left-radius: 0
       border-bottom-right-radius: 0
-      color: $main-blue-color
-      padding-left: 100px
-      border-bottom-style: dotted
-      .symbol
-        color: $main-blue-color
-        cursor: pointer
-    &.add
-      cursor: pointer
-      //background: $orange-color
-      //border-style: dotted
-      span
-        //color: #ffffff
-        //font-weight: 400
+      padding-top: 6px
+      padding-bottom: 5px
 
-    @media only screen and (min-width: 900px)
-      padding: 0 40px
-
-  .help::before
-    font-size: 13px
-    padding: 5px
-    margin-right: 2px
 
 .program-form__title
+  position: relative
   display: flex
   align-items: baseline
   justify-content: flex-end
-  width: 300px
+  width: 240px
+  min-height: 42px
+  padding-top: 12px
+  padding-right: 15px
+  //padding: 13px 15px 5px 10px
+  //font-family: $f_montserrat
   color: $font-grey-color
-  min-height: 40px
-  padding: 11px 10px 11px 5px
-  background-color: $bkg-grey-color
-  border: 1px solid $border-line-color
+  text-transform: lowercase
+  //letter-spacing: 0.3px
+  font-size: 14px
+  line-height: 100%
+  font-weight: 400
+  background-color: $bkg-deep-grey-color
+  border: 1px solid $border-line-light-color
   border-right: none
-  border-top-left-radius: 12px
-  border-bottom-left-radius: 12px
+  border-top-left-radius: 10px
+  border-bottom-left-radius: 10px
   &.day
-    width: 225px
+    width: 200px
+    background-color: #ffffff
     border-top-left-radius: 0
     border-bottom-left-radius: 0
+    border-right: 1px solid $border-line-light-color
     border-bottom: none
+    //border-bottom-color: $border-line-light-color
     border-top: none
-    background-color: unset
-    border-right: $bkg-grey-color
     &.end
-      border-bottom-left-radius: 12px
-      border-bottom: 1px solid $border-line-color
+      border-bottom-left-radius: 10px
+      border-bottom: 1px solid $border-line-light-color
+  .help::before
+    top: -11px
+    left: -20px
+    background-size: 13px
+  span
+    //opacity: 0.95
+  span.red
+    position: absolute
+    top: 13px
+    right: 9px
+    font-weight: 600
+    font-size: 16px
+
+  .add-elem
+    width: 18px
+    &::before
+      padding: 7px
+      top: -12px
+    &:hover::before
+      transform: unset
+      filter: grayscale(100%)
+      cursor: help
+
+.day-box
+  margin-top: 8px
+  margin-bottom: 20px
+  border-radius: 10px
+  -webkit-box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  //@include box-deep-shadow
+  //@media only screen and (min-width: $desktop-content-width)
+    margin-bottom: 8px
+
+  &.opened
+    margin-bottom: 30px
+    //&:first-child
+      margin-top: 15px
+
+  &.closed
+    &:hover .day-title
+      color: $main-blue-color
+
+  //класс для скрытия полей НОЧЕВКА и РАЗМЕЩЕНИЕ для последнего дня
+  .hidden-field
+    overflow: hidden
+    min-height: 0
+    height: 0
+
 
 .program-form__text
   width: 100%
-  border: 1px solid $border-line-color
-  border-left-style: dotted
-  border-top-right-radius: 12px
-  border-bottom-right-radius: 12px
+  background-color: #ffffff
+  border: 1px solid $border-line-light-color
+  border-left: none
+  border-top-right-radius: 10px
+  border-bottom-right-radius: 10px
+  &.filled
+    background-color: $bkg-deep-grey-color
+    .fade
+      height: 100%
+      background-color: #ffffff
   &.day
     border-top-right-radius: 0
     border-bottom-right-radius: 0
+    //border-left-color: $border-line-color
+    border-bottom: 1px solid $border-line-light-color
     border-top: none
-    border-bottom: 1px dotted $border-line-color
-    min-height: 40px
+    min-height: 42px
     height: 100%
     &.end
-      border-bottom-right-radius: 12px
-      border-bottom: 1px solid $border-line-color
+      border-bottom-right-radius: 10px
+      border-bottom: 1px solid $border-line-light-color
+      min-height: 50px
+      //padding-right: 6px
+    //@media only screen and (min-width: $tablet-content-width)
 
-    @media only screen and (min-width: $tablet-content-width)
-      padding-right: 6px
+
+  .day__text
+    height: 100%
+    width: 100%
+    min-height: 40px
 
   .cover-box
-    cursor: pointer
     width: 100%
+    height: 100%
 
     .group
+      min-height: 40px
+      cursor: pointer
       justify-content: space-between
-      padding: 11px 15px
-      .text
-        word-spacing: 2px
+      align-items: center
+      padding: 0 13px
 
-    .checkbox-block
-      display: none
-      column-count: 2
-      margin-bottom: 10px
-      div
-        display: inline-block
-        margin-bottom: 5px
-        padding-left: 15px
-        width: 100%
-      @media only screen and (min-width: 900px)
-        column-count: 3
-      @media only screen and (min-width: 1100px)
-        column-count: 4
+  .text
+    word-spacing: 0.5px
+    text-transform: lowercase
+    .blue
+      font-weight: 600
+
+    .cover-btn
+      display: inline-block
+      padding: 4px 14px
+      //font-size: 12px
+      //font-weight: 500
+      margin: 5px 0
+      margin-right: 10px
+
+  .day-place
+    .text-lock
+      text-transform: none
+
+  .checkbox-block
+    display: none
+    column-count: 2
+    margin-top: 10px
+    padding-bottom: 15px
+    margin-bottom: 15px
+    text-transform: lowercase
+
+    div
+      display: inline-block
+      margin-bottom: 5px
+      padding-left: 12px
+      width: 100%
+    @media only screen and (min-width: 900px)
+      column-count: 3
+    @media only screen and (min-width: 1100px)
+      column-count: 4
 
   .radio-cover
     display: flex
     color: $font-grey-color
-    padding-left: 12px
+    padding-left: 16px
     height: 100%
+    //font-size: 12px
     div
       display: flex
       align-items: center
       margin-right: 15px
       &:last-child
         margin-right: 0
-      input[type="radio"]:checked + label:after,
-      input[type="radio"]:not(:checked) + label:after
-        top: 12px
 
   .select-cover
     display: flex
     align-items: center
     width: 100%
+    border-right: 1px solid $border-line-light-color
+    border-radius: 0
+    &:last-child
+      border-right: none
+    option[value=""][disabled]
+      color: $font-grey-color
 
   .checkbox-cover
     position: relative
     display: flex
     align-items: center
     height: 100%
-    margin-left: 12px
+    margin-left: 15px
     margin-right: 8px
-    //padding-left: 7px
-    //padding-top: 3px
-    //margin-bottom: 15px
     span.text
-      display: none
       position: absolute
+      font-size: 14px
+      color: darken($font-light-grey-color, 10%)
       z-index: 5
-      top: 11px
-      left: 3px
+      top: 12px
+      left: 5px
+      text-transform: unset
+    input[type="checkbox"] + label
+      margin-bottom: 1px
 
     .fade
       flex: 1
+      //border-right: 1px dashed $border-line-light-color
+      //border-left: 1px dashed $border-line-light-color
+      margin-right: 10px
       margin-left: -13px
 
-  #multi-country
-    margin-bottom: 5px
-    margin-left: 1px
+  select.clone
+    option:disabled
+      color: $main-blue-color
+      font-size: 16px
+      font-weight: 300
+    option[value=""]
+      color: $font-grey-color
+
+  .select-cover.plus-sign
+    display: inline-block
+    position: relative
+    margin-left: 12px
+    &::before
+      content: ''
+      background: url(../../images/service/plus.svg) center no-repeat
+      background-size: contain
+      left: 0
+      top: -4px
+      width: 7px
+      line-height: 40px
+      height: 100%
+      padding: 5px
+      opacity: 0.8
+      filter: grayscale(100%)
+    &::after
+      display: none
+      //position: absolute
+      //content: "▼"
+      //font-size: 10px
+      //top: 16px
+      //right: 28px
+    select
+      padding-left: 22px
 
   .country-list
-    margin-top: 34px
-    span
+    margin-top: 40px
+    margin-right: 3px
+    padding-bottom: 7px
+    border-bottom: 1px dashed $border-line-light-color
+    .cover-btn
+      background-color: $bkg-deep-grey-color
+      border: 1px solid $border-line-pr-color
+      color: $font-grey-color
+      font-weight: 400
+      //opacity: 0.9
+      position: relative
       display: inline-block
-      padding: 6px 0 7px 17px
+      padding: 4px 30px 4px 17px
+      margin-left: 12px
+      margin-bottom: 8px
+      //letter-spacing: 0.5px
+      border-radius: 6px
+      //-webkit-box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
+      //-moz-box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
+      //box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.7)
     .delete-clone
-      padding: 0
+      top: 4px
+      right: 7px
       &::after
-        font-family: 'fontello'
-        font-weight: normal
-        font-style: normal
-        content: '\e81c'  //icon-minus-circled
-        cursor: pointer
-        padding: 3px
-        font-size: 13px
-        margin-left: 2px
-        color: $font-grey-color
-        opacity: 0.8
-      &:hover:after
-        color: $main-blue-color
+        width: 16px
+        height: 16px
         opacity: 1
+        filter: grayscale(100%)
+      &:hover::after
+        filter: unset
 
+  .day-accommodation
+    .text
+      text-transform: unset
+      //font-size: 15px
+      //font-weight: 400
 
-  #country-added::before
-    position: absolute
-    font-family: 'fontello'
-    font-weight: normal
-    font-style: normal
-    z-index: -1
-    content: '\e8b8'   // icon-plus-circled-1
-    color: $font-grey-color
-    font-size: 13px
-    bottom: 11px
-    left: 55px
-    opacity: 0.8
+  .distance-box
+    padding-bottom: 5px
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    //label,
+    //span
+    //font-size: 12px
+    //word-spacing: 1px
+    label
+      //padding-left: 13px
+      //padding-right: 2px
+    input[type='number']
+      min-width: 70px
+      //font-family: $f_montserrat
+      margin-left: 2px
+      margin-right: 2px
+      margin-bottom: 8px
+      //font-weight: 400
 
-  .day__text
-    height: 100%
-    width: 100%
+  .add-elem,
+  .delete-elem
+    min-height: 40px
+    width: 18px
+    margin-right: 18px
+    cursor: pointer
+    &::before
+      top: 11px
+      right: -5px
 
-  .btn-action
-    width: 110px
-    padding: 5px
-    border: 1px solid #00b8e3
-    border-radius: 12px
-    font-size: 10px
-    font-weight: 500
-    text-align: center
-    margin-right: 20px
-    &:last-child
-      margin-right: 30px
+  iframe
+    margin: 0 11px 8px 11px
 
-
+.program__comfort,
+.program__dynamics,
+.program__meal
+  &::before
+    width: 17px
+    height: 17px
+    margin-top: 5px
+    margin-bottom: -4px
+  &.program__dynamics
+    &::before
+      margin-bottom: -6px
 
 .repeat-4-all
-  line-height: 30px
+  display: flex
+  line-height: 40px
   align-self: baseline
+  padding-right: 8px
   input[type="checkbox"]:checked + label:before,
-  input[type="checkbox"]:not(:checked) + label:before
-    margin-top: 5px
-
+  input[type="checkbox"]:not(:checked) + label:before,
   input[type="checkbox"]:checked + label:after,
   input[type="checkbox"]:not(:checked) + label:after
-    margin-top: 7px
+    margin-top: 8px
 
-//////////////////////////////////////////////
+.unlocked::after
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e802"  //.icon-lock-open-1
+  color: $font-grey-color
+  font-size: 14px
+  margin-right: 11px
+  margin-left: 7px
 
+.locked::after
+  font-family: 'fontello'
+  font-weight: normal
+  font-style: normal
+  content: "\e8c5"  //.icon-lock-1
+  color: $main-blue-color
+  font-size: 14px
+  margin-right: 11px
+  margin-left: 7px
 
-.program-form__image-result
+// для динамически созданных текстовых полей локера
+.text-lock
+  min-height: 40px
+  padding: 0 13px
+
+// класс бокса с картинкой, добавленной в ПЛАН ПО ДНЯМ
+.checked-img
   position: relative
+  border-radius: 8px
+  padding: 7px
   img
-    border-radius: 15px
-    border: 2px solid #ffffff
+    margin: 4px
+    margin-bottom: 2px
+    border-radius: 8px
+  .delete-clone
+    right: 15px
+    top: 15px
+
+.add-day
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 10px
+  width: 100%
+  height: 50px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 1px
+  color: $font-grey-color
+  margin-bottom: 35px
+  border: 1px solid $bkg-deep-grey-color
+  cursor: pointer
+  background-color: #ffffff
+  transition: all 0.3s ease-in-out
+  text-shadow: 0 1px 1px rgba(0,0,0,.08)
+  -webkit-box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.15)
+  i
+    padding-right: 5px
+    font-size: 16px
+  &:hover
+    color: $main-blue-color
+    @include inner-shadow-blue
+    text-shadow: unset
+
+//======= G A L L E R Y ========================================
+#gallery // признак Галереи
+  .program-form__image-result
+    padding: 8px 15px 0 20px
+  .turn-img
+    left: 4px
+
+#img-archive-box // признак ПЛАН ПО ДНЯМ
+  .program-form__image-result
+    padding: 0
+  .turn-img
+    right: 32px
+
+.image-result__delete
+  display: inline-block
+  position: relative
+  transition: all 0.3s ease-in-out
+  margin: 5px 2% 5px 0
+  border-radius: 8px
+  img
+    width: 100%
+    border-radius: 8px
+
+  //.turn-img
+    &::after
+      width: 28px
+      height: 28px
+
+  .delete-clone
+    top: 4px
+    right: 4px
+    transition: 0.3s all linear
+
+  .check-img
+    display: inline-block
+    position: absolute
+    z-index: 5
+    //transition: all 0.3s ease-in-out
+    left: 4px
+    top: 4px
+    //transition: 0.3s all linear
+    &::after
+      display: inline-block
+      cursor: pointer
+      content: ""
+      position: absolute
+      z-index: 5
+      background: url(../../images/service/check.svg) center no-repeat
+      width: 28px
+      height: 28px
+      background-size: contain
+      filter: grayscale(100%)
+      opacity: 0.8
+      transition: all 0.3s ease-in-out
+    &:hover::after
+      filter: drop-shadow(0px 0px 2px $green-color)
+      //filter: unset
+      transform: scale(1.1)
+      opacity: 1
+
+#form_upload_main_photo,
+#form_upload_map_photo,
+#form_upload_archive_photo
+  margin-bottom: 15px
+  .input-btn-style,
+  .btn-blue
+    margin-top: 10px
+    &.btn-blue
+      line-height: 32px
+
+//#form_upload_archive_photo
+  margin-top: 15px
+  margin-bottom: 15px
+
+.program-form__text,
+.choose-img-box,
+  form
+    .btn-tertiary
+      min-width: 200px
+      max-width: 250px
+      margin-top: 5px
+      margin-left: 20px
+      line-height: 30px
+
+    .has-file
+      color: $main-blue-color
+      //font-weight: 500
+
+    button
+      font-size: 11px
+      margin-left: 15px
+      //span
+        padding: 8px 20px
+
+#block_error_upload_archive_photo
+  display: block
+  font-weight: 500
+  width: 100%
+
+// анимация во время загрузки фото
+.preloader
+  width: 130px
+  //height: 15px
+  display: block
+  margin-top: 10px
+  padding-top: 14px
+  margin-left: 24px
+  background: url("../../images/service/preloader.svg") no-repeat
+  background-size: contain
+  &::before
+    width: 130px
+    display: inline-block
+    //font-family: $f_montserrat
+    font-size: 14px
+    font-weight: 600
+    color: $main-blue-color
+    text-align: center
+    content: "идет загрузка фото"
+    opacity: 0.7
+
+// стили для счетчика фото в ФОТО-АРХИВЕ
+#img-archive-counter
+  margin-left: auto
+  padding-right: 45px
+  align-self: flex-end
+  //font-size: 11px
+  color: $font-grey-color
+  span
+    padding-left: 6px
+    padding-right: 6px
+    font-weight: 600
+    font-size: 16px
 
 
+#add-video
+  width: 200px
+  margin-top: 15px
+  //margin-left: 20px
+  margin-bottom: 15px
+  line-height: 28px
 
+.video-box
+  transition:  all 0.3s ease-in-out
 
-.new-program__bottom
-  margin-top: 50px
-  margin-bottom: 30px
+  input
+    width: 90%
+    min-height: 40px
+    margin-left: 15px
+    margin-top: 15px
+    margin-bottom: 15px
+    border: 1px solid $border-line-light-color
+    &:focus
+      @include form-focus-inset
+
+.ytPlay
+  width: 330px
   position: relative
   div
-    min-width: 190px
+    padding: 10px 10px 0 10px
+  .delete-clone
+    right: 12px
+    top: 14px
+    //&::after
+      width: 35px
+      height: 35px
 
-  .help
-    position: absolute
-    top: 1px
-    right: 1px
+
+//====== В Ы Б Р А Т Ь   Ф О Т О   К О   Д Н Ю ========================================
+ // стили для отображения галереи в ПЛАН ПО ДНЯМ
+#img-archive-box
+  background-color: #FFFFFF
+  border: 1px solid $border-line-light-color
+  border-radius: 10px
+  padding: 5px 10px
+
+  form
+    justify-content: center
+    margin-top: 25px
+    margin-bottom: 15px
+
+  .image-result__delete
+    margin: 5px
+
+#choose-img
+  height: 100%
+  overflow: auto
+  padding: 2%
+
+  .choose-img-box
+    position: relative
+    min-width: 500px
+    max-width: 1000px
+    background-color: $bkg-deep-grey-color
+    border-radius: 12px
+    padding: 20px 35px 40px 35px
+    margin-top: 3%
+    margin-left: auto
+    margin-right: auto
+
+    .close-pop-up::before
+      font-size: 18px
+      top: 12px
+      right: 12px
+
+    p
+      color: $font-grey-color
+      //line-height: 1.2em
+      margin: 0 0 10px 0
+      font-size: 15px
+      font-weight: 300
+      padding: 0 6px
+
+    .block-title
+      border-bottom: none
+      //padding-left: 10px
+
+.blur-img
+  opacity: 0.5
+
+
+//======= A D D I T I O N A L =========================================
+
+#additional
+  .cover-box
+    border-bottom: 1px solid $border-line-light-color
+    &:last-child
+      border-bottom: none
+
+  .program-form__title.frame
+    padding-top: 50px
+
+  .program-form__text.frame
+    padding: 2px 23px 10px 0
+    background-color: $bkg-deep-grey-color
+
+//======= B O T T O M =========================================
+.bottom__button-box
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  div
+    display: flex
+    justify-content: flex-start
+    margin-top: 20px
+    margin-left: 5px
+    &:first-child
+      flex-direction: column
+      align-items: flex-end
+      margin-right: 5px
+  button
+    min-width: 140px
+    max-width: 180px
+    padding: 0 19px
+    //border-radius: 8px
+    //span, a
+      font-size: 14px
+  .btn-orange, .btn-grey
+    min-width: 180px
+    margin-bottom: 25px
+    margin-left: 15px
+
+  .btn-linear-blue
+    display: flex
+    justify-content: center
+    align-items: center
+    min-width: 150px
+    max-width: 150px
+    font-weight: 400
+    font-size: 14px
+    border-radius: 8px
+    margin: 0 0.2%
+    cursor: pointer
+    background-color: $bkg-deep-grey-color
+    color: $font-grey-color
+    border: 2px solid $border-line-light-color
+    text-transform: lowercase
+    height: 30px
+    transition: all 0.3s linear
+    &:hover
+      color: $main-blue-color
+      font-weight: 600
+      background-color: #ffffff
+      border: 2px solid $main-blue-color
+//height: 28px
+
+//.btn-linear-blue
+  @include unselectable
+  color: #ffffff
+  background-color: $main-blue-color
+  border: 2px solid $main-blue-color
+  text-align: center
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 1px
+  cursor: pointer
+  transition: all 0.3s linear
+  line-height: 100%
+  height: 30px
+  text-transform: lowercase
+  padding: 0 18px
+  border-radius: 6px
+  &:hover
+    color: $icon-grey-color
+    background-color: #FFFFFF
+    border-color: $border-line-light-color
+    font-weight: 400
+
+//#save-exit,
+//#to-preview
+  min-width: 175px
+  //margin-right: 20px
+
+#previous-page
+  margin-right: 40px
+  padding-right: 30px
+#next-page
+  padding-left: 30px
+
+
+//====== И К О Н К И   Д Л Я   Б А З Ы   З Н А Н И Й ===========================
+//.img_tour-type
+  &::before
+    content: ""
+    display: inline-block
+    width: 16px
+    height: 16px
+    background: url("../../images/icons/icon_tour-type.svg") no-repeat
+    background-size: contain
+
+.img_search
+  &::before
+    content: ""
+    display: inline-block
+    margin-top: 5px
+    margin-bottom: -3px
+    width: 16px
+    height: 16px
+    background: url("../../images/icons/icon_search.svg") no-repeat
+    background-size: contain
+
+.img_accommodation
+  &::before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/icon_accommodation.svg") no-repeat
+    margin-bottom: -4px
+    margin-top: 6px
+    width: 21px
+    height: 14px
+    background-size: contain
+
+.img_map-and-route
+  &::before
+    content: ''
+    display: inline-block
+    background: url("../../images/icons/icon_route-stats.svg") no-repeat
+    margin-bottom: -6px
+    margin-top: 4px
+    width: 24px
+    height: 24px
+    background-size: contain
+
+.icon-camera,
+.icon-videocam-3
+  font-size: 16px
+  padding-right: 3px
+  margin-top: 4px
+  margin-bottom: 3px
+
+
+#moderation-mode
+  padding-bottom: 10px
+  padding-left: 10px
+  padding-right: 10px
+  margin-bottom: 25px
+  h4
+    font-size: 18px
+    text-transform: uppercase
+    letter-spacing: 0.5px
+    font-weight: 600
+    margin: 0 0 8px 0
+    color: $main-blue-color
+
+  .group
+    display: flex
+    align-items: baseline
+    min-height: 25px
+    border: 1px solid $border-line-pr-color
+    //border-bottom: none
+    background-color: $bkg-deep-grey-color
+    margin-top: -1px
+    //&:last-child
+      border-bottom: 1px solid $border-line-pr-color
+
+  .history__data
+    padding: 5px 12px
+    font-weight: 400
+    font-size: 12px
+
+  .history__comment
+    padding: 0 12px
+    border-left: 1px solid $border-line-pr-color
+    font-size: 14px
+    p
+      margin: 6px 0
+  button
+    margin-top: 15px

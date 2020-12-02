@@ -30,17 +30,18 @@ class TemplateRenderer implements IRenderer
     /**
      * Метод генерирует шаблон и возвращает его в виде строки.
      * @param string $template - Имя подлключаемой страницы.
+     * @param string $path - Путь к папке с представлениями.
      * @param array $params - Список параметров, которые мы получаем в функции.
      * @return false|string Возвращаем сгенерированный шаблон в виде строки.
      */
-    public function render($template, $params = [])
+    public function render($template, $path, $params = [])
     {
         // Извлекаем переменные из массива.
         extract($params);
         // Включаем буферизацию вывода.
         ob_start();
         // Подключаем шаблон.
-        require VIEWS_DIR . $template . ".php";
+        require $path . $template . ".php";
         // Возвращаем полученное содержимое текущего буфера, бефер очищаем.
         return ob_get_clean();
     }

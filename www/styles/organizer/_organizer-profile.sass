@@ -1,381 +1,581 @@
-.organizer__profile
-  margin-bottom: 40px
+@charset "UTF-8"
 
+.organizer__profile
   @media only screen and (min-width: $tablet-average-content-width)
     display: block
-    margin-top: 15px
-    margin-bottom: 100px
+
+.organizer__profile
+  padding: 15px 10px 60px 10px
+  @media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
+  @media only screen and (min-width: $tablet-average-content-width)
+    padding: 35px 20px 70px 20px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 35px 30px 70px 30px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  @media only screen and (min-width: $desktop-content-width + 40px)
+    padding: 35px 10px 70px 10px
+
+  .organizer__info-field
+    padding: 0 5px 15px 5px
+    font-weight: 400
+    font-size: 15px
+
+  .info-field__head
+    color: $font-grey-color
+    //opacity: 0.85
+    font-size: 13px
+    font-weight: 300
+    //letter-spacing: 0.3px
+    text-transform: lowercase
+
+  .info-field__content
+    display: block
+    //line-height: 1.3em
+    margin-top: 3px
+
 
 .organizer__information
-  margin-bottom: 30px
-
-  @media only screen and (min-width: $mobile-content-width)
-    padding: 0 10px
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    padding: 10px 20px
-
+  //padding: 15px 10px 60px 10px
+  //@media only screen and (min-width: $mobile-content-width)
+    padding: 15px 15px 60px 15px
+    //padding-bottom: 30px
+  //@media only screen and (min-width: $tablet-average-content-width)
+    padding: 15px 20px 70px 20px
+    //padding-top: 30px
   @media only screen and (min-width: $tablet-content-width)
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+  //@media only screen and (min-width: $desktop-content-width + 40px)
+    //padding: 25px 0
+    padding: 20px 10px 70px 10px
 
-  @media only screen and (min-width: $desktop-content-width + 40px)
-    padding: 10px
+  .back-n-wrap
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: block
+      width: 100%
+      margin-top: -20px
+      .mobile
+        display: none
 
-  @media only screen and (min-width: $desktop-content-width)
-    .organizer__main,
-    .organizer__contacts,
-    .organizer__links,
-    .organizer__personal-data,
-    .organizer__about
-      padding: 15px 25px
+  .important::before
+    top: -2px
 
-  .block-title
-    padding-left: 10px
+  .right
+    top: -20px
+    left: 16px
 
-  .help
-    padding-left: 5px
+  .edit-menu
+    position: absolute
+    width: 73px
+    height: 67px
+    right: 0
+    top: 0
+    z-index: 3
+    border-top-right-radius: 12px
+    border-bottom-left-radius: 12px
+    cursor: pointer
     &::before
-      font-size: 13px
+      display: block
+      text-align: center
+      padding-top: 20px
+      font-size: 28px
+      padding-right: 20px
+      color: $main-font-color
+      opacity: 0.8
+    &:hover::before
+      color: $main-blue-color
+      opacity: 1
 
-  form
-
-    select,
-    input,
-    textarea
-      border-style: dotted
-
-    .organizer__button
-      width: 100%
-      padding: 0 10px
-      button
-        width: 100%
-        margin: 20px 0
-
-      @media only screen and (min-width: $mobile-content-width)
-        text-align: end
-        padding: 0 20px
-        button
-          width: auto
-
-.organizer__activate
-  margin: 0 20px 15px 20px
-  div
-    position: relative
-    button
-      width: 100%
-      span
-        padding: 10px 15px
-    .help
-      position: absolute
-      text-align: start
-      z-index: 4
-      right: -9px
-      top: -10px
-      &::before
-        font-size: 16px
-
-  @media only screen and (min-width: $tablet-content-width)
-    order: -2
-    width: 100%
-
-  @media only screen and (min-width: $desktop-content-width)
-    padding: 0
-
+//========================================
 .main__group
   position: relative
-  background-color: #FCFCFC
-  border: 1px solid #e6e6e6
-  border-radius: 15px
-  margin: 0 2%
-  margin-bottom: 20px
-
+  //background-color: $bkg-grey-color
+  background-color: #ffffff
+  @include box-light-shadow
+  //border: 1px solid $border-line-light-color
+  border-radius: 12px
+  //margin: 0 2%
+  margin-bottom: 30px
+  padding-bottom: 20px
+  @media only screen and (min-width: $mobile-content-width)
+    margin: 0
+    margin-bottom: 30px
   @media only screen and (min-width: $tablet-average-content-width)
     display: flex
     justify-content: space-evenly
-    margin: 0 0 30px 0
-
+    margin: 0 0 40px 0
+    padding-bottom: 0
   @media only screen and (min-width: $tablet-content-width)
     order: -1
     flex-direction: column
-    width: 38.5%
-    padding-top: 20px
+    width: 44%
 
 .organizer__main
-  padding: 5%
+  padding: 30px 5% 20px 5%
   display: flex
   justify-content: flex-start
   align-items: center
-  margin-top: 10px
-
+  margin-left: 10px
   @media only screen and (min-width: $tablet-average-content-width)
+    padding: 0 5%
     flex-direction: column
-    justify-content: space-evenly
-    padding: 5px 15px
+    justify-content: center
     margin: 0
-
   @media only screen and (min-width: $tablet-content-width)
+    padding: 17px 30px 15px 30px
     flex: 1
+    flex-direction: row
+    justify-content: flex-start
+    margin-left: 0
 
   .info-field
     padding-left: 10px
 
+  .info-field__head
+    margin-top: 2px
+    margin-bottom: 2px
+    opacity: 1
+
 .organizer__avatar
   position: relative
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin-bottom: 7px
+  @media only screen and (min-width: $tablet-content-width)
+    margin-bottom: 0
+    margin-top: 5px
+    //margin-left: 7px
+
   img
+    width: 100%
     border-radius: 50%
     cursor: pointer
+    @include img-light-shadow
     &:hover
       opacity: 0.9
 
 .add_avatar
   cursor: pointer
   &:after
-    content: "+"
-    font-size: 32px
+    font-size: 35px
     position: absolute
     border-radius: 50%
-    padding: 0 9px
-    font-weight: 600
-    opacity: 0.7
-    bottom: 0
-    right: 0
+    padding: 0 10px
+    padding-bottom: 1px
+    font-weight: 800
+    opacity: 0.8
     color: $font-grey-color
-    background: $bkg-grey-color
+    content: "+"
+    bottom: -1px
+    right: -9px
+    border: 1px solid $bkg-grey-color
+    background: #ffffff
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.15)
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.15)
+    box-shadow: 0 1px 3px rgba(0,0,0,.15)
 
+.organizer__registered
+  margin-top: 10px
+  span
+    display: block
+    margin-left: 20px
+    @media only screen and (min-width: $tablet-average-content-width)
+      min-width: 150px
+      margin: 0
+      text-align: center
+    @media only screen and (min-width: $tablet-content-width)
+      min-width: 100px
+      margin-left: 25px
+      text-align: left
+
+.organizer__contacts
+  position: relative
+  padding: 0 5% 10px 5%
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 100%
+    padding: 15px 20px
+    box-shadow: -2px 0px 1px -2px $border-line-color
+    margin: 0
+  @media only screen and (min-width: $tablet-content-width)
+    flex: 2
+    box-shadow: unset
+    padding: 0 35px
+    padding-bottom: 18px
+
+  //.organizer__info-field
+    padding-bottom: 8px
+
+  .organizer__info-field:first-child
+    padding-top: 12px
+    box-shadow: 0px -3px 1px -2px $border-line-light-color
+    @media only screen and (min-width: $tablet-average-content-width)
+      box-shadow: unset
+      padding-top: 0
+    @media only screen and (min-width: $tablet-content-width)
+      box-shadow: 0px -3px 1px -2px $border-line-light-color
+      padding-top: 12px
+
+//-----------------------------------------------------------
+.organizer__personal-data
+  position: relative
+  //background-color: $bkg-grey-color
+  background-color: #ffffff
+  @include box-light-shadow
+  //border: 1px solid $border-line-light-color
+  border-radius: 12px
+  padding: 15px 5% 30px 5%
+  //margin: 0 2%
+  margin-bottom: 30px
+  @media only screen and (min-width: $mobile-content-width)
+    margin: 0
+    margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    margin: 0 auto
+    margin-bottom: 40px
+  @media only screen and (min-width: $tablet-content-width)
+    width: 90%
+    padding: 10px 35px 30px 35px
+
+  .block-title
+    margin-bottom: 14px
+
+  //.unfilled
+    padding-left: 10px
+
+//класс для центровки блоков на странице ПРОФИЛЬ ПАРТНЕРА
+.media-default
+  @media only screen and (min-width: $tablet-content-width)
+    order: -1
+    display: block
+    width: 53%
+    margin: 0 0 40px 0
+
+//===LINKS==================================================================
+.organizer__links
+  position: relative
+  //background-color: $bkg-grey-color
+  background-color: #ffffff
+  @include box-light-shadow
+  //border: 1px solid $border-line-light-color
+  border-radius: 12px
+  padding: 15px 5% 30px 5%
+  //margin: 0 2%
+  margin-bottom: 30px
+  @media only screen and (min-width: $mobile-content-width)
+    margin: 0
+    margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 100%
+    margin-bottom: 40px
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 10px 35px 30px 35px
+  @media only screen and (min-width: $desktop-content-width)
+    width: 53%
+    margin-bottom: 0
+
+  .block-title
+    //padding-left: 10px
+    margin-bottom: 12px
+
+  .links__group
+    @media only screen and (min-width: $tablet-average-content-width)
+      column-count: 2
+
+  .unfilled
+    margin-left: -2px
+
+  .organizer__info-field
+    display: flex
+    align-items: center
+    padding: 7px 10px
+
+    .info-field__content
+      width: 85%
+      font-weight: 400
+      font-size: 14px
+      min-height: 20px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      text-transform: lowercase
+
+  .info-field__icon
+    margin-right: 10px
+    margin-top: 3px
+    opacity: 0.9
+
+//====ABOUT=======================================================================
+.organizer__about
+  position: relative
+  //background-color: $bkg-grey-color
+  background-color: #ffffff
+  @include box-light-shadow
+  //border: 1px solid $border-line-light-color
+  border-radius: 12px
+  //margin: 0 2%
+  padding: 15px 5% 30px 5%
+  @media only screen and (min-width: $mobile-content-width)
+    margin: 0
+    margin-bottom: 30px
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 100%
+    margin: 0 auto
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 10px 35px 30px 35px
+  @media only screen and (min-width: $desktop-content-width)
+    width: 44%
+    margin-left: 0
+    order: -1
+
+  .organizer__info-field
+    padding: 10px 5px
+    @media only screen and (min-width: $desktop-content-width)
+      max-height: 300px
+      overflow: auto
+
+  p
+    margin: 6px 0
+    line-height: 1.25em
+    //font-weight: 300
+
+//===== B O T T O M   B U T T O N ===================================================
+.organizer__activate
+  margin-top: 50px
+  display: flex
+  justify-content: center
+  width: 100%
+  div
+    button
+      max-width: 300px
+    .help
+      z-index: 1000
+      padding-bottom: 25px
+      &::before
+        left: 0
+        top: 0
+        //font-size: 16px
+      .help-pop-up
+        text-align: left
+      .top
+        right: -30px
+        top: 17px
+
+///=== F O R M S =========================================
+.organizer__information form
+  select,
+  input,
+  textarea
+    min-height: 35px
+
+//=====AVATAR=========
 .avatar__edit
   position: absolute
-  z-index: 4
+  z-index: 100
+  min-width: 300px
+  margin-top: 15px
   top: 70%
-  left: -10px
-  background-color: rgba(255, 255, 255, 0.95)
-  border: 1px solid $border-line-color
-  border-radius: 15px
-  box-shadow: 0 3px 6px rgba(178, 178, 178, 0.16)
-  padding: 25px 15px 15px 15px
+  left: -22px
+  background-color: $bkg-light-grey-color
+  border-radius: 12px
+  @include box-deep-shadow
+  padding: 15px 25px 35px 25px
   text-align: center
+
   .close-pop-up
     color: $font-grey-color
     padding: 5px
     cursor: pointer
-    font-size: 16px
+    font-size: 18px
     position: absolute
     right: 5px
     top: 5px
     &:hover
       color: $main-blue-color
 
-  input
-    width: 260px
+  .info-field__head
+    font-size: 16px
+    font-weight: 300
+    padding-top: 13px
+    margin-bottom: 7px
 
-    @media only screen and (min-width: $mobile-content-width)
-      width: 350px
+  .avatar__original
+    position: relative
+
+    .turn-img
+      &::after
+        width: 32px
+        height: 32px
+        margin-left: 5px
+    img
+      width: 100%
+      border-radius: 0
+      filter: unset
+      border: 1px solid $border-line-light-color
+
+  .input-btn-style .btn-tertiary
+    min-width: unset
+    max-width: unset
+    margin-top: 10px
+    font-size: 14px
+    border-radius: 10px
+    background-color: #ffffff
+    height: 40px
+    line-height: 36px
 
   button
-    margin: 20px 0 10px 0
-    span
-      padding: 12px
+    margin: 0 auto
+    margin-top: 15px
 
-.organizer__registered
-  span
-    display: block
-    padding-left: 20px
-
-    @media only screen and (min-width: $tablet-average-content-width)
-      min-width: 150px
-      padding: 0
-      text-align: center
-
-.organizer__contacts
-  position: relative
-  padding: 15px
-  .organizer__info-field:first-child
-    padding-top: 10px
-    border-top: 1px solid $border-line-color
-
+//=====PERSONAL DATA=========
+form.organizer__personal-data
+  background-color: $bkg-grey-color
+  @include box-deep-shadow
   @media only screen and (min-width: $tablet-average-content-width)
-    width: 100%
-    padding: 15px 20px
-    border-left: 1px solid $border-line-color
+    width: 600px
     margin: 0
-    .organizer__info-field:first-child
-      border-top: none
-
-  @media only screen and (min-width: $tablet-content-width)
-    flex: 2
-    border-left: none
-    .organizer__info-field:first-child
-      border-top: 1px solid $border-line-color
-
-.organizer__links
-  position: relative
-  display: flex
-  flex-direction: column
-  background-color: $bkg-light-grey-color
-  border: 1px solid $border-line-color
-  border-radius: 15px
-  padding: 15px 10px
-  margin: 0 2%
-  margin-bottom: 30px
-
-  .edit-menu
-    position: absolute
-    top: 25px
-    left: 160px
+    padding: 10px 45px 35px 40px
 
   .block-title
-    margin-bottom: 10px
-
-  .links__group
-    @media only screen and (min-width: $tablet-average-content-width)
-      //margin-left: 10px
-      //margin-bottom: 10px
-      padding-left: 10px
+    margin-bottom: 22px
 
   .organizer__info-field
-    display: flex
-    align-items: center
+    padding: 0
+    margin-bottom: 15px
 
-    .info-field__content
-      width: 85%
-      overflow: hidden
-      text-overflow: ellipsis
-
-      @media only screen and (min-width: $mobile-content-width)
-        width: 89%
-
-      @media only screen and (min-width: $tablet-average-content-width)
-        width: 80%
-
-      @media only screen and (min-width: $tablet-content-width)
-        width: 85%
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    flex-direction: row
-    flex-wrap: wrap
-    margin: 0
-    margin-bottom: 30px
-    .links__group
-      flex: 1
-
-  @media only screen and (min-width: $tablet-content-width)
-    width: 100%
-    padding: 15px 20px
-
-  .info-field__icon
-    margin-right: 10px
-    padding-top: 3px
-    opacity: 0.9
-
-.organizer__personal-data
-  position: relative
-  background-color: $bkg-light-grey-color
-  border: 1px solid $border-line-color
-  border-radius: 15px
-  padding: 15px 10px
-  margin: 0 2%
-  margin-bottom: 30px
-
-  .edit-menu
-    position: absolute
-    top: 25px
-    left: 190px
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    margin: 0 0 30px 0
-
-  @media only screen and (min-width: $tablet-content-width)
-    order: -1
-    display: block
-    width: 58.5%
-    margin-bottom: 30px
-    padding: 15px 20px
-
-  .organizer__info-field
-    @media only screen and (min-width: $tablet-average-content-width)
-      margin-left: 10px
-      margin-right: 10px
-
-  form
-    margin-top: 10px
+  .info-field__head
+    display: inline-block
+    font-size: 14px
+    font-weight: 400
+    margin-bottom: 3px
+    padding-left: 10px
 
   select,
   input
     width: 100%
-    margin-bottom: 2px
+    margin-bottom: 5px
 
-  label
-    margin-bottom: 4px
-    padding-left: 12px
-    line-height: 100%
-
-  .checkbox-cover
-    padding-left: 12px
-    margin-bottom: 3px
-    @media only screen and (min-width: $tablet-average-content-width)
-      padding-left: 25px
-    label
-      text-transform: lowercase
-      font-weight: 400
-      font-size: 14px
-      letter-spacing: 0
-      margin-top: -3px
-      margin-bottom: 0
-    input + label
-      padding-left: 30px
+  .red
+    font-size: 14px
+    margin-left: -2px
 
   .radio-btn-cover
-    .info-field__head
-      display: block
-      margin-top: -10px
-
-    @media only screen and (min-width: $mobile-content-width)
-      padding: 0 10px
-      text-align: left
+    margin-bottom: 22px
 
     label
-      margin: 8px 0
+      color: $font-grey-color
+      margin: 8px 10px
+      margin-top: 5px
+      font-weight: 300
 
     input[type="radio"]:checked + label:before,
     input[type="radio"]:not(:checked) + label:before
       margin-top: 1px
 
-.organizer__about
-  position: relative
-  background-color: #FCFCFC
-  border: 1px solid #e6e6e6
-  border-radius: 15px
-  margin: 0 2%
-  margin-bottom: 30px
-  padding: 15px 10px
+    input[type="radio"]:checked + label
+      color: $main-font-color
+      font-weight: 400
 
-  .edit-menu
-    position: absolute
-    top: 25px
-    left: 240px
+  .checkbox-cover
+    margin-top: 10px
+    padding-left: 10px
+    label
+      margin-top: 5px
+      font-weight: 300
+      span
+        text-transform: lowercase
+        opacity: 0.9
+    input[type="checkbox"]:checked + label
+      opacity: 1
+      font-weight: 400
 
-  form
+  label[for='name'],
+  label[for='patronymic'],
+  label[for='surname']
+    margin-top: 7px
+    margin-bottom: 1px
+
+  label[for='company-address'],
+  label[for='person-registration'],
+  label[for='company-phone'],
+  .experience
     margin-top: 10px
 
+  .experience
+    div:first-child
+      width: 100%
+      padding-left: 10px
+      margin-top: 10px
+      margin-bottom: 0
+      color: $font-grey-color
+      opacity: 0.8
+
+    label
+      text-transform: lowercase
+      font-size: 13px
+      font-weight: 400
+      margin-top: 6px
+      margin-bottom: 1px
+      padding-left: 10px
+
+    input
+      display: block
+      width: 50%
+
+  .organizer__button
+    text-align: center
+    margin-top: 45px
+
+//=====CONTACTS=========
+form.organizer__links
+  @include box-deep-shadow
+  background-color: $bkg-grey-color
+  @media only screen and (min-width: $tablet-content-width)
+    padding: 10px 35px 30px 40px
+    width: 100%
+    margin: 0
+
   .organizer__info-field
-    padding-left: 0
+    padding: 10px
+
+  .block-title
+    margin-bottom: 20px
+
+  .info-field__icon
+    margin-right: 8px
+
+  .organizer__button
+    text-align: center
+    margin-top: 45px
+
+//=====ABOUT=========
+form.organizer__about
+  background-color: $bkg-grey-color
+  margin: 0
+  @include box-deep-shadow
+  order: 0
+  @media only screen and (min-width: $tablet-average-content-width)
+    width: 600px
+
+  .block-title
+    padding-top: 20px
+    box-shadow: unset
+
+  .organizer__info-field
+    padding: 0 2px
+    @media only screen and (min-width: $desktop-content-width)
+      max-height: unset
 
   textarea
     width: 100%
-    margin-bottom: 5px
-
-  .info-field__content
-    padding: 0 5px
-
-  p
-    margin: 8px 0
-
-  @media only screen and (min-width: $tablet-average-content-width)
     padding: 15px
-    margin: 30px 0
 
-  @media only screen and (min-width: $tablet-content-width)
-    width: 100%
-    padding: 15px 20px
-    margin: 0
+  .organizer__button
+    margin-top: 30px
+    margin-bottom: 10px
+    text-align: center

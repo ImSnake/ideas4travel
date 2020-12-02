@@ -1,26 +1,21 @@
-/* SECTION GUIDES START */
+@charset "UTF-8"
 
 .organizer__guides
-  margin-bottom: 40px
-
-  @media only screen and (min-width: $tablet-average-content-width)
-    margin-top: 30px
-    margin-bottom: 100px
+  @include content-padding
 
 .guides-block
   display: flex
   flex-wrap: wrap
   justify-content: space-evenly
-  padding: 0 5%
   @media only screen and (min-width: $tablet-average-content-width)
-    padding: 0 20px
+    justify-content: flex-start
 
 .guide-box
   position: relative
   padding: 5%
   //margin: 30px 10px
   border: 1px solid $border-line-color
-  border-radius: 15px
+  border-radius: 12px
   max-width: 400px
   @media only screen and (min-width: $tablet-average-content-width)
     width: 380px
@@ -66,12 +61,12 @@
   background-color: $bkg-light-grey-color
   border-top: 1px solid $border-line-color
   border-left: 1px solid $border-line-color
-  border-bottom-right-radius: 15px
-  border-top-left-radius: 15px
+  border-bottom-right-radius: 12px
+  border-top-left-radius: 12px
   padding: 15px
   cursor: pointer
   i
     font-size: 25px
-    color: $font-dark-grey-color
+    color: $main-font-color
 
 /* SECTION GUIDES FINISH */

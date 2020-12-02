@@ -40,7 +40,7 @@ class Db
      * Приватный метод возвращает подготовленную строку DSN.
      * @return string
      */
-    private function prepareDsnString(): string
+    protected function prepareDsnString(): string
     {
         return sprintf("%s:host=%s;dbname=%s;charset=%s", MYSQL_DRIVER, MYSQL_HOST, MYSQL_DB, MYSQL_CHARSET);
     }

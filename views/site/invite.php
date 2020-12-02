@@ -5,37 +5,43 @@ use app\services\renderer\TemplateRenderer;
 /* @var $errors */
 /* @var $this TemplateRenderer */
 
-$this->title = "Партнерам";
-$this->description = "Описание страницы Партнерам";
+$this->title = "Организаторам";
+$this->description = "Описание страницы Организаторам";
 
 $this->cssFiles = ['partnership/partnership.css'];
-$this->jsFiles = ['partnership/partnership.js'];
+//$this->jsFiles = ['partnership/partnership.js'];
 
 ?>
 
-<div class="center">
+<!--<div class="center">-->
 
-    <div class="container">
+<div class="container">
 
-        <section class="partnership">
+    <section class="partnership">
+
+        <h2 class="block-title">Организаторам</h2>
+
+        <h4>Гидам&nbsp;и&nbsp;трэвел-экспертам</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, aspernatur assumenda
+            beatae cum delectus doloremque eligendi est et laudantium molestiae nesciunt nostrum quasi quia sequi
+            temporibus voluptate voluptates!</p>
+        <h4>Туроператорам</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, aspernatur assumenda
+            beatae cum delectus doloremque eligendi est et laudantium molestiae nesciunt nostrum quasi quia sequi
+            temporibus voluptate voluptates!</p>
+        <h4>Турагентствам</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, aspernatur assumenda
+            beatae cum delectus doloremque eligendi est et laudantium molestiae nesciunt nostrum quasi quia sequi
+            temporibus voluptate voluptates!</p>
 
             <div class="btn-blue">
-
-                <a href="/auth/auth-signup"><span>Кабинет партнера</span></a>
-
+                <a href="/auth/auth-signup">В&nbsp;кабинет&nbsp;организатора</a>
             </div>
 
-            <h2 class="block-title">Партнерам</h2>
+        <a href="/offer" class="link">договор-оферта&nbsp;для&nbsp;организатора</a>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illum obcaecati repudiandae. Ipsum nam
-                odit
-                officiis porro quam quasi quibusdam. A aspernatur consectetur earum eligendi eveniet laboriosam maxime
-                provident sint!</p>
-
-            <a href="partnership-offer.php">Договор-оферта для партнеров</a>
-
-        </section>
-
-    </div>
+    </section>
 
 </div>
+
+<!--</div>-->

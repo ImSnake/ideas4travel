@@ -22,16 +22,21 @@ use app\services\renderer\TemplateRenderer;
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles/normalize.css">
-    <!-- connect web icon fonts icofont and fontello/ -->
-    <link rel="stylesheet" href="/styles/web-fonts/icofont/icofont.min.css">
-    <link rel="stylesheet" href="/styles/web-fonts/fontello-c45cd08e/css/fontello.css">
-
+    <!-- загрузка шрифтов -->
+    <link rel="stylesheet" href="/styles/base/fonts.css">
+    <!-- стили для хедера, футера и повторяющихся элементов  -->
     <link rel="stylesheet" href="/styles/base/base.css">
-
+    <!-- connect web icon fonts icofont and fontello/ -->
+    <link rel="stylesheet" href="/styles/web-fonts/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/styles/web-fonts/icofont/icofont.min.css">
     <!--Подключаем css файлы заданные в настройках страницы.-->
     <?php foreach ($this->cssFiles as $css): ?>
         <link rel="stylesheet" href="/styles/<?= $css ?>">
     <?php endforeach; ?>
+    <!--бибилиотека jQuery-->
+    <script src="/js/jquery/jq.js"></script>
+    <!--Подключаем css для вывода стилизованных сервисных сообщений alert, prompt, confirm-->
+    <link rel="stylesheet" href="/styles/jquery/jquery-confirm.css">
 
 </head>
 
@@ -41,6 +46,9 @@ use app\services\renderer\TemplateRenderer;
 
 include VIEWS_DIR . 'blocks-html/base-html/header.php';
 
+// контейнер для формирования контента основного содержимого страницы: отркывающий тег
+echo "<div class='center'>";
+
 if (App::get()->auth->getUserID()) {
     include VIEWS_DIR . 'blocks-html/organizer/navigation.php';
 }
@@ -48,15 +56,19 @@ if (App::get()->auth->getUserID()) {
 // Выводим содержание.
 echo $content;
 
+// контейнер для формирования контента основного содержимого страницы: закрывающий тег
+echo "</div>";
+
 include VIEWS_DIR . 'blocks-html/base-html/footer.php';
 
 ?>
 
 <!--Подключаем основные js скрипты.-->
-<script src="/js/jq.js"></script>
-<script src="/js/main.js"></script>
-
-<!--Подключаем js файлы заданные в настройках страницы.-->
+<!--<script src="/js/jquery/jq.js"></script>-->
+<script src="/js/base/main.js"></script>
+<!--Подключаем js для вывода стилизованных сервисных сообщений alert, prompt, confirm-->
+<script src="/js/jquery/jquery-confirm.min.js"></script>
+<!--Подключаем js файлы заданные в настройках страницы -->
 <?php foreach ($this->jsFiles as $script): ?>
     <script src="/js/<?= $script ?>"></script>
 <?php endforeach; ?>

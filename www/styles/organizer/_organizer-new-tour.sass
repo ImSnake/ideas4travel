@@ -1,0 +1,354 @@
+@charset "UTF-8"
+
+.organizer__new-tour
+  @include content-padding
+
+  .back-n-wrap
+    //margin-bottom: 28px
+    @media only screen and (min-width: $tablet-average-content-width)
+      display: block
+      margin-top: -20px
+
+  label
+    display: inline-block
+    //width: 100px
+    //margin-right: 5px
+
+  input,
+  select
+    height: 36px
+
+  input[type='date']
+    width: 150px
+
+  .block-title
+    padding: 12px 5px
+
+  .title
+    color: $font-grey-color
+    font-size: 15px
+
+  .required-sign
+    position: relative
+    display: inline-block
+    width: 5px
+    &::after
+      position: absolute
+      color: $red-color
+      font-weight: 600
+      font-size: 16px
+      content: "*"
+      top: -15px
+      left: 2px
+
+  .select-cover
+    display: inline-block
+    width: 200px
+    select
+      width: 100%
+
+  //input[type='text'],
+  //input[type='number']
+    //padding: 7px 13px
+
+  input[type='number']
+    width: 70px
+
+  //input[type='checkbox']:checked + label
+    //font-weight: 600
+
+  textarea
+    width: 100%
+    margin-top: 3px
+    margin-left: -3px
+    //margin-bottom: 10px
+
+.new-tour__heading
+  //font-size: 16px
+  //padding: 0 2%
+  //margin-top: 5%
+  //margin-bottom: 3%
+  //@media only screen and (min-width: $tablet-average-content-width)
+  //max-width: 600px
+  margin-top: 30px
+  padding-left: 5px
+  font-size: 21px
+  font-weight: 400
+  //color: $font-grey-color
+  //text-transform: lowercase
+  //line-height: 1.3em
+  //margin-top: 30px
+  //margin-bottom: 25px
+
+.heading__program-name
+  font-size: 21px
+  font-weight: 600
+  text-transform: uppercase
+  color: $main-font-color
+  margin-top: 6px
+  margin-bottom: 10px
+
+.new-tour__form-block
+  min-width: 320px
+  max-width: 600px
+  background-color: $bkg-grey-color
+  @include box-deep-shadow
+  //border: 1px solid $border-line-color
+  border-radius: 8px
+  padding-top: 10px
+  padding-left: 30px
+  padding-right: 30px
+  padding-bottom: 25px
+  margin-bottom: 45px
+
+  //@media only screen and (min-width: $mobile-content-width)
+    max-width: 400px
+    padding-left: 25px
+    padding-right: 25px
+  //@media only screen and (min-width: $tablet-average-content-width)
+    max-width: 350px
+    padding-left: 15px
+    padding-right: 15px
+
+  .block-title
+    margin-bottom: 20px
+
+  .help
+    left: 1px
+    top: -12px
+    margin-left: 8px
+    &::before
+      width: 8px
+      height: 8px
+    .top
+      top: 18px
+      right: -23px
+
+.form-block__field
+  padding: 0 3px
+  margin-bottom: 20px
+  @media only screen and (min-width: $min-site-width + 20px)
+    padding: 0 5px
+
+  //.text
+    //margin-right: 4px
+    //margin-left: 3px
+
+  .label-width
+    width: 100px
+
+  .degree
+    width: 67px
+
+  label[for='t-max']
+    margin-left: 11px
+    margin-right: 11px
+
+  label[for='price']
+    width: 90px
+  #price
+    width: 120px
+    margin-right: 8px
+  .currency
+    width: 100px
+    select
+      width: 100%
+
+  label[for='available']
+    width: 90px
+  #available
+    margin-right: 8px
+
+
+  label[for='discount']
+    //width: 65px
+
+  #discount
+    width: 70px
+    margin-left: 8px
+    //margin-right: 10px
+  label[for='discount-timeOut']
+    margin-left: 15px
+    margin-right: 8px
+
+  //#kids-price + label
+    margin-top: 3px
+    margin-left: 2px
+
+
+  #book-term,
+  #pre-pay,
+  #pay-term
+    margin-left: 8px
+    width: 60px
+    margin-right: 5px
+    &#pre-pay
+      margin-right: 0
+
+  label[for='tour-contact']
+    margin-top: 10px
+
+//========================================================
+#extra-costs
+  margin-top: 70px
+  margin-bottom: 70px
+  h2
+    padding-left: 5px
+    font-size: 21px
+    font-weight: 800
+    color: $red-color
+    text-transform: uppercase
+
+.extra-costs__title
+  padding-left: 5px
+  position: relative
+  margin-top: 15px
+  margin-bottom: 20px
+  font-size: 19px
+  font-weight: 600
+  .help
+    left: 7px
+    top: -13.5px
+    font-weight: 400
+    &.help::before
+      width: 9px
+      height: 9px
+    .top
+      right: -23px
+      top: 18px
+
+.extra-costs__field
+  margin-bottom: 23px
+
+  .extra-costs__heading
+    padding-left: 10px
+    &:hover
+      color: $main-blue-color
+      font-weight: 600
+
+    input[type='checkbox'] + label
+      span
+        margin-left: 3px
+
+    input[type='checkbox']:checked + label
+      font-weight: 700
+      span
+        opacity: 0.65
+
+  &.closed
+
+  &.opened
+    .extra-costs__heading
+      position: relative
+      bottom: -1px
+      max-width: max-content
+      background-color: $bkg-grey-color
+      border: 1px solid $border-line-light-color
+      border-bottom: none
+      box-shadow: -1px 0px 2px -1px rgba(0, 0, 0, 0.15)
+      -webkit-box-shadow: -1px 0px 2px -1px rgba(0, 0, 0, 0.15)
+      -moz-box-shadow: -1px 0px 2px -1px rgba(0, 0, 0, 0.15)
+      border-top-left-radius: 10px
+      border-top-right-radius: 10px
+      padding: 7px 28px 1px 10px
+      margin-top: 15px
+      &:hover
+        font-weight: 700
+
+
+.extra-costs__block
+  min-width: 300px
+  max-width: 600px
+  background-color: $bkg-grey-color
+  @include box-deep-shadow
+  //border: 1px solid $border-line-color
+  border-radius: 10px
+  border-top-left-radius: 0
+  padding: 22px 15px 20px 15px
+  //margin-top: 3px
+  margin-bottom: 25px
+  @media only screen and (min-width: $mobile-content-width)
+    //max-width: 400px
+    padding-left: 35px
+    padding-right: 35px
+    padding-top: 25px
+    padding-bottom: 20px
+
+  .group
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+  .title
+    margin-right: 10px
+
+  input[type='number']
+    width: 40%
+    max-width: 120px
+    margin-right: 16px
+    margin-left: 5px
+  .select-cover
+    display: inline-block
+    width: 30%
+    max-width: 100px
+    margin-right: 5px
+    select
+      width: 100%
+
+  textarea
+    margin-bottom: 15px
+
+  //label
+    font-size: 12px
+
+//.add-elem,
+//.delete-elem
+
+
+.add-elem
+  padding-left: 10px
+  color: $main-font-color
+  margin-right: 10px
+  margin-bottom: 30px
+  &.add-elem::before
+    padding: 11.5px
+  &:hover
+    color: $green-color
+  &::after
+    content: 'добавить'
+    line-height: 23px
+    margin-left: 31.5px
+  &:hover
+    font-weight: 600
+    color: $main-blue-color
+    opacity: 1
+
+
+.delete-elem
+  padding-left: 2px
+  padding-top: 2px
+  &.delete-elem::before
+    padding: 10px
+  //&.delete-elem::before:hover
+     color: $red-color
+  &::after
+    content: 'удалить'
+    opacity: 0.6
+    font-weight: 700
+    margin-left: 28px
+  &:hover::after
+    cursor: pointer
+    color: $red-color
+    opacity: 1
+
+.new-tour__bottom
+  min-width: 300px
+  max-width: 600px
+  display: flex
+  justify-content: space-between
+  .btn-orange,
+  .btn-grey
+    border-radius: 8px
+    //max-width: 215px
+    //margin-right: 50px
+    //margin-left: 10px
